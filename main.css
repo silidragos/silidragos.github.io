@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Abel', sans-serif;
+    margin: 0px;
+    color: #383838;
+}
+h1, h2{
+    font-family: 'Anton', sans-serif;
+}
+
+h2{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+button{
+    font-family: 'Abel', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.key-but{
+    font-family: 'Abel', sans-serif;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd04a+0,ff5461+100 */
+    background: #ffd04a; /* Old browsers */
+    background: -moz-linear-gradient(left, #ffd04a 0%, #ff5461 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ffd04a 0%,#ff5461 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffd04a 0%,#ff5461 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd04a', endColorstr='#ff5461',GradientType=1 ); /* IE6-9 */
+
+    border-radius: 10px;
+    padding: 15px;
+
+    transition: .3s all ease-in-out;
+}
+
+.key-but:hover{
+    font-size:1.6em;
+}
+
+h1{
+    font-size: 3em;
+}
+p, ul{
+    font-size: 1.4em;
+}
+small{
+    font-size: 1em;
+}
+
+.key-word{
+    background-color: #FFD04A;
+    padding: 10px;
+    color: #22181C;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+
+.centered-image{
+    width: 126%;
+    margin-left: -13%;
+    margin-right: -13%;
+    background-color: #eee;
+    text-align: center;
+}
+
+.red{
+    color: #ff5461;
+}
+
+header{
+    height: 60px;
+    z-index: 10;
+}
+header div{
+    font-size: 1.2em;
+    line-height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+header div a{
+    text-decoration: none;
+    color: black;
+}
+
+header div a:hover{
+    border-bottom: 2px solid #FFD04A;
+}
+
+.logo{
+    width: 150px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.logo img{
+    width: 100%;
+}
+
+section{
+    margin-top: 150px;
+    margin-bottom: 200px;
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: 10;
+}
+
+.bg{
+    background-image:  url("./img/1.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 900px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.introduction{
+    z-index: 10;
+    margin-top: 100px;
+    margin-bottom: 350px;
+}
+.introduction .main-body{
+    width: 45%;
+}
+
+hr{
+    color: #FFD04A;
+    border-style: solid;
+}
+
+.what-we-are{
+    margin-bottom: 100px;
+}
+.what-we-are h1, h2{
+    text-align: center;
+}
+
+.what-we-are h1{
+    margin-bottom: 120px;
+}
+
+.steps-explanation{
+    background-color: #EEE;
+    margin-left: -13%;
+    margin-right: -13%;
+}
+
+.steps-explanation img{
+    width: 20%;
+    margin: 5%;
+    margin-left: 7%;
+}
+
+.use-cases{
+    margin-top: 50px;
+}
+.use-cases h1{
+    text-align: center;
+
+}
+
+.use-cases h2{
+    padding-top: 60px;
+}
+
+.use-cases .wrapper{
+    background-color: #FFD04A;
+    color: #383838;
+}
+
+.use-cases .img-body{
+    width: 50%;
+    margin: auto;
+    display: inline-block;
+    background-color: #EEE;
+}
+.use-cases .img-body img{
+    margin: 0px;
+    width: 100%;
+}
+
+.use-cases .desc-body{
+    display: inline-block;
+    width: 46%;
+    vertical-align: top;
+    padding-right: 0.65%;
+    padding-left: 3%;
+}
+
+.use-cases .industries{
+    margin-left: -13%;
+    margin-right: -13%;
+}
+
+.use-cases .enables-to{
+    margin-left: -13%;
+    margin-right: -13%;
+}
+
+.use-cases .enables-to h2{
+    margin-top: 0px;
+}
+
+.goals h1{
+    text-align: center;
+}
+.goals ul{
+    list-style-type: none;
+}
+.goals ul li{
+    line-height: 35px;
+}
+.goals ul li>span{
+    display: inline;
+    vertical-align: super;
+}
+
+.goals ul li>span a{
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    padding-top: 5px;
+}
+
+.goals ul li img{
+    display: inline;
+    width: 25px;
+    margin: 0px 25px;
+}
+
+.contact{
+    margin-top: 100px;
+}
+
+.contact h1{
+    text-align: center;
+    margin-bottom: 100px;
+}
+.contact-but{
+    padding: 20px 50px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: auto;
+    display: block;
+
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd04a+0,ff5461+100 */
+    background: #ffd04a; /* Old browsers */
+    background: -moz-linear-gradient(left, #ffd04a 0%, #ff5461 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ffd04a 0%,#ff5461 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffd04a 0%,#ff5461 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd04a', endColorstr='#ff5461',GradientType=1 ); /* IE6-9 */
+
+    transition: .3s all ease-in-out;
+}
+
+.contact-but:hover{
+    font-size:1.6em;
+}
+
+.social-icons{
+    width: 100%;
+}
+
+.social-icons a{
+    display: inline-block;
+    width:45%;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 32px;
+    transition: all .5s ease-in-out;
+
+}
+
+.social-icons a:hover{
+    transform: rotateY(6.284rad);
+}
+
+
+footer{
+    width: 100%;
+    text-align: center;
+    background-color: #383838;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: default;
+}
+footer:hover .heart{
+    color: #FF5461;
+}
+.heart{
+    transition: 1s all ease-in-out;
+    cursor: default;
+}
+
+.use-cases .resp{
+    display: none;
+}
+
+@media (max-width: 1050px){
+    .use-cases .img-body{
+        width: 100%;
+    }
+
+    .use-cases .resp{
+        display: inline-block;
+    }
+    .use-cases .no-resp{
+        display: none;
+    }
+    .use-cases .desc-body{
+        width: 100%;
+        height: 400px;
+    }
+}
+@media (max-width: 900px) {
+    .logo{
+        display: none;
+    }
+    .bg{
+        height: 1000px;
+        background-position: right -650px bottom 0px;
+    }
+
+    .centered-image{
+        margin: 0px;
+    }
+
+    .centered-image img{
+        width: 100%;
+    }
+
+    .steps-explanation img{
+        width: 80%;
+        margin: auto;
+    }
+}
