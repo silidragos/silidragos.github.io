@@ -83,6 +83,8 @@ small{
 header{
     height: 60px;
     z-index: 10;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 header div{
     font-size: 1.2em;
@@ -284,7 +286,7 @@ hr{
     width:45%;
     cursor: pointer;
     text-align: center;
-    margin-left: 32px;
+    margin-left: 2.5%;
     transition: all .5s ease-in-out;
 
 }
@@ -327,8 +329,8 @@ footer:hover .heart{
         display: none;
     }
     .use-cases .desc-body{
-        width: 100%;
-        height: 400px;
+        width: 93%;
+        min-height: 400px;
     }
 
     .steps-explanation img{
@@ -346,13 +348,36 @@ footer:hover .heart{
         background-position: right -650px bottom 0px;
     }
 
-    .centered-image{
+    .img-body .centered-image{
         margin: 0px;
     }
 
+
     .centered-image img{
+        width: 100%;
+    }    
+
+    .introduction .main-body{
+        width: 70%;
+    }
+}
+
+@media(max-width: 675px){
+    
+    .introduction .main-body{
         width: 100%;
     }
 
+    .bg{
+        opacity: .3;
+    }
+
     
+    .goals ul{
+        padding-left: 0px;
+    }
+
+    .contact-but{
+        font-size: 1em;
+    }
 }
