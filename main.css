@@ -8,6 +8,7 @@ body{
     font-family: 'Abel', sans-serif;
     margin: 0px;
     color: #383838;
+    overflow-x: hidden;
 }
 h1, h2{
     font-family: 'Anton', sans-serif;
@@ -66,6 +67,7 @@ small{
     color: #22181C;
     font-weight: bold;
     padding-bottom: 3px;
+    padding-top: 3px;
 }
 
 .centered-image{
@@ -78,6 +80,11 @@ small{
 
 .red{
     color: #ff5461;
+}
+.white{
+    background-color: white;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 header{
@@ -341,8 +348,18 @@ footer:hover .heart{
 }
 @media (max-width: 900px) {
     .logo{
-        display: none;
+        width: 100px;
     }
+    header{
+        background-color: white;
+        height: 100%;
+        width: 100%;
+        margin-left: -13%;
+        margin-right: -13%;
+        padding-left: 13%;
+        padding-right: 13%;
+    }
+
     .bg{
         height: 1000px;
         background-position: right -650px bottom 0px;
@@ -356,9 +373,16 @@ footer:hover .heart{
     .centered-image img{
         width: 100%;
     }    
+    .introduction{
+        margin-bottom: 100px;
+    }
 
     .introduction .main-body{
         width: 70%;
+    }
+
+    .goals{
+        margin-bottom: 100px;
     }
 }
 
@@ -372,7 +396,6 @@ footer:hover .heart{
         opacity: .3;
     }
 
-    
     .goals ul{
         padding-left: 0px;
     }
