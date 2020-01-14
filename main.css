@@ -159,163 +159,114 @@ hr {
     border-style: solid;
 }
 
-.what-we-are {
-    margin-bottom: 100px;
-}
-.what-we-are h1,
-h2 {
-    text-align: center;
-}
-
-.what-we-are h1 {
-    margin-bottom: 120px;
-}
-
-.steps-explanation {
-    background-color: #eee;
-    margin-left: -14%;
-    margin-right: -14%;
-}
-
-.steps-explanation div {
-    width: 20%;
-    margin: 5%;
-    margin-left: 7%;
-    display: inline-block;
-    vertical-align: top;
-    margin-bottom: 100px;
-    position: relative;
-}
-
-.steps-explanation div img {
-    width: 100%;
-}
-
-.steps-explanation div span {
-    text-align: center;
-    font-weight: bold;
-}
-
-.steps-explanation.products .parent-image {
-    width: 10%;
-    padding: 10%;
-    padding-left: 13%;
-    padding-bottom: 10px;
-    padding-top: 25px;
-    margin: 0;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
-}
-.steps-explanation.products .parent-image:hover {
-    background-color: white;
-}
-.steps-explanation.products div.first:hover ~ .hidden-image.first {
-    display: inline-block;
-    width: 100%;
-    margin: auto;
-}
-
-.steps-explanation.products div.second:hover ~ .hidden-image.second {
-    display: inline-block;
-    width: 100%;
-    margin: auto;
-}
-
-.steps-explanation.products div.third:hover ~ .hidden-image.third {
-    display: inline-block;
-    width: 100%;
-    margin: auto;
-}
-
-.steps-explanation.products .hidden-image {
-    display: none;
-}
-.steps-explanation.products .hidden-image img {
-    display: block;
-    width: 50%;
-    margin: auto;
-}
-
-.use-cases {
+#layer-1 {
+    margin-bottom: 50px;
     margin-top: 50px;
 }
-.use-cases h1 {
+#layer-1 .main-body h1 {
     text-align: center;
 }
 
-.use-cases h2 {
-    padding-top: 60px;
+.side-by-side img {
+    width: 30%;
+}
+.side-by-side .left {
+    margin-right: 3%;
+}
+.side-by-side .right {
+    margin-left: 3%;
 }
 
-.use-cases .wrapper {
-    background-color: #ffd04a;
-    color: #383838;
-}
-
-.use-cases .img-body {
-    width: 50%;
-    margin: auto;
+.side-by-side span {
+    width: 30%;
+    font-size: 5em;
     display: inline-block;
-    background-color: #eee;
+    vertical-align: top;
+    margin-top: 75px;
+    text-align: center;
 }
-.use-cases .img-body img {
-    margin: 0px;
+
+#product-description,
+#find-out-more,
+#modules,
+#contact {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+
+    padding-top: 150px;
+    padding-bottom: 200px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+#product-description,
+#find-out-more {
+    background-color: rgb(255, 250, 231);
+}
+
+#product-description .central-illustration {
+    width: 20%;
+    margin-left: 40%;
+}
+
+#modules h1 {
+    text-align: center;
+}
+#modules p {
+    text-align: center;
+}
+#modules .main-body div {
+    width: 40%;
+    display: inline-block;
+    margin-left: 4%;
+    margin-right: 4%;
+
+    border: 2px solid #ffd04a;
+}
+
+#modules .main-body div img {
     width: 100%;
 }
 
-.use-cases .desc-body {
-    display: inline-block;
-    width: 46%;
-    vertical-align: top;
-    padding-right: 0.65%;
-    padding-left: 3%;
-}
-
-.use-cases .industries {
-    margin-left: -13%;
-    margin-right: -13%;
-}
-
-.use-cases .enables-to {
-    margin-left: -13%;
-    margin-right: -13%;
-}
-
-.use-cases .enables-to h2 {
-    margin-top: 0px;
-}
-
-.goals h1 {
+#modules .main-body div p {
+    font-weight: bold;
     text-align: center;
 }
-.goals ul {
-    list-style-type: none;
+
+#find-out-more h1 {
+    text-align: center;
 }
-.goals ul li {
-    line-height: 35px;
-}
-.goals ul li > span {
-    display: inline;
-    vertical-align: super;
+#find-out-more .main-body div {
+    display: inline-block;
+    width: 40%;
+    margin-left: 4%;
+
+    text-align: center;
 }
 
-.goals ul li > span a {
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-    padding-top: 5px;
+#find-out-more .main-body .left {
+    padding-right: 4%;
+    border-right: 2px solid #ffd04a;
 }
 
-.goals ul li img {
-    display: inline;
-    width: 25px;
-    margin: 0px 25px;
+#find-out-more .main-body div img {
+    width: 40%;
+
+    margin: 30px;
 }
 
 .contact {
     margin-top: 100px;
 }
 
+.contact .get-sdk {
+    border: 2px solid #ffd04a;
+    padding: 10px;
+    padding-bottom: 75px;
+
+    background-color: rgb(255, 250, 231);
+}
 .contact h1 {
     text-align: center;
     margin-bottom: 100px;
@@ -384,42 +335,136 @@ footer:hover .heart {
     display: none;
 }
 
-@media (max-width: 1050px) {
-    .use-cases .img-body {
-        width: 100%;
-    }
+/** Modals **/
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
 
-    .use-cases .resp {
-        display: inline-block;
-    }
-    .use-cases .no-resp {
-        display: none;
-    }
-    .use-cases .desc-body {
-        width: 93%;
-        min-height: 400px;
-    }
+.modal.modal-pricing .modal-body {
+    height: 500px;
+}
+.modal.modal-contact .modal-body {
+    height: 550px;
+}
 
-    .steps-explanation div {
-        width: 80%;
-        margin: auto;
-        display: block;
-    }
+.modal.modal-request .modal-body {
+    height: 400px;
+}
 
-    .steps-explanation.products .parent-image {
-        width: 80%;
-        margin: auto;
-        display: block;
-    }
+.modal .modal-body {
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+    background-color: white;
+    position: relative;
+}
 
-    .steps-explanation.products .hidden-image img {
-        position: fixed;
-        bottom: 25px;
-        left: 0;
-        right: 0;
-        width: 80%;
-        margin: auto;
-    }
+.modal .modal-body .close {
+    position: absolute;
+    right: 25px;
+    top: 10px;
+    font-size: 2em;
+    width: initial;
+    font-family: 'Anton', sans-serif;
+    cursor: pointer;
+}
+.modal .modal-body h1 {
+    text-align: center;
+    padding-top: 25px;
+    margin-bottom: 15px;
+}
+.modal .modal-body div {
+    width: 40%;
+    margin-left: 5%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.modal .modal-body .main-text {
+    width: 80%;
+    text-align: center;
+}
+
+.modal .modal-body .free-list {
+    border-right: 2px solid orange;
+}
+
+.modal .modal-body .free-list div,
+.modal .modal-body .commercial-list div {
+    width: 200px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: orange;
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    position: absolute;
+    bottom: 50px;
+}
+.modal .modal-body div div a {
+    font-size: 1.4em;
+}
+.modal .modal-body div ul {
+    margin-bottom: 50px;
+    list-style: none;
+}
+.modal .modal-body div ul li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.modal .modal-body div ul li img {
+    width: 25px;
+    margin-right: 10px;
+}
+
+.modal .modal-body div ul li:nth-child(odd) {
+    background-color: rgb(240, 240, 240);
+}
+
+.modal .modal-body div ul li:hover {
+    background-color: rgb(230, 230, 230);
+}
+.modal .modal-body .form {
+    font-size: 1.4em;
+    position: relative;
+    width: 90%;
+}
+.modal .modal-body .form button {
+    float: right;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+.modal .modal-body .form div {
+    display: block;
+}
+
+.modal .modal-body .form input,
+.modal .modal-body .form textarea {
+    font-size: 1.2em;
+}
+
+#loading-overlay {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#loading-overlay p {
+    text-align: center;
+    margin-top: 200px;
 }
 @media (max-width: 900px) {
     .logo {
@@ -429,10 +474,7 @@ footer:hover .heart {
         background-color: white;
         height: 100%;
         width: 100%;
-        margin-left: -13%;
-        margin-right: -13%;
-        padding-left: 13%;
-        padding-right: 13%;
+        margin: 0;
     }
 
     .bg {
@@ -455,8 +497,85 @@ footer:hover .heart {
         width: 70%;
     }
 
-    .goals {
-        margin-bottom: 100px;
+    .side-by-side img,
+    .side-by-side span {
+        display: block;
+        width: 100%;
+    }
+
+    .side-by-side span {
+        margin-top: 0;
+    }
+
+    #product-description,
+    #find-out-more,
+    #modules,
+    #contact {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    #product-description .central-illustration {
+        width: 60%;
+        margin-left: 20%;
+    }
+
+    #modules .main-body div {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    #find-out-more .main-body div {
+        width: 100%;
+
+        padding-bottom: 50px;
+        margin-bottom: 25px;
+    }
+    #find-out-more .main-body .left {
+        border-right: none;
+        border-bottom: 2px solid #ffd04a;
+    }
+
+    .get-sdk h1 {
+        margin-bottom: 50px;
+    }
+
+    .modal.modal-pricing .modal-body,
+    .modal.modal-contact .modal-body,
+    .modal.modal-request .modal-body {
+        height: 100%;
+    }
+
+    .modal .modal-body .form input,
+    .modal .modal-body .form textarea {
+        font-size: 1em;
+    }
+    .modal .modal-body {
+        overflow: scroll;
+        width: 100%;
+        margin-top: 0px;
+    }
+    .modal .modal-body div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .modal .modal-body .free-list div {
+        margin-left: 10%;
+    }
+
+    .modal .modal-body .commercial-list {
+        margin-bottom: 50px;
+        margin-left: 0;
+    }
+
+    .modal .modal-body .free-list div,
+    .modal .modal-body .commercial-list div {
+        position: initial;
+        margin-top: 50px;
+    }
+    .modal .modal-body div ul {
+        margin-bottom: 0px;
     }
 }
 
@@ -469,11 +588,13 @@ footer:hover .heart {
         opacity: 0.3;
     }
 
-    .goals ul {
-        padding-left: 0px;
-    }
-
     .contact-but {
         font-size: 1em;
+    }
+}
+
+@media (max-width: 1050px) {
+    .introduction {
+        margin-bottom: 250px;
     }
 }

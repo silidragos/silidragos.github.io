@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+        <link rel="stylesheet" type="text/css" href="./main.css" />
+        <link rel="stylesheet" type="text/css" href="./usecases.css" />
+        <script src="./behavior.js"></script>
+        <title>InsidAR - Location based experiences</title>
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="./index.html"><img src="./img/logo_2_hor.png"/></a>
+            </div>
+        </header>
+        <h1>Use Cases</h1>
+        <div class="card-wrapper">
+            <div class="card" onclick="showModal('modal-office')">
+                <div class="overlay"></div>
+                <img src="./img/coworking.jpg" />
+                <p class="title">Offices & Coworking spaces</p>
+            </div>
+            <div class="card" onclick="showModal('modal-retail')">
+                <div class="overlay"></div>
+                <img src="./img/coarse-localization.jpg" />
+                <p class="title">Retail</p>
+            </div>
+            <div class="card" onclick="showModal('modal-public')">
+                <div class="overlay"></div>
+                <img src="./img/public_inst.jpg" />
+                <p class="title">Public Spaces</p>
+            </div>
+            <div class="card" onclick="showModal('modal-museums')">
+                <div class="overlay"></div>
+                <img src="./img/museum.jpg" />
+                <p class="title">Museums & Art Exhibitons</p>
+            </div>
+            <div class="card" onclick="showModal('modal-industry')">
+                <div class="overlay"></div>
+                <img src="./img/storagehall.jpg" />
+                <p class="title">Industrial Halls & Storage Spaces</p>
+            </div>
+        </div>
+
+        <footer>
+            <small>Made with <span class="heart">❤</span> in Iasi, Romania</small>
+        </footer>
+
+        <div class="modal modal-office" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-office')">X</div>
+                <h1>Office Buildings & Coworking Spaces</h1>
+                <ul>
+                    <li>Employees induction</li>
+                    <li>Augmenting Rooms Interactions and Scheduling</li>
+                    <li>Mapping and Augmenting of desks based on who works there</li>
+                    <li>Improve Building Manager - Employee communication</li>
+                </ul>
+
+                <video src="./img/bob.mp4" controls style="width: 150px; margin-left: 40%"></video>
+                <p style="font-size: 1em; width: 80%; margin: auto;">
+                    <b>InsidAR</b> was part of one of <b>BoB</b>'s showcase within <b>Commons Coworking Spaces</b>. It
+                    was basically an AR medium between Coworking Spaces and their members. More exactly we worked on
+                    enabling location based experiences such as a Kitchen wall with a sticky board and shared calendar
+                    and a member wall in 2 different locations.
+                </p>
+            </div>
+        </div>
+
+        <div class="modal modal-retail" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-retail')">X</div>
+                <h1>Retail</h1>
+                <ul>
+                    <li><b>Hardware Stores, Hypermarkets, Supermarkets, Wine Stores etc.</b></li>
+                    <li>Guide your way through the store</li>
+                    <li>Location based recommendations</li>
+                    <li>Location based promotions, marketing experiences</li>
+                    <li>AR experiences & gamification</li>
+                </ul>
+                <div class="usecase-image" id="retail_img"></div>
+            </div>
+        </div>
+
+        <div class="modal modal-public" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-public')">X</div>
+                <h1>Public Spaces</h1>
+                <ul>
+                    <li><b>Airports, Hospitals, Universities, City Halls etc.</b></li>
+                    <li>Mapping and Navigation through multiple module, intricated buildings</li>
+                    <li>Enhance Employees work performance and communication</li>
+                    <li>Asset Management</li>
+                </ul>
+                <div class="usecase-image" id="public_img"></div>
+            </div>
+        </div>
+        <div class="modal modal-museums" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-museums')">X</div>
+                <h1>Museums and Art Exhibition</h1>
+                <ul>
+                    <li>Artistic Augmented Reality visualizations</li>
+                    <li>Live visualization of current Exhibits</li>
+                    <li>Informative panels based on what you're watching</li>
+                </ul>
+                <div class="usecase-image" id="museums_img"></div>
+            </div>
+        </div>
+
+        <div class="modal modal-industry" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-industry')">X</div>
+                <h1>Industrial Halls & Storage Spaces</h1>
+                <ul>
+                    <li>Asset Management</li>
+                    <li>Location-based tags and notes</li>
+                    <li>Malfunctioning or problem location-based notices</li>
+                    <li>Package scanning and localization</li>
+                    <li>IoT integration</li>
+                </ul>
+                <div class="usecase-image" id="public_img"></div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,85 @@
+h1 {
+    text-align: center;
+}
+
+.card-wrapper {
+    width: 100%;
+    margin: auto;
+}
+.card {
+    position: relative;
+    width: 40%;
+    border: 2px solid black;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 5%;
+    margin-left: 4%;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+.card .overlay {
+    position: absolute;
+    background-color: orange;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: 0.3s all ease-in-out;
+}
+.card .overlay:hover {
+    opacity: 0.2;
+}
+.card img {
+    width: 100%;
+    border-bottom: 2px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card .title {
+    text-align: center;
+}
+
+.modal .modal-body {
+    height: 630px;
+}
+
+.modal .modal-body h1 {
+    font-size: 2em;
+}
+
+.modal .modal-body .usecase-image {
+    width: 280px;
+    height: 310px;
+    background-size: cover;
+    margin-left: calc(50% - 150px);
+}
+
+#retail_img {
+    background-image: url('./img/retail_fg.PNG');
+}
+#retail_img:hover {
+    background-image: url('./img/retail.PNG');
+}
+#museums_img {
+    background-image: url('./img/museum_fg.PNG');
+}
+#museums_img:hover {
+    background-image: url('./img/museum.PNG');
+}
+#public_img {
+    background-image: url('./img/public_fg.PNG');
+}
+#public_img:hover {
+    background-image: url('./img/public.PNG');
+}
+
+@media (max-width: 900px) {
+    .card {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 0%;
+    }
+}

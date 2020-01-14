@@ -1,0 +1,183 @@
+ffmpeg version N-94334-gab4795a085 Copyright (c) 2000-2019 the FFmpeg developers
+  built with gcc 9.1.1 (GCC) 20190716
+  configuration: --enable-gpl --enable-version3 --enable-sdl2 --enable-fontconfig --enable-gnutls --enable-iconv --enable-libass --enable-libdav1d --enable-libbluray --enable-libfreetype --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libopus --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libtheora --enable-libtwolame --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libzimg --enable-lzma --enable-zlib --enable-gmp --enable-libvidstab --enable-libvorbis --enable-libvo-amrwbenc --enable-libmysofa --enable-libspeex --enable-libxvid --enable-libaom --enable-libmfx --enable-amf --enable-ffnvcodec --enable-cuvid --enable-d3d11va --enable-nvenc --enable-nvdec --enable-dxva2 --enable-avisynth --enable-libopenmpt
+  libavutil      56. 30.100 / 56. 30.100
+  libavcodec     58. 53.101 / 58. 53.101
+  libavformat    58. 28.102 / 58. 28.102
+  libavdevice    58.  7.100 / 58.  7.100
+  libavfilter     7. 56.101 /  7. 56.101
+  libswscale      5.  4.101 /  5.  4.101
+  libswresample   3.  4.100 /  3.  4.100
+  libpostproc    55.  4.100 / 55.  4.100
+Splitting the commandline.
+Reading option '-v' ... matched as option 'v' (set logging level) with argument 'debug'.
+Reading option '-nostdin' ... matched as option 'stdin' (enable or disable interaction on standard input) with argument 0.
+Reading option '-progress' ... matched as option 'progress' (write program-readable progress information) with argument 'C:/Users/Dragos/AppData/Local/Temp/KritaFFmpegProgress.Ho8412'.
+Reading option '-r' ... matched as option 'r' (set frame rate (Hz value, fraction or abbreviation)) with argument '6'.
+Reading option '-start_number' ... matched as AVOption 'start_number' with argument '0'.
+Reading option '-i' ... matched as input url with argument 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse%04d.png'.
+Reading option '-i' ... matched as input url with argument 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/palette.png'.
+Reading option '-lavfi' ... matched as option 'lavfi' (create a complex filtergraph) with argument '[0:v][1:v] paletteuse'.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/fine2.gif' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option v (set logging level) with argument debug.
+Applying option nostdin (enable or disable interaction on standard input) with argument 0.
+Applying option progress (write program-readable progress information) with argument C:/Users/Dragos/AppData/Local/Temp/KritaFFmpegProgress.Ho8412.
+[file @ 0000014b1be8b640] Setting default whitelist 'file,crypto'
+Applying option lavfi (create a complex filtergraph) with argument [0:v][1:v] paletteuse.
+Applying option y (overwrite output files) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse%04d.png.
+Applying option r (set frame rate (Hz value, fraction or abbreviation)) with argument 6.
+Successfully parsed a group of options.
+Opening an input file: D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse%04d.png.
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0000.png' for reading
+[file @ 0000014b1becf1c0] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed7380] Statistics: 363533 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0001.png' for reading
+[file @ 0000014b1bf302c0] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bf30440] Statistics: 363533 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0002.png' for reading
+[file @ 0000014b1bf30380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1c578e40] Statistics: 369103 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0003.png' for reading
+[file @ 0000014b1bf30380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed6040] Statistics: 369103 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0004.png' for reading
+[file @ 0000014b1bf30380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed6200] Statistics: 370108 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0005.png' for reading
+[file @ 0000014b1bf30380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed63c0] Statistics: 370108 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0006.png' for reading
+[file @ 0000014b1bf30380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed6580] Statistics: 370372 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0007.png' for reading
+[file @ 0000014b1bf30380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed6740] Statistics: 370372 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0008.png' for reading
+[file @ 0000014b1bf30380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed6900] Statistics: 364866 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0009.png' for reading
+[file @ 0000014b1bf30380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed72c0] Statistics: 364866 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0010.png' for reading
+[file @ 0000014b1bed72c0] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed0200] Statistics: 359580 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0011.png' for reading
+[file @ 0000014b1bed72c0] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed0200] Statistics: 359580 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0012.png' for reading
+[file @ 0000014b1bed7380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed0200] Statistics: 401314 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0013.png' for reading
+[file @ 0000014b1bed7380] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bed0200] Statistics: 401314 bytes read, 0 seeks
+[image2 @ 0000014b1becba80] Probe buffer size limit of 5000000 bytes reached
+Input #0, image2, from 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse%04d.png':
+  Duration: 00:00:00.64, start: 0.000000, bitrate: N/A
+    Stream #0:0, 14, 1/25: Video: png, 1 reference frame, rgba(pc), 900x700 [SAR 11811:11811 DAR 9:7], 0/1, 25 fps, 25 tbr, 25 tbn, 25 tbc
+Successfully opened the file.
+Parsing a group of options: input url D:/Work/InsidAR/Code/InsidAR-landing-page/img/palette.png.
+Successfully parsed a group of options.
+Opening an input file: D:/Work/InsidAR/Code/InsidAR-landing-page/img/palette.png.
+[NULL @ 0000014b1bece340] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/palette.png' for reading
+[file @ 0000014b1bed7400] Setting default whitelist 'file,crypto'
+[png_pipe @ 0000014b1bece340] Format png_pipe probed with size=2048 and score=99
+[png_pipe @ 0000014b1bece340] Before avformat_find_stream_info() pos: 0 bytes read:1015 seeks:0 nb_streams:1
+[png_pipe @ 0000014b1bece340] After avformat_find_stream_info() pos: 1015 bytes read:1015 seeks:0 frames:1
+Input #1, png_pipe, from 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/palette.png':
+  Duration: N/A, bitrate: N/A
+    Stream #1:0, 1, 1/25: Video: png, 1 reference frame, rgba(pc), 16x16 [SAR 1:1 DAR 1:1], 0/1, 25 tbr, 25 tbn, 25 tbc
+Successfully opened the file.
+Parsing a group of options: output url D:/Work/InsidAR/Code/InsidAR-landing-page/img/fine2.gif.
+Successfully parsed a group of options.
+Opening an output file: D:/Work/InsidAR/Code/InsidAR-landing-page/img/fine2.gif.
+[file @ 0000014b1c6e5100] Setting default whitelist 'file,crypto'
+Successfully opened the file.
+detected 8 logical cores
+Stream mapping:
+  Stream #0:0 (png) -> paletteuse:default
+  Stream #1:0 (png) -> paletteuse:palette
+  paletteuse -> Stream #0:0 (gif)
+cur_dts is invalid st:0 (0) [init:0 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+    Last message repeated 2 times
+[image2 @ 0000014b1becba80] Thread message queue blocking; consider raising the thread_queue_size option (current value: 8)
+cur_dts is invalid st:0 (0) [init:0 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+    Last message repeated 3 times
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0014.png' for reading
+[file @ 0000014b1bed5fc0] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bf30200] Statistics: 401314 bytes read, 0 seeks
+cur_dts is invalid st:0 (0) [init:0 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+[image2 @ 0000014b1becba80] Opening 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse0015.png' for reading
+[file @ 0000014b1bed5fc0] Setting default whitelist 'file,crypto'
+[AVIOContext @ 0000014b1bf30200] Statistics: 401314 bytes read, 0 seeks
+cur_dts is invalid st:0 (0) [init:0 i_done:0 finish:0] (this is harmless if it occurs once at the start per stream)
+    Last message repeated 3 times
+[graph 0 input from stream 0:0 @ 0000014b1ca53ac0] Setting 'video_size' to value '900x700'
+[graph 0 input from stream 0:0 @ 0000014b1ca53ac0] Setting 'pix_fmt' to value '26'
+[graph 0 input from stream 0:0 @ 0000014b1ca53ac0] Setting 'time_base' to value '1/6'
+[graph 0 input from stream 0:0 @ 0000014b1ca53ac0] Setting 'pixel_aspect' to value '11811/11811'
+[graph 0 input from stream 0:0 @ 0000014b1ca53ac0] Setting 'sws_param' to value 'flags=2'
+[graph 0 input from stream 0:0 @ 0000014b1ca53ac0] Setting 'frame_rate' to value '6/1'
+[graph 0 input from stream 0:0 @ 0000014b1ca53ac0] w:900 h:700 pixfmt:rgba tb:1/6 fr:6/1 sar:11811/11811 sws_param:flags=2
+[graph 0 input from stream 1:0 @ 0000014b1d885c80] Setting 'video_size' to value '16x16'
+[graph 0 input from stream 1:0 @ 0000014b1d885c80] Setting 'pix_fmt' to value '26'
+[graph 0 input from stream 1:0 @ 0000014b1d885c80] Setting 'time_base' to value '1/25'
+[graph 0 input from stream 1:0 @ 0000014b1d885c80] Setting 'pixel_aspect' to value '1/1'
+[graph 0 input from stream 1:0 @ 0000014b1d885c80] Setting 'sws_param' to value 'flags=2'
+[graph 0 input from stream 1:0 @ 0000014b1d885c80] Setting 'frame_rate' to value '25/1'
+[graph 0 input from stream 1:0 @ 0000014b1d885c80] w:16 h:16 pixfmt:rgba tb:1/25 fr:25/1 sar:1/1 sws_param:flags=2
+[format @ 0000014b1ca53e80] Setting 'pix_fmts' to value 'rgb8|bgr8|rgb4_byte|bgr4_byte|gray|pal8'
+[auto_scaler_0 @ 0000014b1ca81880] w:iw h:ih flags:'bilinear' interl:0
+[Parsed_paletteuse_0 @ 0000014b1bed6300] auto-inserting filter 'auto_scaler_0' between the filter 'graph 0 input from stream 0:0' and the filter 'Parsed_paletteuse_0'
+[auto_scaler_1 @ 0000014b1ca81c40] w:iw h:ih flags:'bilinear' interl:0
+[Parsed_paletteuse_0 @ 0000014b1bed6300] auto-inserting filter 'auto_scaler_1' between the filter 'graph 0 input from stream 1:0' and the filter 'Parsed_paletteuse_0'
+[AVFilterGraph @ 0000014b1c6e2ac0] query_formats: 5 queried, 2 merged, 2 already done, 0 delayed
+[swscaler @ 0000014b1c6e5f80] Forcing full internal H chroma due to input having non subsampled chroma
+[auto_scaler_0 @ 0000014b1ca81880] w:900 h:700 fmt:rgba sar:11811/11811 -> w:900 h:700 fmt:bgra sar:1/1 flags:0x2
+[swscaler @ 0000014b1c6f2f00] Forcing full internal H chroma due to input having non subsampled chroma
+[auto_scaler_1 @ 0000014b1ca81c40] w:16 h:16 fmt:rgba sar:1/1 -> w:16 h:16 fmt:bgra sar:1/1 flags:0x2
+[Parsed_paletteuse_0 @ 0000014b1bed6300] [framesync @ 0000014b1d803088] Selected 1/150 time base
+[Parsed_paletteuse_0 @ 0000014b1bed6300] [framesync @ 0000014b1d803088] Sync level 2
+Output #0, gif, to 'D:/Work/InsidAR/Code/InsidAR-landing-page/img/fine2.gif':
+  Metadata:
+    encoder         : Lavf58.28.102
+    Stream #0:0, 0, 1/100: Video: gif, 1 reference frame, pal8, 900x700 [SAR 1:1 DAR 9:7], 0/1, q=2-31, 200 kb/s, 6 fps, 100 tbn, 6 tbc (default)
+    Metadata:
+      encoder         : Lavc58.53.101 gif
+Clipping frame in rate conversion by 0.000008
+[gif @ 0000014b1c6e4400] 1x1 image at pos (899;699) [area:900x700]
+[gif @ 0000014b1c6e4400] 566x586 image at pos (93;14) [area:900x700]
+[gif @ 0000014b1c6e4400] 1x1 image at pos (899;699) [area:900x700]
+[gif @ 0000014b1c6e4400] 807x685 image at pos (93;14) [area:900x700]
+[gif @ 0000014b1c6e4400] 1x1 image at pos (899;699) [area:900x700]
+frame=    6 fps=0.0 q=-0.0 size=     256kB time=00:00:00.84 bitrate=2496.6kbits/s speed=1.52x    [gif @ 0000014b1c6e4400] 730x685 image at pos (170;14) [area:900x700]
+[gif @ 0000014b1c6e4400] 1x1 image at pos (899;699) [area:900x700]
+[gif @ 0000014b1c6e4400] 554x655 image at pos (209;14) [area:900x700]
+[gif @ 0000014b1c6e4400] 1x1 image at pos (899;699) [area:900x700]
+[gif @ 0000014b1c6e4400] 515x682 image at pos (385;18) [area:900x700]
+[gif @ 0000014b1c6e4400] 1x1 image at pos (899;699) [area:900x700]
+[gif @ 0000014b1c6e4400] 900x700 image at pos (0;0) [area:900x700]
+frame=   13 fps= 12 q=-0.0 size=     256kB time=00:00:02.01 bitrate=1043.4kbits/s speed=1.81x    [gif @ 0000014b1c6e4400] 1x1 image at pos (899;699) [area:900x700]
+    Last message repeated 2 times
+[Parsed_paletteuse_0 @ 0000014b1bed6300] [framesync @ 0000014b1d803088] Sync level 0
+[out_0_0 @ 0000014b1ca53cc0] EOF on sink link out_0_0:default.
+No more output streams to write to, finishing.
+frame=   16 fps= 11 q=-0.0 Lsize=     425kB time=00:00:02.51 bitrate=1386.5kbits/s speed= 1.7x    
+[AVIOContext @ 0000014b1becb800] Statistics: 0 seeks, 3 writeouts
+video:425kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.004598%
+Input file #0 (D:/Work/InsidAR/Code/InsidAR-landing-page/img/coarse%04d.png):
+  Input stream #0:0 (video): 16 packets read (6000380 bytes); 16 frames decoded; 
+  Total: 16 packets (6000380 bytes) demuxed
+Input file #1 (D:/Work/InsidAR/Code/InsidAR-landing-page/img/palette.png):
+  Input stream #1:0 (video): 1 packets read (1015 bytes); 1 frames decoded; 
+  Total: 1 packets (1015 bytes) demuxed
+Output file #0 (D:/Work/InsidAR/Code/InsidAR-landing-page/img/fine2.gif):
+  Output stream #0:0 (video): 16 frames encoded; 16 packets muxed (434995 bytes); 
+  Total: 16 packets (434995 bytes) muxed
+17 frames successfully decoded, 0 decoding errors
+[AVIOContext @ 0000014b1c6e5200] Statistics: 0 seeks, 2 writeouts
+[AVIOContext @ 0000014b1bece980] Statistics: 1015 bytes read, 0 seeks

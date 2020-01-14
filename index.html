@@ -6,14 +6,20 @@
         <title>InsidAR - Location based experiences</title>
         <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
         <link rel="stylesheet" type="text/css" href="./main.css" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init('user_uuw1oe0fye1S9X2Gy6REj');
+            })();
+        </script>
     </head>
     <body>
         <header>
             <div class="logo"><img src="./img/logo_2_hor.png" /></div>
-            <div><a href="#features">Features</a></div>
-            <div><a href="#product">Product</a></div>
-            <div><a href="#usecases">Use cases</a></div>
-            <div><a href="#contact">Contact</a></div>
+            <div><a href="#layer-1">Product</a></div>
+            <div><a href="#find-out-more">Find out more</a></div>
+            <div><a onclick="showModal('modal-pricing')" style="cursor: pointer;">Pricing</a></div>
+            <div><a href="#contact" style=" background-color: #ffdc15; padding: 5px;">Get SDK</a></div>
         </header>
         <div class="bg"></div>
         <section class="introduction">
@@ -23,182 +29,214 @@
                     Find where you are
                 </h1>
                 <p>Bring location-based, persistent experiences to the devices of everyone, no matter the budget.</p>
-                <a class="key-but" href="#contact">Find out more!</a>
+                <span class="key-but" href="" onclick="showModal('modal-contact')">Contact us!</span>
             </div>
-        </section>
-
-        <section id="features" class="what-we-are">
-            <h1>Features</h1>
-            <p>
-                <span class="key-word">InsidAR</span> let's you locate yourself in a <b>previously scanned</b>,
-                <b>indoor</b> setting, using just your <b>mobile camera</b> and no other external assets, based on
-                <b>computer vision</b> solutions.
-            </p>
-
-            <div class="steps-explanation">
-                <div>
-                    <img src="./img/2_1.jpg" /> <span><p>Locate yourself with only the RGB camera</p></span>
-                </div>
-                <div>
-                    <img src="./img/3.gif" /> <span><p>Augmented Reality Ready</p></span>
-                </div>
-                <div>
-                    <img src="./img/2_2.jpg" />
-                    <span><p>Enable location-based experiences</p></span>
-                </div>
-            </div>
-
-            <h1 id="product">Our product</h1>
-            <p>
-                Our purpose is to make an equally easy and customizable product for <b>developers</b>,
-                <b>building manager</b> and <b>the end user</b>.
-            </p>
-            <div class="steps-explanation products">
-                <div class="parent-image first">
-                    <img src="./img/unity.png" />
-                    <span>
-                        <p>Unity SDK & REST API</p>
-                    </span>
-                </div>
-                <div class="parent-image second">
-                    <img src="./img/dashboard.png" />
-                    <span>
-                        <p>Scans Dashboard</p>
-                    </span>
-                </div>
-                <div class="parent-image third">
-                    <img src="./img/35400-1-gears.png" />
-                    <span>
-                        <p>Custom applications</p>
-                    </span>
-                </div>
-
-                <div class="hidden-image first">
-                    <img src="./img/code-ss.JPG" />
-                </div>
-                <div class="hidden-image second ">
-                    <img src="./img/dasbhoard-app.JPG" />
-                </div>
-                <div class="hidden-image third">
-                    <img src="./img/scan-app.JPG" />
-                </div>
-            </div>
-
-            <h2>Latest Demo:</h2>
-            <!-- <video autoplay controls src="./img/InsidAR-Demo 0.0.1.mp4"></video> -->
-            <div style="position:relative;padding-top:56.25%;">
-                <iframe
-                    src="https://www.youtube.com/embed/iWmUkptzIBs"
-                    frameborder="0"
-                    allowfullscreen
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;"
-                ></iframe>
-            </div>
-
-            <h2>Why <span class="red">vision-based</span> ?</h2>
-            <p>
-                There are of course other solutions, but the X-spot we're in is the Sweet Spot between
-                <b>accesibility</b> and <b>afforable</b> you might just need!
-            </p>
-            <p>
-                <b class="key-word">Accesibility</b> - You don't need any extra asset! Of course, you still need for
-                someone to scan the building and a cool dashboard to setup the map. But no extra images sticked all over
-                your building, no hidden, thousands of beacons with limited battery, and no custom trackers to give to
-                your clients so they feel tracked.
-            </p>
-            <p>
-                <b class="key-word">Affordable</b> - Of course there are more powerful devices. But your clients might
-                not have the budget or interest to buy a cutting-edge Mixed Reality headset. We love those too, but we
-                understand that, for now, smartphones are still the only mobile mainstream device. So all they need is
-                one app, they can find on <span class="key-word" style="padding-top:1px">App Store</span> or
-                <span class="key-word" style="padding-top:1px">Google Play!</span>
-            </p>
-            <!-- <div class="centered-image"><img src="./img/4.jpg" /></div> -->
         </section>
 
         <hr />
 
-        <!-- TODO: Add example demo -->
-
-        <section id="usecases" class="use-cases">
-            <h1>Use cases</h1>
-            <div class="industries">
-                <div class="wrapper">
-                    <div class="img-body">
-                        <img class="centered-image" src="./img/5.png" />
-                    </div>
-                    <div class="desc-body">
-                        <p>
-                            There are many use-cases, of course. But most of the problems
-                            <span class="white">InsidAR</span> solves are given by:
-                        </p>
-                        <ul>
-                            <li>Large surface</li>
-                            <li>Hard to orient structure</li>
-                            <li>Large flow of new visitors</li>
-                            <li>Ever-changing structure</li>
-                            <li>Hard to know structure</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="enables-to">
-                <div class="wrapper">
-                    <div class="img-body resp">
-                        <img class="centered-image" src="./img/6.png" />
-                    </div>
-                    <div class="desc-body">
-                        <p>
-                            Knowing our position inside of buildings has great benefits, sometimes even more hands-on
-                            than outdoor positioning, thanks to:
-                        </p>
-                        <ul>
-                            <li>Knowing exact position inside</li>
-                            <li>
-                                Being able to access analytics and see big-flow areas and where people are confused.
-                            </li>
-                            <li>
-                                Already existing many manager apps, that track real-life assets, that could benefit of
-                                positioning and querying.
-                            </li>
-                            <li>Gamification with the help of positioning and AR/VR.</li>
-                        </ul>
-                    </div>
-                    <div class="img-body no-resp">
-                        <img class="centered-image" src="./img/6.png" />
-                    </div>
+        <section id="layer-1">
+            <div class="main-body">
+                <h1>Our product</h1>
+                <div class="side-by-side">
+                    <img class="left" src="img/unity-sdk.png" />
+                    <span>+</span>
+                    <img class="right" src="img/map-manager.png" />
                 </div>
             </div>
         </section>
 
-        <!-- <section id="goals" class='goals'>
-        <h1>Goals and achievements</h1>
+        <hr />
 
-        <ul>
-            <li><img src="./img/tick.png"><span>Lorem ipsum</span></li>
-            <li><img src="./img/untick.png"><span>Lorem Ipsum - <span class="red">Coming soon!</span>  🏭</span></li>
-        </ul>
-    </section> -->
+        <section id="product-description">
+            <div class="main-body">
+                <img class="central-illustration" src="./img/undraw_my_location_f9pr.svg" />
+                <p>
+                    Make user experiences more memorable by <b>customizing experiences</b> based on location or through
+                    the magic of <b>location persistent Augmented Reality</b>.
+                </p>
+                <p>
+                    <span class="key-word">InsidAR</span> enhances your apps by allowing clients to locate themselves in
+                    a <b>previously scanned</b>, indoor setting, using <b>just their smartphones</b> and no other
+                    external assets, based on <b>our set of computer vision solutions</b>.
+                </p>
+            </div>
+        </section>
+
+        <hr />
+
+        <section id="modules">
+            <div class="main-body">
+                <h1>Modules</h1>
+                <p>Customly combine</p>
+                <div class="left">
+                    <img src="./img/coarse.gif" />
+                    <p>High-speed Coarse Localization</p>
+                </div>
+                <div class="right">
+                    <img src="./img/fine2.gif" />
+                    <p>High-Accuracy Fine Localization(AR-ready)</p>
+                </div>
+            </div>
+        </section>
+
+        <hr />
+
+        <section id="find-out-more">
+            <div class="main-body">
+                <h1>Find out more</h1>
+                <div class="left">
+                    <img src="./img/innovation.png" />
+                    <p>Learn more about Indoor Localization business cases.</p>
+                    <a class="key-but" href="./usecases.html">Use Cases</a>
+                </div>
+                <div class="right">
+                    <img src="./img/coding.png" />
+                    <p>Learn more about usage, integrations and limitations.</p>
+                    <a class="key-but" href="./documentation.html">Documentation</a>
+                </div>
+            </div>
+        </section>
 
         <hr />
 
         <section id="contact" class="contact">
-            <h1>Contact</h1>
-            <p>
-                If you'd like to have a discussion to see if your place could benefit a technology like <b>InsidAR</b>,
-                or if you love the idea and would like to be part of the team, let's have a chat!
-            </p>
-            <button class="contact-but">dragos@colorfulcoding.com</button>
+            <div class="get-sdk">
+                <h1>Start using InsidAR</h1>
+                <p style="text-align:center">
+                    Start taking full advantage of users position indoors right now!
+                </p>
+                <button class="contact-but" onclick="showModal('modal-request')">Get InsidAR SDK!</button>
+            </div>
+
             <p>You can also find, follow, and contact us here:</p>
 
             <div class="social-icons">
-                <a href="https://www.facebook.com/Insidar-259572068044949"><img src="./img/facebook.png"/></a>
-                <a href="https://twitter.com/insidARtech"><img src="./img/twitter.png"/></a>
+                <a href="https://www.facebook.com/Insidar-259572068044949" target="_blank"
+                    ><img src="./img/facebook.png"
+                /></a>
+                <a href="https://twitter.com/insidARtech" target="_blank"><img src="./img/twitter.png"/></a>
             </div>
         </section>
 
         <footer>
             <small>Made with <span class="heart">❤</span> in Iasi, Romania</small>
         </footer>
+
+        <div class="modal modal-pricing" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-pricing')">X</div>
+                <h1>Pricing</h1>
+                <div class="free-list">
+                    <h3>Developement</h3>
+                    <ul>
+                        <li><img src="./img/tick.png" /><span>Access to test API</span></li>
+                        <li><img src="./img/tick.png" /><span>Access to Scan App</span></li>
+                        <li><img src="./img/untick.png" /><span>Access to live API</span></li>
+                        <li><img src="./img/tick.png" /><span>Direct support</span></li>
+                        <li>
+                            <img src="./img/tick.png" /><span><b>Free</b></span>
+                        </li>
+                    </ul>
+                    <div><a onclick="hideAndShowModal('modal-pricing', 'modal-request')">Request Free API Key</a></div>
+                </div>
+                <div class="commercial-list">
+                    <h3>Commercial</h3>
+                    <ul>
+                        <li><img src="./img/tick.png" /><span>Access to test API</span></li>
+                        <li><img src="./img/tick.png" /><span>Access to Scan App</span></li>
+                        <li><img src="./img/tick.png" /><span>Access to live API</span></li>
+                        <li><img src="./img/tick.png" /><span>Direct support</span></li>
+                        <li><img src="./img/tick.png" /><span>Pay per live location</span></li>
+                        <div>
+                            <a onclick="hideAndShowModal('modal-pricing', 'modal-contact')">Contact for more details</a>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-contact" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-contact')">X</div>
+                <h1>Contact</h1>
+                <div class="form">
+                    <form id="contact_form">
+                        <div>
+                            <label>Name: <br /><input class="name_input" type="text" required/></label>
+                        </div>
+                        <div>
+                            <label>Email: <br /><input class="email_input" type="email" required/></label>
+                        </div>
+                        <div>
+                            <label>Company: <br /><input class="company_input" type="text" required/></label>
+                        </div>
+                        <div>
+                            <label
+                                >Body: <br /><textarea class="body_textarea" rows="4" cols="26" required> </textarea
+                            ></label>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-request" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-request')">X</div>
+                <h1>Request API Key</h1>
+                <div class="form" id="request_sdk_form">
+                    <form id="request_form">
+                        <div>
+                            <label>Name: <br /><input class="name_input" type="text" required/></label>
+                        </div>
+                        <div>
+                            <label>Email: <br /><input class="email_input" type="email" required/></label>
+                        </div>
+                        <div>
+                            <label>Company: <br /><input class="company_input" type="text" required/></label>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal modal-success-contact" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-success-contact')">X</div>
+                <h1>Thanks!</h1>
+                <div class="main-text">
+                    <p>We will contact you as soon as possible!</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-success-request" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-success-request')">X</div>
+                <h1>Thanks!</h1>
+                <div class="main-text">
+                    <p>We will send you the SDK and the API Key as soon as possible!</p>
+                </div>
+            </div>
+        </div>
+        <div class="modal modal-error" style="display: none">
+            <div class="modal-body">
+                <div class="close" onclick="hideModal('modal-error')">X</div>
+                <h1>Oops!</h1>
+                <div class="main-text">
+                    <p>
+                        There seem to be a problem with the email service. Please contact us directly on
+                        <a href="mailto: dragos@insidar.tech">dragos@insidar.tech</a> and we will answer your as
+                        promptly as by using the form.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="loading-overlay" style="display: none">
+            <p>Loading...</p>
+        </div>
+        <script src="./behavior.js"></script>
     </body>
 </html>
