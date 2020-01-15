@@ -335,6 +335,13 @@ footer:hover .heart {
     display: none;
 }
 
+.yt-video {
+    margin-left: 20%;
+    width: 600px;
+    height: 300px;
+    margin-bottom: 100px;
+}
+
 /** Modals **/
 .modal {
     position: fixed;
