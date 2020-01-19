@@ -44,10 +44,35 @@ h1 {
 
 .modal .modal-body {
     height: 630px;
+    overflow: scroll;
+    width: 80%;
 }
 
 .modal .modal-body h1 {
     font-size: 2em;
+    margin-bottom: 75px;
+}
+
+.modal .modal-body h2{
+    margin-top:0;
+}
+
+.modal .modal-body .body {
+    width: 45%;
+    display: inline-block;
+}
+
+.modal .modal-body .graphics {
+    width: 45%;
+    display: inline-block;
+    margin-left: 0%;
+    background-color: #eee;
+    padding: 2%;
+}
+
+.modal .modal-body .graphics video{
+    width: 150px; 
+    margin-left: calc(50% - 75px);
 }
 
 .modal .modal-body .usecase-image {
@@ -81,5 +106,15 @@ h1 {
         width: 90%;
         margin-left: 5%;
         margin-right: 0%;
+    }
+    .modal .modal-body{
+        width: 100%;
+    }
+    .modal .modal-body .body{
+        width: 90%;
+    }
+
+    .modal .modal-body .graphics{
+        width: 90%;
     }
 }
