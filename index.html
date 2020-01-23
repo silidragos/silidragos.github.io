@@ -1,258 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>InsidAR - Location based experiences</title>
-        <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
-        <link rel="stylesheet" type="text/css" href="./main.css" />
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.4.1/dist/email.min.js"></script>
-        <script type="text/javascript">
-            (function() {
-                emailjs.init('user_uuw1oe0fye1S9X2Gy6REj');
-            })();
-        </script>
-    </head>
-    <body>
-        <header>
-            <div class="logo"><img src="./img/logo_2_hor.png" /></div>
-            <div><a href="#layer-1">Product</a></div>
-            <div><a href="#find-out-more">Find out more</a></div>
-            <div><a href="#blog">Blog</a></div>
-            <div><a onclick="showModal('modal-pricing')" style="cursor: pointer;">Pricing</a></div>
-            <div><a href="#contact" style=" background-color: #ffdc15; padding: 5px;">Get SDK</a></div>
-        </header>
-        <div class="bg"></div>
-        <section class="introduction">
-            <div class="main-body">
-                <h1>
-                    Scan around <br />
-                    Find where you are
-                </h1>
-                <p>Bring location-based, persistent experiences to the devices of everyone, no matter the budget.</p>
-                <span class="key-but" href="" onclick="showModal('modal-contact')">Contact us!</span>
-            </div>
-        </section>
 
-        <hr />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArtLink - The ArtWorld at your Fingertips</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="./bg.css" />
+</head>
 
-        <section id="layer-1">
-            <div class="main-body">
-                <h1>Our product</h1>
-                <div class="side-by-side">
-                    <img class="left" src="img/unity-sdk.png" />
-                    <span>+</span>
-                    <img class="right" src="img/map-manager.png" />
-                </div>
-            </div>
-        </section>
-
-        <hr />
-
-        <section id="product-description">
-            <div class="main-body">
-                <img class="central-illustration" src="./img/undraw_my_location_f9pr.svg" />
-                <p>
-                    Make user experiences more memorable by <b>customizing experiences</b> based on location or through
-                    the magic of <b>location persistent Augmented Reality</b>.
-                </p>
-                <p>
-                    <span class="key-word">InsidAR</span> enhances your apps by allowing clients to locate themselves in
-                    a <b>previously scanned</b>, indoor setting, using <b>just their smartphones</b> and no other
-                    external assets, based on <b>our set of computer vision solutions</b>.
-                </p>
-            </div>
-        </section>
-
-        <hr />
-
-        <section id="modules">
-            <div class="main-body">
-                <h1>Modules</h1>
-                <p>Customly combine</p>
-                <div class="left">
-                    <img src="./img/coarse.gif" />
-                    <p>High-speed Coarse Localization</p>
-                </div>
-                <div class="right">
-                    <img src="./img/fine2.gif" />
-                    <p>High-Accuracy Fine Localization(AR-ready)</p>
-                </div>
-            </div>
-        </section>
-
-        <hr />
-
-        <section id="find-out-more">
-            <div class="main-body">
-                <h1>Find out more</h1>
-                <div class="left">
-                    <img src="./img/innovation.png" />
-                    <p>Learn more about Indoor Localization business cases.</p>
-                    <a class="key-but" href="./usecases.html">Use Cases</a>
-                </div>
-                <div class="right">
-                    <img src="./img/coding.png" />
-                    <p>Learn more about usage, integrations and limitations.</p>
-                    <a class="key-but" href="./documentation.html">Documentation</a>
-                </div>
-            </div>
-        </section>
-
-        <hr />
-        <section id="blog">
-            <div class="main-body">
-                <h1>Blog</h1>
-                <div>
-                    <div class="blog-card">
-                        <a href="http://colorfulcoding.com/#/blog/6" target="_blank">
-                            <img src="http://colorfulcoding.com/local_images/6/Capture.JPG" />
-                            <div class="title"><h3>Lessons we learned from augmenting Coworking Spaces.</h3></div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr />
-
-        <section id="contact" class="contact">
-            <div class="get-sdk">
-                <h1>Start using InsidAR</h1>
-                <p style="text-align:center">
-                    Start taking full advantage of users position indoors right now!
-                </p>
-                <button class="contact-but" onclick="showModal('modal-request')">Get InsidAR SDK!</button>
-            </div>
-
-            <p>You can also find, follow, and contact us here:</p>
-
-            <div class="social-icons">
-                <a href="https://www.facebook.com/Insidar-259572068044949" target="_blank"
-                    ><img src="./img/facebook.png"
-                /></a>
-                <a href="https://twitter.com/insidARtech" target="_blank"><img src="./img/twitter.png"/></a>
-            </div>
-        </section>
-
-        <footer>
-            <small>Made with <span class="heart">❤</span> in Iasi, Romania</small>
-        </footer>
-
-        <div class="modal modal-pricing" style="display: none">
-            <div class="modal-body">
-                <div class="close" onclick="hideModal('modal-pricing')">X</div>
-                <h1>Pricing</h1>
-                <div class="free-list">
-                    <h3>Developement</h3>
-                    <ul>
-                        <li><img src="./img/tick.png" /><span>Access to test API</span></li>
-                        <li><img src="./img/tick.png" /><span>Access to Scan App</span></li>
-                        <li><img src="./img/untick.png" /><span>Access to live API</span></li>
-                        <li><img src="./img/tick.png" /><span>Direct support</span></li>
-                        <li>
-                            <img src="./img/tick.png" /><span><b>Free</b></span>
-                        </li>
-                    </ul>
-                    <div><a onclick="hideAndShowModal('modal-pricing', 'modal-request')">Request Free API Key</a></div>
-                </div>
-                <div class="commercial-list">
-                    <h3>Commercial</h3>
-                    <ul>
-                        <li><img src="./img/tick.png" /><span>Access to test API</span></li>
-                        <li><img src="./img/tick.png" /><span>Access to Scan App</span></li>
-                        <li><img src="./img/tick.png" /><span>Access to live API</span></li>
-                        <li><img src="./img/tick.png" /><span>Direct support</span></li>
-                        <li><img src="./img/tick.png" /><span>Pay per live location</span></li>
-                        <div>
-                            <a onclick="hideAndShowModal('modal-pricing', 'modal-contact')">Contact for more details</a>
-                        </div>
-                    </ul>
+<body>
+    <nav class="side-nav">
+        <img class="logo" src="img/artlink.jpg">
+        <ul>
+            <li class="active"><span class="line"></span><a>MISSION</a></li>
+            <li><span class="line"></span><a>HOW TO ARTLINK</a></li>
+            <li><span class="line"></span><a>TEAM</a></li>
+            <li><span class="line"></span><a>CONTACT</a></li>
+        </ul>
+    </nav>
+    <div class="body">
+        <div class="left">
+            <video src="video/Artlink promo final fara logo.mp4" controls autoplay></video>
+            <h3>The Art World at your fingertips!</h3>
+            <div class="get-it">
+                <h3>Get it now</h3>
+                <div class="links">
+                    <a class="android-link"></a>
+                    <a class="ios-link"></a>
                 </div>
             </div>
         </div>
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+            nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum."</p>
+    </div>
 
-        <div class="modal modal-contact" style="display: none">
-            <div class="modal-body">
-                <div class="close" onclick="hideModal('modal-contact')">X</div>
-                <h1>Contact</h1>
-                <div class="form">
-                    <form id="contact_form">
-                        <div>
-                            <label>Name: <br /><input class="name_input" type="text" required/></label>
-                        </div>
-                        <div>
-                            <label>Email: <br /><input class="email_input" type="email" required/></label>
-                        </div>
-                        <div>
-                            <label>Company: <br /><input class="company_input" type="text" required/></label>
-                        </div>
-                        <div>
-                            <label
-                                >Body: <br /><textarea class="body_textarea" rows="4" cols="26" required> </textarea
-                            ></label>
-                        </div>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
 
-        <div class="modal modal-request" style="display: none">
-            <div class="modal-body">
-                <div class="close" onclick="hideModal('modal-request')">X</div>
-                <h1>Request API Key</h1>
-                <div class="form" id="request_sdk_form">
-                    <form id="request_form">
-                        <div>
-                            <label>Name: <br /><input class="name_input" type="text" required/></label>
-                        </div>
-                        <div>
-                            <label>Email: <br /><input class="email_input" type="email" required/></label>
-                        </div>
-                        <div>
-                            <label>Company: <br /><input class="company_input" type="text" required/></label>
-                        </div>
-                        <button type="submit">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal modal-success-contact" style="display: none">
-            <div class="modal-body">
-                <div class="close" onclick="hideModal('modal-success-contact')">X</div>
-                <h1>Thanks!</h1>
-                <div class="main-text">
-                    <p>We will contact you as soon as possible!</p>
-                </div>
-            </div>
-        </div>
-        <div class="modal modal-success-request" style="display: none">
-            <div class="modal-body">
-                <div class="close" onclick="hideModal('modal-success-request')">X</div>
-                <h1>Thanks!</h1>
-                <div class="main-text">
-                    <p>We will send you the SDK and the API Key as soon as possible!</p>
-                </div>
-            </div>
-        </div>
-        <div class="modal modal-error" style="display: none">
-            <div class="modal-body">
-                <div class="close" onclick="hideModal('modal-error')">X</div>
-                <h1>Oops!</h1>
-                <div class="main-text">
-                    <p>
-                        There seem to be a problem with the email service. Please contact us directly on
-                        <a href="mailto: dragos@insidar.tech">dragos@insidar.tech</a> and we will answer your as
-                        promptly as by using the form.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div id="loading-overlay" style="display: none">
-            <p>Loading...</p>
-        </div>
-        <script src="./behavior.js"></script>
-    </body>
 </html>

@@ -1,635 +1,113 @@
-@import url('https://fonts.googleapis.com/css?family=Anton');
-@import url('https://fonts.googleapis.com/css?family=Abel');
+@font-face {
+    font-family: 'jaappokki';
+    src: url('./fonts/jaapokki-regular.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/jaapokki-regular.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/jaapokki-regular.woff') format('woff'), /* Super Modern Browsers */
+         url('./fonts/jaapokki-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/jaapokki-regular.svg') format('svg'); /* Legacy iOS */
+  }
 
-html {
-    scroll-behavior: smooth;
-}
-body {
-    font-family: 'Abel', sans-serif;
-    margin: 0px;
-    color: #383838;
-    overflow-x: hidden;
-}
-h1,
-h2 {
-    font-family: 'Anton', sans-serif;
-}
-
-h2 {
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
-
-button {
-    font-family: 'Abel', sans-serif;
-    font-size: 1.5em;
-    cursor: pointer;
-}
-
-.key-but {
-    font-family: 'Abel', sans-serif;
-    font-size: 1.5em;
-    cursor: pointer;
+body{
+    background-color: black;
     color: white;
-    text-decoration: none;
-    font-weight: bold;
-
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd04a+0,ff5461+100 */
-    background: #ffd04a; /* Old browsers */
-    background: -moz-linear-gradient(left, #ffd04a 0%, #ff5461 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #ffd04a 0%, #ff5461 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(
-        to right,
-        #ffd04a 0%,
-        #ff5461 100%
-    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd04a', endColorstr='#ff5461',GradientType=1 ); /* IE6-9 */
-
-    border-radius: 10px;
-    padding: 15px;
-
-    transition: 0.3s all ease-in-out;
+    font-family: 'jaappokki';
+}
+h3{
+    font-weight: normal;
 }
 
-.key-but:hover {
-    font-size: 1.6em;
+.side-nav{
+    width: 20%;
+    display: inline-block;
+    padding-left: 50px;
+    vertical-align: top;
 }
 
-h1 {
-    font-size: 3em;
-}
-p,
-ul {
-    font-size: 1.4em;
-}
-small {
-    font-size: 1em;
+.side-nav .logo{
+    width: 150px;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-bottom: 100px;
 }
 
-.key-word {
-    background-color: #ffd04a;
-    padding: 10px;
-    color: #22181c;
-    font-weight: bold;
-    padding-bottom: 3px;
-    padding-top: 3px;
+.side-nav ul{
+    list-style-type: none;
+    font-size: 14px;
 }
 
-.centered-image {
-    width: 126%;
-    margin-left: -13%;
-    margin-right: -13%;
-    background-color: #eee;
-    text-align: center;
+.side-nav ul li{
+    cursor: pointer;
+    margin-bottom: 10px;
+    color: #999;
+    transition: all .3s ease-in-out;
 }
 
-.red {
-    color: #ff5461;
-}
-.white {
-    background-color: white;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-header {
-    height: 60px;
-    z-index: 10;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-header div {
-    font-size: 1.2em;
-    line-height: 60px;
-    text-align: center;
+.side-nav ul li .line{
+    width: 25px;
+    height: 5px;
+    background-color: #999;
     vertical-align: middle;
     display: inline-block;
-    margin-left: 40px;
+    border-radius:2px;
+    margin:5px;
+
+    transition: all .3s ease-in-out;
+}
+.side-nav ul li.active .line{
+    width: 35px;
+    background-color: white;
+}
+.side-nav ul li.active{
+    color: white;
 }
 
-header div a {
-    text-decoration: none;
-    color: black;
+.side-nav ul li:hover .line{
+    width: 35px;
+    background-color: white;
+}
+.side-nav ul li:hover{
+    color: white;
 }
 
-header div a:hover {
-    border-bottom: 2px solid #ffd04a;
-}
-
-.logo {
-    width: 150px;
-    display: inline-block;
-    margin-top: 20px;
-}
-
-.logo img {
-    width: 100%;
-}
-
-section {
+.body {
     margin-top: 150px;
-    margin-bottom: 200px;
-    margin-left: 10%;
-    margin-right: 10%;
-    z-index: 10;
+    width: 70%;
+    display: inline-block;
 }
 
-.bg {
-    background-image: url('./img/1.jpg');
-    background-size: cover;
+.body .left{
+    width: 75%;
+    display: inline-block;
+}
+
+.body .left video{
     width: 100%;
-    height: 900px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -1;
 }
 
-.introduction {
-    z-index: 10;
-    margin-top: 100px;
-    margin-bottom: 350px;
-}
-.introduction .main-body {
-    width: 45%;
-}
-
-hr {
-    color: #ffd04a;
-    border-style: solid;
-}
-
-#layer-1 {
-    margin-bottom: 50px;
-    margin-top: 50px;
-}
-#layer-1 .main-body h1 {
-    text-align: center;
-}
-
-.side-by-side img {
-    width: 30%;
-}
-.side-by-side .left {
-    margin-right: 3%;
-}
-.side-by-side .right {
-    margin-left: 3%;
-}
-
-.side-by-side span {
-    width: 30%;
-    font-size: 5em;
+.body p{
+    width: 20%;
     display: inline-block;
     vertical-align: top;
-    margin-top: 75px;
-    text-align: center;
 }
 
-#product-description,
-#find-out-more,
-#modules,
-#contact {
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0;
-    margin-right: 0;
-
-    padding-top: 150px;
-    padding-bottom: 200px;
-    padding-left: 10%;
-    padding-right: 10%;
-}
-#product-description,
-#find-out-more {
-    background-color: rgb(255, 250, 231);
-}
-
-#product-description .central-illustration {
-    width: 20%;
-    margin-left: 40%;
-}
-
-#modules h1 {
-    text-align: center;
-}
-#modules p {
-    text-align: center;
-}
-#modules .main-body div {
-    width: 40%;
-    display: inline-block;
-    margin-left: 4%;
-    margin-right: 4%;
-
-    border: 2px solid #ffd04a;
-}
-
-#modules .main-body div img {
-    width: 100%;
-}
-
-#modules .main-body div p {
-    font-weight: bold;
-    text-align: center;
-}
-
-#find-out-more h1 {
-    text-align: center;
-}
-#find-out-more .main-body div {
-    display: inline-block;
-    width: 40%;
-    margin-left: 4%;
-
-    text-align: center;
-}
-
-#find-out-more .main-body .left {
-    padding-right: 4%;
-    border-right: 2px solid #ffd04a;
-}
-
-#find-out-more .main-body div img {
-    width: 40%;
-
-    margin: 30px;
-}
-
-.contact {
-    margin-top: 100px;
-}
-
-.contact .get-sdk {
-    border: 2px solid #ffd04a;
-    padding: 10px;
-    padding-bottom: 75px;
-
-    background-color: rgb(255, 250, 231);
-}
-.contact h1 {
-    text-align: center;
-    margin-bottom: 100px;
-}
-.contact-but {
-    padding: 20px 50px;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    margin: auto;
-    display: block;
-
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffd04a+0,ff5461+100 */
-    background: #ffd04a; /* Old browsers */
-    background: -moz-linear-gradient(left, #ffd04a 0%, #ff5461 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left, #ffd04a 0%, #ff5461 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(
-        to right,
-        #ffd04a 0%,
-        #ff5461 100%
-    ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd04a', endColorstr='#ff5461',GradientType=1 ); /* IE6-9 */
-
-    transition: 0.3s all ease-in-out;
-}
-
-.contact-but:hover {
-    font-size: 1.6em;
-}
-
-.social-icons {
-    width: 100%;
-}
-
-.social-icons a {
-    display: inline-block;
-    width: 45%;
-    cursor: pointer;
-    text-align: center;
-    margin-left: 2.5%;
-    transition: all 0.5s ease-in-out;
-}
-
-.social-icons a:hover {
-    transform: rotateY(6.284rad);
-}
-
-footer {
-    width: 100%;
-    text-align: center;
-    background-color: #383838;
-    color: white;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    cursor: default;
-}
-footer:hover .heart {
-    color: #ff5461;
-}
-.heart {
-    transition: 1s all ease-in-out;
-    cursor: default;
-}
-
-.use-cases .resp {
-    display: none;
-}
-
-.yt-video {
-    margin-left: 20%;
-    width: 600px;
-    height: 300px;
-    margin-bottom: 100px;
-}
-
-.blog-card {
-    width: 500px;
-    border: 1px solid orange;
-    transition: all 0.3s ease-in-out;
-}
-
-.blog-card:hover {
-    background-color: rgb(255, 250, 231);
-}
-
-.blog-card a {
-    text-decoration: none;
-}
-.blog-card img {
-    width: 100%;
-}
-
-.blog-card .title h3 {
-    color: black;
+.body .get-it{
+    border-left: 5px solid white;
     padding-left: 10px;
 }
 
-/** Modals **/
-.modal {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal.modal-pricing .modal-body {
-    height: 500px;
-}
-.modal.modal-contact .modal-body {
-    height: 550px;
-}
-
-.modal .modal-body {
-    width: 60%;
-    margin: auto;
-    margin-top: 50px;
-    background-color: white;
-    position: relative;
-
-    border-radius: 20px;
-}
-
-.modal .modal-body .close {
-    position: absolute;
-    right: 25px;
-    top: 10px;
-    font-size: 2em;
-    width: initial;
-    font-family: 'Anton', sans-serif;
-    cursor: pointer;
-}
-.modal .modal-body h1 {
-    text-align: center;
-    padding-top: 25px;
-    margin-bottom: 15px;
-}
-.modal .modal-body div {
-    width: 40%;
-    margin-left: 5%;
+.body .left .get-it .links a{
+    width: 150px;
+    height: 50px;
     display: inline-block;
-    vertical-align: top;
-}
-.modal.modal-request .modal-body {
-    height: 400px;
-}
-.modal.modal-request .modal-body,
-.modal.modal-contact .modal-body {
-    width: 40%;
-}
-
-.modal .modal-body .main-text {
-    width: 80%;
-    text-align: center;
-}
-
-.modal .modal-body .free-list {
-    border-right: 2px solid orange;
-}
-
-.modal .modal-body .free-list div,
-.modal .modal-body .commercial-list div {
-    width: 200px;
+    background-size: cover;
+    margin: 5px;
     cursor: pointer;
-    font-size: 15px;
-    background-color: orange;
-    color: white;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    position: absolute;
-    bottom: 50px;
-}
-.modal .modal-body div div a {
-    font-size: 1.4em;
-}
-.modal .modal-body div ul {
-    margin-bottom: 50px;
-    list-style: none;
-}
-.modal .modal-body div ul li {
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-.modal .modal-body div ul li img {
-    width: 25px;
-    margin-right: 10px;
 }
 
-.modal .modal-body div ul li:nth-child(odd) {
-    background-color: rgb(240, 240, 240);
+.android-link{
+    background-image: url('./img/google-play.png');
 }
 
-.modal .modal-body div ul li:hover {
-    background-color: rgb(230, 230, 230);
-}
-.modal .modal-body .form {
-    font-size: 1.4em;
-    position: relative;
-    width: 90%;
-}
-.modal .modal-body .form button {
-    float: right;
-    background-color: orange;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    margin-top: 20px;
-}
-
-.modal .modal-body .form div {
-    display: block;
-}
-
-.modal .modal-body .form input,
-.modal .modal-body .form textarea {
-    font-size: 1.2em;
-}
-
-#loading-overlay {
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-#loading-overlay p {
-    text-align: center;
-    margin-top: 200px;
-}
-@media (max-width: 900px) {
-    .logo {
-        width: 100px;
-    }
-    header {
-        background-color: white;
-        height: 100%;
-        width: 100%;
-        margin: 0;
-    }
-
-    .bg {
-        height: 1000px;
-        background-position: right -650px bottom 0px;
-    }
-
-    .img-body .centered-image {
-        margin: 0px;
-    }
-
-    .centered-image img {
-        width: 100%;
-    }
-    .introduction {
-        margin-bottom: 100px;
-    }
-
-    .introduction .main-body {
-        width: 70%;
-    }
-
-    .side-by-side img,
-    .side-by-side span {
-        display: block;
-        width: 100%;
-    }
-
-    .side-by-side span {
-        margin-top: 0;
-    }
-
-    #product-description,
-    #find-out-more,
-    #modules,
-    #contact {
-        padding-top: 50px;
-        padding-bottom: 50px;
-    }
-
-    #product-description .central-illustration {
-        width: 60%;
-        margin-left: 20%;
-    }
-
-    #modules .main-body div {
-        width: 100%;
-        margin-bottom: 50px;
-    }
-
-    #find-out-more .main-body div {
-        width: 100%;
-
-        padding-bottom: 50px;
-        margin-bottom: 25px;
-    }
-    #find-out-more .main-body .left {
-        border-right: none;
-        border-bottom: 2px solid #ffd04a;
-    }
-
-    .get-sdk h1 {
-        margin-bottom: 50px;
-    }
-
-    .modal.modal-pricing .modal-body,
-    .modal.modal-contact .modal-body,
-    .modal.modal-request .modal-body {
-        height: 100%;
-    }
-
-    .modal .modal-body .form input,
-    .modal .modal-body .form textarea {
-        font-size: 1em;
-    }
-    .modal .modal-body {
-        overflow: scroll;
-        width: 100%;
-        margin-top: 0px;
-    }
-    .modal .modal-body div {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .modal .modal-body .free-list div {
-        margin-left: 10%;
-    }
-
-    .modal .modal-body .commercial-list {
-        margin-bottom: 50px;
-        margin-left: 0;
-    }
-
-    .modal .modal-body .free-list div,
-    .modal .modal-body .commercial-list div {
-        position: initial;
-        margin-top: 50px;
-    }
-    .modal .modal-body div ul {
-        margin-bottom: 0px;
-    }
-}
-
-@media (max-width: 675px) {
-    .introduction .main-body {
-        width: 100%;
-    }
-
-    .bg {
-        opacity: 0.3;
-    }
-
-    .contact-but {
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 1050px) {
-    .introduction {
-        margin-bottom: 250px;
-    }
+.ios-link{
+    background-image: url('./img/ios.png');
 }
