@@ -342,6 +342,28 @@ footer:hover .heart {
     margin-bottom: 100px;
 }
 
+.blog-card {
+    width: 500px;
+    border: 1px solid orange;
+    transition: all 0.3s ease-in-out;
+}
+
+.blog-card:hover {
+    background-color: rgb(255, 250, 231);
+}
+
+.blog-card a {
+    text-decoration: none;
+}
+.blog-card img {
+    width: 100%;
+}
+
+.blog-card .title h3 {
+    color: black;
+    padding-left: 10px;
+}
+
 /** Modals **/
 .modal {
     position: fixed;
