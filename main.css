@@ -571,6 +571,10 @@ footer:hover .heart {
         border-bottom: 2px solid #ffd04a;
     }
 
+    .blog-card {
+        width: 100%;
+    }
+
     .get-sdk h1 {
         margin-bottom: 50px;
     }
