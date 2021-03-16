@@ -12,8 +12,23 @@ body{
     color: white;
     font-family: 'jaappokki';
 }
+h2{
+    font-weight: normal;
+}
 h3{
     font-weight: normal;
+}
+
+hr{
+    border-style: dashed;
+}
+
+.mobile{
+    display: none;
+}
+
+.pc{
+    display:none;
 }
 
 .side-nav{
@@ -74,33 +89,85 @@ h3{
     text-decoration: none;
 }
 
+.top-bar{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed white;
+}
+.download-icon{
+    width: 25px;
+    height: 25px;
+    background-image: url('./img/download-circular-button.png');
+    background-size: cover;
+    display: inline-block;
+    margin-right: 25px;
+    vertical-align: middle;
+}
+.footer{
+    padding-bottom: 25px;
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px dashed white;
+    padding-top:20px;
+}
+
+.footer a{
+    margin-left: 10%;
+    width: 80%;
+    display: inline-block;
+
+}
+
 .body {
     margin-top: 150px;
     width: 70%;
     display: inline-block;
+
+    background-color: black;
+    overflow-y: scroll;
+    height: 80vh;
+    padding-bottom:150px;
+}
+.body::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  border-radius: 10px;
+  background-color: black;
+}
+.body::-webkit-scrollbar
+{
+  width: 12px;
+  background-color: transparent;
 }
 
-.body .left{
-    width: 75%;
-    display: inline-block;
+.body::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: white;
 }
 
-.body .left video{
+.body .body-wrapper{
+
+}
+
+.body video{
     width: 100%;
-}
-
-.body p{
-    width: 20%;
-    display: inline-block;
-    vertical-align: top;
 }
 
 .body .get-it{
     border-left: 5px solid white;
     padding-left: 10px;
+    margin-bottom:75px;
 }
 
-.body .left .get-it .links a{
+.body .get-it .links a{
     width: 150px;
     height: 50px;
     display: inline-block;
@@ -116,16 +183,13 @@ h3{
 .ios-link{
     background-image: url('./img/ios.png');
 }
-.body .left h3{
+.body h3{
     display: inline-block;
 }
 .social-media{
-    display: inline-block;
-    width: 175px;
+    width: 100%;
     height: 50px;
     vertical-align: middle;
-    text-align: right;
-    float: right;
 }
 .social-media-icon{
     width: 35px;
@@ -135,9 +199,11 @@ h3{
     display: inline-block;
     cursor: pointer;
 }
+.social-media-icon.mail{
+    background-image: url(./img/email.png);
+}
 .social-media-icon.facebook{
     background-image: url(./img/facebook.png);
-    
 }
 .social-media-icon.instagram{
     background-image: url(./img/instagram.png);
@@ -151,6 +217,10 @@ h3{
     display: inline-block;
 }
 
+.body{
+    scroll-behavior: smooth;
+}
+
 .body .profile{
     display: inline-block;
     width: 40%;
@@ -162,8 +232,71 @@ h3{
     width: 100%;
 }
 
+.body p{
+    text-align: justify;
+}
+
 .body .profile p{
     display: block;
     margin: auto;
     width: 60%;
+}
+
+.partner-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.partner-wrapper img{
+    width: 150px;
+    padding: 15px;
+}
+
+@media only screen and (min-width: 800px) {
+    .body p, .body h3, .body .social-media{
+        width: 80%;
+        margin: auto;
+        display: block;
+        margin-bottom: 25px;
+    }
+    img.main{
+        width: 100%;
+    }
+
+    .team-member img{
+        display: inline-block;
+        width: 30%;
+        vertical-align: middle;
+    }
+
+    .team-member p{
+        display: inline-block;
+        width: 50%;
+        vertical-align: middle;
+    }
+
+    .pc{
+        display: block;
+    }
+
+    .col-3-pc{
+        width:29%;
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+@media only screen and (max-width: 800px) {
+    .side-nav{
+        display: none;
+    }
+
+    .body{
+        width: 100%;
+    }
+
+    .mobile{
+        display: block;
+    }
+
 }
