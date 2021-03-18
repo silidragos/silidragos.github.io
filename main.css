@@ -168,8 +168,6 @@ a{
 }
 
 .body .get-it{
-    border-left: 5px solid white;
-    padding-left: 10px;
     margin-bottom:75px;
 }
 
@@ -262,9 +260,16 @@ img.main{
     width: 100%;
 }
 
+#what-we-do img.main{
+    width: 50%;
+    margin: auto;
+    display: block;
+    margin-bottom: 40px;
+}
+
 @media only screen and (min-width: 800px) {
-    .body p, .body h3, .body .social-media{
-        width: 80%;
+    .body p, .body h3, body h2, .body .social-media{
+        width: 100%;
         margin: auto;
         display: block;
         margin-bottom: 25px;
@@ -288,6 +293,7 @@ img.main{
 
     .col-3-pc{
         width:29%;
+        margin-right:3%;
         display: inline-block;
         vertical-align: top;
     }
