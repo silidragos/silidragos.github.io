@@ -31,6 +31,12 @@ hr{
     display:none;
 }
 
+a:visited{
+    color:white;
+}
+a{
+    text-decoration: none;
+}
 .side-nav{
     width: 20%;
     display: inline-block;
@@ -252,6 +258,9 @@ hr{
     width: 150px;
     padding: 15px;
 }
+img.main{
+    width: 100%;
+}
 
 @media only screen and (min-width: 800px) {
     .body p, .body h3, .body .social-media{
@@ -259,9 +268,6 @@ hr{
         margin: auto;
         display: block;
         margin-bottom: 25px;
-    }
-    img.main{
-        width: 100%;
     }
 
     .team-member img{
@@ -285,6 +291,10 @@ hr{
         display: inline-block;
         vertical-align: top;
     }
+    .get-it{
+        width: 80%;
+        margin-left: 10%;
+    }
 }
 @media only screen and (max-width: 800px) {
     .side-nav{
@@ -293,6 +303,11 @@ hr{
 
     .body{
         width: 100%;
+    }
+
+    .body-wrapper{
+        width: 80%;
+        margin:auto;
     }
 
     .mobile{
