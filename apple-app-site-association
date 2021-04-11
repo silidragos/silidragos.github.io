@@ -5,6 +5,14 @@
              "appIDs": [ "1526716070.com.colorfulcoding.artlinkar", "1526716070.com.colorfulcoding.artlinkar" ],
              "components": [
                 {
+                   "/": "/app.html",
+                   "comment": "Matches any URL whose path starts with /buy/"
+                },
+               {
+                  "/": "/app.html/*",
+                  "comment": "Matches any URL whose path starts with /buy/"
+               },
+                {
                    "/": "/app",
                    "comment": "Matches any URL whose path starts with /buy/"
                 },
