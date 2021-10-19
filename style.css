@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'jaappokki';
+    src: url('./fonts/jaapokki-regular.eot'); /* IE9 Compat Modes */
+    src: url('./fonts/jaapokki-regular.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/jaapokki-regular.woff') format('woff'), /* Super Modern Browsers */
+         url('./fonts/jaapokki-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/jaapokki-regular.svg') format('svg'); /* Legacy iOS */
+  }
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    color: white;
+    font-family: 'jaappokki';
+
+    background-color: black;
+}
+
+h1, h3{
+    font-weight: 100;
+}
+
+h3{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{    
+    font-size: 1em;
+    border: 2px solid white;
+    border-radius: 25px;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+
+    transition: 0.3s all ease-in-out;
+}
+
+a:hover{
+    background-color: white;
+    color: black;
+}
+
+#myVideo{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+.content{
+    position: absolute;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    color:#f1f1f1;
+}
+
+.content .wrapper{
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.logo img{
+    width: 250px;
+    margin-left: calc(50% - 125px)
+}
+
+.logo h1, .logo h3{
+    text-align: center;
+}
+
+.logo h1{
+    margin-bottom: 0;
+}
+
+.logo h3{
+    margin-top: 0;
+}
+
+.main-buttons{
+    text-align: center;
+    margin-top: 75px;
+}
+
+.main-buttons .buts{
+    font-size: 1.5em;
+}
+
+.main-buttons .buts a{
+    width: 35%;
+    display: inline-block;
+}
+
+.reel{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 2em;
+}
+
+.reel:hover{
+    cursor: pointer;
+}
+
+.reel img{
+    height: 50px;
+    vertical-align: middle;
+    
+    transition: 0.2s all  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.reel span{
+    transition: 0.2s all  cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.reel:hover img{
+    transform: scale(1.1) rotate(-10deg);
+}
+
+.reel:hover span{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.reel-modal{
+    position: absolute;
+    background-color: black;
+    padding: 25px;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 23%;
+    top: 150px;
+}
+
+.reel-modal .close-but{
+    width: 50px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.reel-modal .close-but button{
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.reel-modal iframe{
+    margin-left: calc(50% - 280px);
+}
+@media only screen and (max-width: 800px) {
+    .logo img{
+        width: 128px;
+        margin-left: calc(50% - 64px)
+    }
+
+    .content .wrapper{
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .main-buttons .buts {
+        font-size: 1em;
+    }
+    
+    .reel-modal{
+        width: 90%;
+        margin-left: 2%;
+        padding: 2%;
+    }
+    
+    .reel-modal iframe{
+        width: 100%;
+        margin-left: initial;
+    }
+
+}

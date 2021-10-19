@@ -1,0 +1,311 @@
+h2{
+    font-weight: 100;
+}
+
+p{
+    font-weight: 100;
+}
+.logo img{
+    width: 90px;
+    margin-left: calc(50% - 45px);
+}
+
+section{
+    text-align: center;
+    position: relative;
+}
+
+a.small-link{
+    border: none;
+    text-decoration: underline;
+    padding: 0;
+}
+
+a.small-link:hover{
+    background-color:transparent;
+    color: white;
+}
+
+section.title{
+    min-height: 400px;
+}
+
+section.title a{
+    margin-top: 10px;
+    display: block;
+}
+
+section.title .left{
+    width: 65%;
+    min-width: 250px;
+    display: inline-block;
+    position: absolute;
+    left: 0px;
+    margin-top: 25px;
+    z-index: 10;
+}
+
+section.title .right{
+    width: 65%;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+}
+
+section.title .right img{
+    min-width: 500px;
+    border-radius: 20px;
+}
+
+section.title .bottom{
+    position: absolute;
+    width: 50%;
+    margin-left: 40%;
+    bottom: 0;
+}
+
+section.title .bottom .social-media{
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+section.title .bottom .social-media .social-media-icon a{
+    border: none;
+}
+
+section.title .bottom .social-media .social-media-icon a:hover{
+    background-color:transparent;
+    color: white;
+}
+
+
+.social-media-icon{
+    width: 20%;
+    max-width: 35px;
+    margin:1%;
+    background-size: cover;
+    display: inline-block;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.social-media .social-media-icon{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: center;
+}
+
+.social-media-icon.mail{
+    background-image: url(./img/email.png);
+}
+.social-media-icon.facebook{
+    background-image: url(./img/facebook.png);
+}
+.social-media-icon.instagram{
+    background-image: url(./img/instagram.png);
+}
+.social-media-icon.linkedin{
+    background-image: url(./img/linkedin.png);
+}
+.social-media-icon a{
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+}
+
+.get-it .links a{
+    width: 30%;
+    height: 50px;
+    display: inline-block;
+    background-size: contain;
+    margin: 5px;
+    cursor: pointer;
+    background-position-y: center;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 0;
+
+    margin-top:0;
+    padding-top:0;
+}
+
+.get-it .links a:hover{
+    background-color:transparent;
+    color: white;
+}
+
+.android-link{
+    background-image: url('./img/google-play.png');
+}
+
+.ios-link{
+    background-image: url('./img/ios.png');
+}
+
+
+#features .feature img{
+    width: 50%;
+    margin: auto;
+}
+
+#offers .card{
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: left;
+    padding: 10px;
+    margin-top:25px;
+    margin-bottom: 25px;
+}
+
+#offers .card h2{
+    text-align: center;
+}
+
+#offers .card .submit{
+    text-align: center;    
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+#offers .card .submit a{
+    margin: 10px;
+}
+
+#offers .card p{
+    text-align: justify;
+}
+
+
+#offers .card img{
+    width: 50%;
+    margin: auto;
+    display: block;
+    padding: 25px;
+}
+
+#team .team-member a{
+    width: 75%;
+    display: block;
+    border: none;
+    margin: auto;
+
+    
+    background-color:transparent;
+    color: white;
+}
+
+#team .team-member a:hover{
+    background-color:transparent;
+    color: white;
+}
+#team .team-member a img{
+    width: 100%;
+}
+
+#team .team-member p{
+    text-align: justify;
+}
+
+.partner-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.partner-wrapper img{
+    width: 45%;
+    padding: 2%;
+    display: inline-block;
+}
+
+#back-to-top div img{
+    width: 25px;
+    transform: rotate(180deg);
+    vertical-align: middle;
+}
+
+#back-to-top div{
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-top: 1px dashed white;
+}
+
+
+@media only screen and (min-width: 800px) {
+    h1{
+        font-size: 3em;
+    }
+
+    .mobile{
+        display: none;
+    }
+
+    .content .wrapper{
+        width: 80%;
+    }
+
+    .logo{
+        margin-bottom: 50px;
+    }
+    .logo img{
+        width: 200px;
+        margin-left: calc(50% - 100px);
+    }
+
+    section.title{
+        width: 60%;
+        margin: auto;
+    }
+
+    section#get-it-mobile{
+        width: 60%;
+        margin: auto;
+    }
+
+    #features .feature{
+        width: 28%;
+        margin: auto;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    #features .feature img{
+        border-radius: 20px;
+    }
+
+    #features .feature p{
+        width: 80%;
+        margin: auto;
+    }
+
+    #offers .card{
+        width: 28%;
+        margin-left: 1%;
+        margin-right: 1%;
+        display: inline-block;
+        vertical-align: top;
+        min-height: 900px;
+        position: relative;
+    }
+
+    #offers .card .submit{
+        bottom: 0;
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+
+
+    #team .team-member{
+        width: 47%;
+        margin-left: 1%;
+        margin-right: 1%;
+        display: inline-block;
+    }
+
+    .partner-wrapper img{
+        width: 10%;
+    }
+}
