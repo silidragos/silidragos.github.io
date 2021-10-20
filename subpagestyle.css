@@ -10,6 +10,10 @@ p{
     margin-left: calc(50% - 45px);
 }
 
+ul{
+    padding-left: 20px;
+}
+
 section{
     text-align: center;
     position: relative;
@@ -33,6 +37,7 @@ section.title{
 section.title a{
     margin-top: 10px;
     display: block;
+    width: 250px;
 }
 
 section.title .left{
@@ -61,8 +66,8 @@ section.title .right img{
 section.title .bottom{
     position: absolute;
     width: 50%;
-    margin-left: 40%;
     bottom: 0;
+    text-align: left;
 }
 
 section.title .bottom .social-media{
@@ -202,6 +207,7 @@ section.title .bottom .social-media .social-media-icon a:hover{
 }
 #team .team-member a img{
     width: 100%;
+    max-width: 200px;
 }
 
 #team .team-member p{
