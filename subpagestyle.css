@@ -174,10 +174,16 @@ section.title .right{
     overflow: hidden;
     position: absolute;
     right: 0;
+    
+    height: 350px;
+    border-radius: 35px;
 }
 
-section.title .right img{
-    min-width: 500px;
+section.title .right video{
+    position: absolute;
+    right: -230px;
+    height: 625px;
+    top: -170px;
     border-radius: 20px;
 }
 
@@ -238,6 +244,10 @@ section.title .bottom .social-media .social-media-icon a:hover{
     display: inline-block;
 }
 
+.get-it .links{
+    text-align: left;
+}
+
 .get-it .links a{
     width: 30%;
     height: 50px;
@@ -269,7 +279,7 @@ section.title .bottom .social-media .social-media-icon a:hover{
 
 
 #features .feature img{
-    width: 50%;
+    width: 90%;
     margin: auto;
 }
 
@@ -341,7 +351,7 @@ section.title .bottom .social-media .social-media-icon a:hover{
 .partner-wrapper{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
     flex-wrap: wrap;
 }
 .partner-wrapper img{
@@ -372,11 +382,42 @@ section.title .bottom .social-media .social-media-icon a:hover{
     .content{
         overflow: hidden;
     }
+    .pc{
+        display: none;
+    }
+    
+    section.title .right video{
+        right: -415px;
+    }
+
+    section.title .right .overlay{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.4);
+        z-index: 2;
+    }
 }
 @media only screen and (min-width: 800px) {
     h1{
         font-size: 7em;
         line-height: 0.9em;
+    }
+
+    .welcome{
+        padding-top:100px;
+    }
+    .logo.pc img{
+        width: 50%;
+        margin-left: 10px;
+    }
+
+    .logo.pc h1{
+        font-size: 2em;
+        text-align: left;
+        padding-left: 20px;;
     }
 
     .mobile{
@@ -397,13 +438,16 @@ section.title .bottom .social-media .social-media-icon a:hover{
     }
 
     section.title{
-        width: 60%;
+        width: 100%;
         margin: auto;
+    }
+    section.title .right{
+        width: 50%;
+        right: 10%;
     }
 
     section#get-it-mobile{
         width: 60%;
-        margin: auto;
     }
 
     #features .feature{
@@ -418,8 +462,9 @@ section.title .bottom .social-media .social-media-icon a:hover{
     }
 
     #features .feature p{
-        width: 80%;
+        width: 100%;
         margin: auto;
+        text-align: left;
     }
 
     #offers .card{
@@ -437,6 +482,10 @@ section.title .bottom .social-media .social-media-icon a:hover{
         position: absolute;
         left: 0;
         right: 0;
+    }
+
+    #offers .card p{
+        padding-left: 20px;
     }
 
 
