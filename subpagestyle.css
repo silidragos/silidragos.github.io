@@ -158,6 +158,10 @@ section.title a{
     width: 250px;
 }
 
+section.title a.small-link{
+    text-align: left;
+}
+
 section.title .left{
     width: 65%;
     min-width: 250px;
@@ -189,7 +193,7 @@ section.title .right video{
 
 section.title .bottom{
     position: absolute;
-    width: 50%;
+    width: 75%;
     bottom: 0;
     text-align: left;
 }
@@ -237,6 +241,9 @@ section.title .bottom .social-media .social-media-icon a:hover{
 }
 .social-media-icon.linkedin{
     background-image: url(./img/linkedin.png);
+}
+.social-media-icon.discord{
+    background-image: url(./img/discord.png);
 }
 .social-media-icon a{
     width: 35px;
@@ -314,7 +321,6 @@ section.title .bottom .social-media .social-media-icon a:hover{
 }
 
 #offers .card p{
-    text-align: justify;
 }
 
 
@@ -346,7 +352,7 @@ section.title .bottom .social-media .social-media-icon a:hover{
 }
 
 #team .team-member p{
-    text-align: justify;
+    text-align: left;
 }
 
 .partner-wrapper{
