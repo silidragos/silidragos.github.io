@@ -24,7 +24,7 @@ video{
     cursor: pointer;
 }
 
-.cta a{
+.cta a, .try-again a{
     display: block;
     width: 90%;
     padding: 10px;
@@ -36,6 +36,11 @@ video{
     margin: auto;
     cursor: pointer;
     text-align: center;
+}
+
+.try-again a{
+    width: 40%;
+    margin-bottom: 20px;
 }
 
 
