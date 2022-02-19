@@ -4,7 +4,7 @@
       "details": [
            {
              "appID": "7ZCV63XK7Y.com.colorfulcoding.artlinkar",
-             "paths": ["/app.html", "/app.html/*","/app","/app/*"]
+             "paths": ["/app.html", "/app.html/*","/app","/app/*", "/appv2.html", "/appv2.html/*", "/appv2", "appv2/*"]
            }
        ]
    }
