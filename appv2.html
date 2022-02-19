@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- https://gist.github.com/diachedelic/0d60233dab3dcae3215da8a4dfdcd434 -->
 
 <head>
     <meta charset="UTF-8" />
@@ -18,33 +19,16 @@
 </head>
 
 <body>
-    <section class="main" style="margin-bottom: 50px;">
-        <div>
-            <video autoplay loop playsinline muted>
-                <source src="./video/what-we-do.webm" type="video/webm" />
-            </video>
-        </div>
-        <img style="width:25%; margin:auto; display: block;" src="./img/artlink.jpg">
-        <div>
-            <p style="text-align: center;">Ooops... Seems like you haven't installed ArtLink yet!</p>
-            <p style="text-align: center;">In order to enjoy the Augmented Art Reality please download the experience on
-                the links below:</p>
-        </div>
-        <div class="links">
-            <a href="https://play.google.com/store/apps/details?id=com.colorfulcoding.artlink" target="_blank"
-                class="android-link"></a>
-            <a href="https://apps.apple.com/tt/app/artlink-ar/id1526716070" target="_blank" class="ios-link"></a>
-        </div>
-
-        <div class="try-again">
-            <a id="try-again"> Try Again </a>
+    <section class="main" style="margin-bottom: 50px;">       
+        <div class="try-again" onclick="tryOpen()" style="text-align:center; border: 2px solid white; border-radius: 25px; width: 80%; padding-top: 50px; padding-bottom: 50px; margin:auto; margin-bottom: 50px; cursor: pointer;">
+            <img style="width:25%; margin:auto; display: block;" src="./img/artlink.jpg">
+            <h1 style="font-size:3em">Open App</h1>
+            <img style="width:25%; margin:auto; display: block;" src="./img/tap_icon.png"/>
         </div>
         <div class="cta">
-            <a href="/">LEARN MORE ABOUT ARTLINK HERE</a>
+            <a href="/" target="_blank">LEARN MORE ABOUT ARTLINK</a>
         </div>
     </section>
-    <iframe id="l" width="1" height="1" style="visibility:hidden"></iframe>
-
     <div class="area">
         <ul class="circles">
             <li></li>
@@ -62,25 +46,33 @@
 </body>
 
 <script>
-    document.getElementById("try-again").href = document.location.toString();
-
     window.onload = function () {
+
+        // tryOpen = () => {
+        //     window.location = "artlink://artlink.app?query=vartist";
+        //     setTimeout(function () {
+        //         var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        //         if (userAgent.match(/iPhone|iPad|iPod/i)) {
+        //             window.location = "https://apps.apple.com/tt/app/artlink-ar/id1526716070";
+        //         } else {
+        //             window.location = "https://play.google.com/store/apps/details?id=com.colorfulcoding.artlink";
+        //         }}, 10000);
+        // }
+
         const splitPos = window.location.href.indexOf("?");
-        const deepLink = "artlink://" + ((splitPos > 0) ? window.location.href.substring(splitPos) : "");
-        console.log("going to", deepLink);
-        document.getElementById("l").src = deepLink;
+        const deepLinkQuery = ((splitPos > 0) ? window.location.href.substring(splitPos) : "");
 
-        setTimeout(() => {
+        tryOpen = ()=> {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-
-            // if (userAgent.match(/iPhone|iPad|iPod/i)) {
-            //     window.location = "https://apps.apple.com/tt/app/artlink-ar/id1526716070";
-            // } else {
-            //     window.location = "https://play.google.com/store/apps/details?id=com.colorfulcoding.artlink";
-
-            // }
-        }, 500);
+            if (userAgent.match(/iPhone|iPad|iPod/i)) {
+                window.location = "https://artlink.app/app.html" + deepLinkQuery;
+            } else {
+                window.location = "artlink://artlink.app" + deepLinkQuery;
+                setTimeout(function () {
+                    window.location = "https://play.google.com/store/apps/details?id=com.colorfulcoding.artlink";
+                }, 3000);
+            }
+        };
     }
 </script>
 

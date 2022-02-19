@@ -35,10 +35,6 @@
                 class="android-link"></a>
             <a href="https://apps.apple.com/tt/app/artlink-ar/id1526716070" target="_blank" class="ios-link"></a>
         </div>
-
-        <div class="try-again">
-            <a id="try-again"> Try Again </a>
-        </div>
         <div class="cta">
             <a href="/">LEARN MORE ABOUT ARTLINK HERE</a>
         </div>
@@ -65,18 +61,14 @@
     document.getElementById("try-again").href = document.location.toString();
 
     window.onload = function () {
-        const splitPos = window.location.href.indexOf("?");
-        const deepLink = "artlink://" + ((splitPos > 0) ? window.location.href.substring(splitPos) : "");
-        console.log("going to", deepLink);
-        document.getElementById("l").src = deepLink;
-
         setTimeout(() => {
             var userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
 
-            // if (userAgent.match(/iPhone|iPad|iPod/i)) {
-            //     window.location = "https://apps.apple.com/tt/app/artlink-ar/id1526716070";
-            // } else {
+            if (userAgent.match(/iPhone|iPad|iPod/i)) {
+                window.location = "https://apps.apple.com/tt/app/artlink-ar/id1526716070";
+            } 
+            // else {
             //     window.location = "https://play.google.com/store/apps/details?id=com.colorfulcoding.artlink";
 
             // }
