@@ -361,10 +361,20 @@ section.title .bottom .social-media .social-media-icon a:hover{
     justify-content: left;
     flex-wrap: wrap;
 }
-.partner-wrapper img{
-    width: 45%;
+
+.partner-wrapper a{
+    border: none;
+    width: 25%;
     padding: 2%;
     display: inline-block;
+}
+
+.partner-wrapper a:hover{
+    background-color: transparent;
+}
+
+.partner-wrapper img{
+    width: 100%;
 }
 
 #back-to-top div img{
@@ -503,7 +513,7 @@ section.title .bottom .social-media .social-media-icon a:hover{
         display: inline-block;
     }
 
-    .partner-wrapper img{
+    .partner-wrapper a{
         width: 10%;
     }
 
