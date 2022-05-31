@@ -12,6 +12,11 @@ body{
     color: white;
     font-family: 'jaappokki';
 }
+
+input, button{
+    font-family: 'jaappokki';
+}
+
 h2{
     font-weight: normal;
 }

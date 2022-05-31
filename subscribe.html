@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://gist.github.com/diachedelic/0d60233dab3dcae3215da8a4dfdcd434 -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="ArtLink - The Artworld at your fingertips" />
+    <meta property="og:image" content="./img/artlink.jpg" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+
+    <title>ArtLink - The ArtWorld at your Fingertips</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="./bg.css" />
+    <link rel="stylesheet" type="text/css" href="./subscribe.css" />
+</head>
+
+<body>
+    <nav>
+        <a href="./index.html">Back to website</a>
+    </nav>
+    <section class="main" style="margin-bottom: 50px;">
+        <img src="img/artlink.jpg" width="50px" />
+        <h1>Monthly Newsletter</h1>
+
+        <h3>Not sure about it? Read our <a style="text-decoration: underline;"
+                href="https://us17.campaign-archive.com/home/?u=eba774b00c1a2bb01fea64ee6&id=4e5717e225"
+                target="_blank">PAST ISSUES</a></h3>
+        <br />
+        <form id="form" onsubmit="trySubscribe(event)">
+            <span class="input-element">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="Name" required><br>
+            </span>
+
+            <span class="input-element">
+                <label for="fname">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br>
+            </span>
+
+            <span class="input-element">
+                <label for="fname">How did you hear about us?:</label><br>
+                <input type="source" id="source" name="source" placeholder="My art muse" required><br>
+            </span>
+
+            <span id="error"></span><br />
+            <button type="submit" class="submit-but" id="submit-but">Subscribe!</button>
+        </form>
+        <div id="success" style="display: none;">
+            <img width="250px" src="./img_2/rocket.png">
+            <p>Thanks! We'll not disappoint you!</p>
+            <h2 style="text-decoration: underline; color: white;"><a href="./index.html">Back to website</a></h2>
+        </div>
+    </section>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    function trySubscribe(evt) {
+        document.getElementById("submit-but").style.display = "none";
+
+        evt.preventDefault();
+        let fname = document.getElementById("fname").value;
+        let email = document.getElementById("email").value;
+        let source = document.getElementById("source").value;
+
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://artlink-admin-app.herokuapp.com/subscribe");
+
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onload = () => {
+            if (xhr.status !== 200) {
+                document.getElementById("error").innerText = JSON.parse(xhr.responseText).message;
+                document.getElementById("submit-but").style.display = "inline-block";
+            } else {
+                console.log(xhr.responseText);
+                document.getElementById("form").style.display = "none";
+                document.getElementById("success").style.display = "block";
+            }
+        }
+
+        let data = JSON.stringify({ fname: fname, email: email, source: source });
+        xhr.send(data);
+    }
+</script>
+
+</html>
