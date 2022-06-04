@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://gist.github.com/diachedelic/0d60233dab3dcae3215da8a4dfdcd434 -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="ArtLink - The Artworld at your fingertips" />
+    <meta property="og:image" content="./img/artlink.jpg" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+
+    <title>ArtLink - The ArtWorld at your Fingertips</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="./bg.css" />
+    <link rel="stylesheet" type="text/css" href="./subscribe.css" />
+</head>
+
+<body>
+    <nav>
+        <a href="./index.html">Back to website</a>
+    </nav>
+    <section class="main" style="margin-bottom: 50px;">
+        <img src="img/artlink.jpg" width="50px" />
+        <h1>Contact</h1>
+
+        <h3>For more extensive collaborations, scheduling a brainstorming call about AR and your work, giving us
+            feedback, or anything else, please leave us a message and we'll follow up on email.</h3>
+        <br />
+        <form id="form" onsubmit="trySubscribe(event)">
+            <span class="input-element">
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="Name" required><br>
+            </span>
+
+            <span class="input-element">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br>
+            </span>
+
+            <span class="input-element">
+                <label for="what">What are you?</label><br>
+                <input type="text" id="what" name="what" placeholder="Artist/Gallerist/AR enthusiast" required><br>
+            </span>
+
+            <span class="input-element">
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" placeholder="Let's work together!" required rows="4"
+                    cols="50"></textarea><br>
+            </span>
+
+            <span id="error"></span><br />
+            <button type="submit" class="submit-but" id="submit-but">Subscribe!</button>
+
+            <div class="social-media-wrapper">
+                <div>Too complicated? We might answer faster here:</div>
+                <div class="social-media">
+                    <div class="social-media-icon mail"><a href="mailto:dragos@colorfulcoding.com" target="_blank"></a>
+                    </div>
+                    <div class="social-media-icon facebook"><a href="https://www.facebook.com/ArtLinkApp2020"
+                            target="_blank"></a>
+                    </div>
+                    <div class="social-media-icon instagram"><a href="https://www.instagram.com/artlink.app/"
+                            target="_blank"></a>
+                    </div>
+                    <div class="social-media-icon linkedin"><a href="https://www.linkedin.com/company/artlink-app/"
+                            target="_blank"></a></div>
+                    <div class="social-media-icon discord"><a href="https://discord.gg/XFEZaAztBT" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="success" style="display: none;">
+            <img width="250px" src="./img_2/rocket.png">
+            <p>Thanks! We'll contact you ASAP!</p>
+            <h2 style="text-decoration: underline; color: white;"><a href="./index.html">Back to website</a></h2>
+        </div>
+    </section>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    function trySubscribe(evt) {
+        document.getElementById("submit-but").style.display = "none";
+
+        evt.preventDefault();
+        let fname = document.getElementById("fname").value;
+        let email = document.getElementById("email").value;
+        let what = document.getElementById("what").value;
+        let message = document.getElementById("message").value;
+
+        // const xhr = new XMLHttpRequest();
+        // xhr.open("POST", "https://artlink-admin-app.herokuapp.com/subscribe");
+
+        // xhr.setRequestHeader("Accept", "application/json");
+        // xhr.setRequestHeader("Content-Type", "application/json");
+
+        // xhr.onload = () => {
+        //     if (xhr.status !== 200) {
+        //         document.getElementById("error").innerText = JSON.parse(xhr.responseText).message;
+        //         document.getElementById("submit-but").style.display = "inline-block";
+        //     } else {
+        //         console.log(xhr.responseText);
+        //         document.getElementById("form").style.display = "none";
+        //         document.getElementById("success").style.display = "block";
+        //     }
+        // }
+
+        // let data = JSON.stringify({ fname: fname, email: email, source: source });
+        // xhr.send(data);
+    }
+</script>
+
+</html>

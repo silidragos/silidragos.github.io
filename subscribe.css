@@ -1,9 +1,22 @@
-a, a:hover, a:focus, a:active, a:visited{
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
     color: white;
 }
-.main{
+
+a {
+    text-decoration: underline;
+}
+
+hr {
+    margin: 50px 0;
+}
+
+.main {
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
 
     width: 50%;
@@ -21,15 +34,15 @@ a, a:hover, a:focus, a:active, a:visited{
     padding: 50px;
 }
 
-.main h1{
+.main h1 {
     margin-bottom: 0;
 }
 
-.main h3{
+.main h3 {
     margin-top: 0;
 }
 
-.main .submit-but{
+.main .submit-but {
     margin-top: 25px;
     background-color: transparent;
     border: 2px solid white;
@@ -43,11 +56,11 @@ a, a:hover, a:focus, a:active, a:visited{
     transition: transform 0.3s ease-in-out;
 }
 
-.main .submit-but:hover{
+.main .submit-but:hover {
     transform: scale(1.1, 1.1);
 }
 
-.main .input-element{
+.main .input-element {
     text-align: left;
 
     width: 80%;
@@ -56,24 +69,55 @@ a, a:hover, a:focus, a:active, a:visited{
     margin-bottom: 25px;
 }
 
-.main .input-element label{
+.main .input-element label {
     width: 100%;
 }
 
-.main .input-element input{
+.main .input-element input,
+.main .input-element textarea {
     width: 100%;
 
     background-color: black;
     color: white;
     font-size: 1.5em;
     border: none;
+}
+
+.main .input-element input {
     border-bottom: 2px solid white;
 }
 
+.main .input-element textarea {
+    border: 2px solid white;
+}
+
+.social-media-wrapper {
+    margin-top: 50px;
+}
+
+.hex-template {
+    background-size: cover;
+    display: inline-block;
+    width: 256px;
+    height: 256px;
+}
+
+#cover-pic-image{
+    background-image: url(./img_2/hill.png);
+}
+
+#profile-pic-image{
+    background-image: url(./img_2/user.png);
+    border: 10px solid white;
+    border-radius: 10px;
+    margin: 25px;
+}
+
+
 
 @media only screen and (max-width: 800px) {
-    .main{
+    .main {
         width: 95%;
-        padding: 10px; 
+        padding: 10px;
     }
 }

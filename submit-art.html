@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- https://gist.github.com/diachedelic/0d60233dab3dcae3215da8a4dfdcd434 -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta property="og:title" content="ArtLink - The Artworld at your fingertips" />
+    <meta property="og:image" content="./img/artlink.jpg" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+
+    <title>ArtLink - The ArtWorld at your Fingertips</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./main.css" />
+    <link rel="stylesheet" type="text/css" href="./bg.css" />
+    <link rel="stylesheet" type="text/css" href="./subscribe.css" />
+</head>
+
+<body>
+    <nav>
+        <a href="./index.html">Back to website</a>
+    </nav>
+    <section class="main" style="transform: translate(-50%, 0px); top: 50px;">
+        <img src="img/artlink.jpg" width="50px" />
+        <h1>Submit Gallery / Artwork for ArtLink Selection</h1>
+
+        <br />
+        <form id="form" onsubmit="trySubscribe(event)">
+            <h3 style="text-align: left;">Fastest way to have your works published in-app is by submitting them here.
+                <br />
+                [SOON] We'll soon launch "Artist's Sandbox" and for private experimentsyou'll be able to upload artworks
+                directly in-app, with no moderation / form.
+            </h3>
+            <br />
+
+            <span class="input-element">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Email" required><br>
+            </span>
+            <!-- ----------------- -->
+            <hr />
+            <br /><br />
+
+            <div id="cover-pic-image" class="hex-template">
+                <img src="./img_2/hex_overlay.png" width="256" height="256">
+            </div>
+            
+            <br/><br/>
+            <div>If part of an existing gallery/exhibition fill in just the name.</div>
+            <br/><br/>
+
+            <span class="input-element">
+                <label for="files">Exhibition cover (512x512):</label><br>
+                <input type="file" id="files" name="files" accept="image/png, image/jpeg"
+                    onchange="loadGalleryCover(event);">
+            </span>
+
+            <span class="input-element">
+                <label for="exh-name">Exhibition/Artwork name*:</label><br>
+                <input type="text" id="exh-name" name="exh-name" placeholder="Name" required><br>
+            </span>
+
+            <span class="input-element">
+                <label for="statement">Exhibition/Artwork Statement:</label><br>
+                <textarea id="statement" name="statement" placeholder="Art + Tech equals love!" rows="4" cols="50"
+                    maxlength="512"></textarea><br>
+            </span>
+            <!-- ----------------- -->
+            <hr />
+            <br /><br />
+
+            <div id="profile-pic-image" class="hex-template">
+            </div>
+
+            <br /><br />
+            <div>If already having a profile, upload only your name and data you want updated.</div>
+            <br /><br />
+
+            <span class="input-element">
+                <label for="files">Profile pic(512x512):</label><br>
+                <input type="file" id="files" name="files" accept="image/png, image/jpeg"
+                    onchange="loadProfilePic(event);">
+            </span>
+
+            <span class="input-element">
+                <label for="fname">Display name:</label><br>
+                <input type="text" id="fname" name="fname" placeholder="Name" required><br>
+            </span>
+
+            <span class="input-element">
+                <label for="social-media-links">Social media links (separated by comma):</label><br>
+                <input type="text" id="social-media-links" name="social-media-links"
+                    placeholder="instagram.com/artlink.app, https://artlink.app"><br>
+            </span>
+
+            <span class="input-element">
+                <label for="artist-statement" maxlength="512">Artist Statement:</label><br>
+                <textarea id="artist-statement" name="artist-statement" placeholder="Let's work together!" rows="4"
+                    cols="50"></textarea><br>
+            </span>
+
+            <span class="input-element">
+                <label for="files">ARTWORKS<br />
+                    (Image, Video, GIF, 3D models):<br />
+                    Please name files with the artwork titles! <br />
+                    MAX SIZE: 25mb</label><br>
+                <input type="file" id="files" name="files" accept=".zip, .rar,.7zip" required>
+            </span>
+
+
+            <span id="error"></span><br />
+            <button type="submit" class="submit-but" id="submit-but">Subscribe!</button>
+
+            <div class="social-media-wrapper">
+                <div style="text-align: left;">Are you thinking of a more ellaborate collaboration? <a href="./contact.html" target="_blank">Send
+                        us a message here</a>
+                    <br />
+                    Is the form too much of a hassle? Send us the artworks here and we'll handle the upload:
+                </div>
+                <div class="social-media">
+                    <div class="social-media-icon mail"><a href="mailto:dragos@colorfulcoding.com" target="_blank"></a>
+                    </div>
+                    <div class="social-media-icon facebook"><a href="https://www.facebook.com/ArtLinkApp2020"
+                            target="_blank"></a>
+                    </div>
+                    <div class="social-media-icon instagram"><a href="https://www.instagram.com/artlink.app/"
+                            target="_blank"></a>
+                    </div>
+                    <div class="social-media-icon linkedin"><a href="https://www.linkedin.com/company/artlink-app/"
+                            target="_blank"></a></div>
+                    <div class="social-media-icon discord"><a href="https://discord.gg/XFEZaAztBT" target="_blank"></a>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <div id="success" style="display: none;">
+            <img width="250px" src="./img_2/rocket.png">
+            <p>Congratulations! Your upload is succesful! <br/>
+                Your content is being moderated. We'll email you if something is missing. </p>
+            <h2 style="text-decoration: underline; color: white;"><a href="./index.html">Back to website</a></h2>
+        </div>
+    </section>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+<script>
+    function trySubscribe(evt) {
+        document.getElementById("submit-but").style.display = "none";
+
+        evt.preventDefault();
+        // let fname = document.getElementById("fname").value;
+        // let email = document.getElementById("email").value;
+        // let what = document.getElementById("what").value;
+        // let message = document.getElementById("message").value;
+
+
+        document.getElementById("form").style.display = "none";
+        document.getElementById("success").style.display = "block";
+
+        // const xhr = new XMLHttpRequest();
+        // xhr.open("POST", "https://artlink-admin-app.herokuapp.com/subscribe");
+
+        // xhr.setRequestHeader("Accept", "application/json");
+        // xhr.setRequestHeader("Content-Type", "application/json");
+
+        // xhr.onload = () => {
+        //     if (xhr.status !== 200) {
+        //         document.getElementById("error").innerText = JSON.parse(xhr.responseText).message;
+        //         document.getElementById("submit-but").style.display = "inline-block";
+        //     } else {
+        //         console.log(xhr.responseText);
+        //         document.getElementById("form").style.display = "none";
+        //         document.getElementById("success").style.display = "block";
+        //     }
+        // }
+
+        // let data = JSON.stringify({ fname: fname, email: email, source: source });
+        // xhr.send(data);
+    }
+
+    function loadGalleryCover(evt) {
+        const file = evt.target.files[0];
+        let image = document.getElementById("cover-pic-image");
+
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            image.style.backgroundImage = "url(" + reader.result + ")";
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+
+    function loadProfilePic(evt) {
+        const file = evt.target.files[0];
+        let image = document.getElementById("profile-pic-image");
+
+        const reader = new FileReader();
+        reader.onloadend = function () {
+            image.style.backgroundImage = "url(" + reader.result + ")";
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+
+        // image.src = URL.createObjectURL();
+    }
+</script>
+
+</html>
