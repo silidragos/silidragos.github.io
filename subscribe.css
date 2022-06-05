@@ -14,6 +14,10 @@ hr {
     margin: 50px 0;
 }
 
+h1{
+    font-weight: normal;
+}
+
 .main {
     position: absolute;
     top: 50%;

@@ -24,117 +24,146 @@
     </nav>
     <section class="main" style="transform: translate(-50%, 0px); top: 50px;">
         <img src="img/artlink.jpg" width="50px" />
-        <h1>Submit Gallery / Artwork for ArtLink Selection</h1>
+        <h1>Submit Gallery / Artwork for <br /> ARTLINK SELECTION </h1>
 
         <br />
-        <form id="form" onsubmit="trySubscribe(event)">
-            <h3 style="text-align: left;">Fastest way to have your works published in-app is by submitting them here.
-                <br />
-                [SOON] We'll soon launch "Artist's Sandbox" and for private experimentsyou'll be able to upload artworks
-                directly in-app, with no moderation / form.
-            </h3>
-            <br />
-
-            <span class="input-element">
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" placeholder="Email" required><br>
-            </span>
-            <!-- ----------------- -->
-            <hr />
-            <br /><br />
-
-            <div id="cover-pic-image" class="hex-template">
-                <img src="./img_2/hex_overlay.png" width="256" height="256">
-            </div>
-
-            <br /><br />
-            <div>If part of an existing gallery/exhibition fill in just the name.</div>
-            <br /><br />
-
-            <span class="input-element">
-                <label for="files">Exhibition cover (512x512):</label><br>
-                <input type="file" id="files" name="files" accept="image/png, image/jpeg"
-                    onchange="loadGalleryCover(event);">
-            </span>
-
-            <span class="input-element">
-                <label for="exh-name">Exhibition/Artwork name*:</label><br>
-                <input type="text" id="exh-name" name="exh-name" placeholder="Name" required><br>
-            </span>
-
-            <span class="input-element">
-                <label for="statement">Exhibition/Artwork Statement:</label><br>
-                <textarea id="statement" name="statement" placeholder="Art + Tech equals love!" rows="4" cols="50"
-                    maxlength="512"></textarea><br>
-            </span>
-            <!-- ----------------- -->
-            <hr />
-            <br /><br />
-
-            <div id="profile-pic-image" class="hex-template">
-            </div>
-
-            <br /><br />
-            <div>If already having a profile, upload only your name and data you want updated.</div>
-            <br /><br />
-
-            <span class="input-element">
-                <label for="files">Profile pic(512x512):</label><br>
-                <input type="file" id="files" name="files" accept="image/png, image/jpeg"
-                    onchange="loadProfilePic(event);">
-            </span>
-
-            <span class="input-element">
-                <label for="fname">Display name:</label><br>
-                <input type="text" id="fname" name="fname" placeholder="Name" required><br>
-            </span>
-
-            <span class="input-element">
-                <label for="social-media-links">Social media links (separated by comma):</label><br>
-                <input type="text" id="social-media-links" name="social-media-links"
-                    placeholder="instagram.com/artlink.app, https://artlink.app"><br>
-            </span>
-
-            <span class="input-element">
-                <label for="artist-statement" maxlength="512">Artist Statement:</label><br>
-                <textarea id="artist-statement" name="artist-statement" placeholder="Let's work together!" rows="4"
-                    cols="50"></textarea><br>
-            </span>
-
-            <span class="input-element">
-                <label for="files">ARTWORKS<br />
-                    (Image, Video, GIF, 3D models):<br />
-                    Please name files with the artwork titles! <br />
-                    MAX SIZE: 25mb</label><br>
-                <input type="file" id="files" name="files" accept=".zip, .rar,.7zip" required onchange="loadZip(event)">
-            </span>
-
-
-            <span id="error"></span><br />
-            <button type="submit" class="submit-but" id="submit-but">Subscribe!</button>
-
-            <div class="social-media-wrapper">
-                <div style="text-align: left;">Are you thinking of a more ellaborate collaboration? <a
-                        href="./contact.html" target="_blank">Send
-                        us a message here</a>
+        <form id="main-form" onsubmit="validate(event)">
+            <div class="page">
+                <h3 style="text-align: left;">Fastest way to have your works published in-app is by submitting them
+                    here.
                     <br />
-                    Is the form too much of a hassle? Send us the artworks here and we'll handle the upload:
+                    <span style="color:#1fc2e7">[SOON] We'll soon launch "Artist's Sandbox" and for private
+                        experimentsyou'll be able to upload
+                        artworks
+                        directly in-app, with no moderation / form.</span>
+                </h3>
+                <br />
+
+                <span class="input-element">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="Email" required><br>
+                </span>
+
+                <span style="text-align: left; display: inline-block; width: 80%;">
+                    <input type="checkbox" id="privacy" name="privacy" value="true" required>
+                    <label for="privacy">I have read and agreed with the <a href="./privacy.html" target="_blank">privacy agreement</a>.</label>
+                </span>
+                <br/>
+
+                <button type="submit" class="submit-but" style="font-size: 1.2em;" value="1">Artwork
+                    &gt;</button>
+            </div>
+        </form>
+        <div class="page" style="display: none;">
+            <form id="form" onsubmit="validate(event)">
+
+                <div id="cover-pic-image" class="hex-template">
+                    <img src="./img_2/hex_overlay.png" width="256" height="256">
                 </div>
-                <div class="social-media">
-                    <div class="social-media-icon mail"><a href="mailto:dragos@colorfulcoding.com" target="_blank"></a>
-                    </div>
-                    <div class="social-media-icon facebook"><a href="https://www.facebook.com/ArtLinkApp2020"
-                            target="_blank"></a>
-                    </div>
-                    <div class="social-media-icon instagram"><a href="https://www.instagram.com/artlink.app/"
-                            target="_blank"></a>
-                    </div>
-                    <div class="social-media-icon linkedin"><a href="https://www.linkedin.com/company/artlink-app/"
-                            target="_blank"></a></div>
-                    <div class="social-media-icon discord"><a href="https://discord.gg/XFEZaAztBT" target="_blank"></a>
-                    </div>
+
+                <br /><br />
+                <div style="color: orange">If part of an existing gallery/exhibition fill in just the name.</div>
+                <br /><br />
+
+                <span class="input-element">
+                    <label for="files">Exhibition cover (512x512):</label><br>
+                    <input type="file" id="files" name="files" accept="image/png, image/jpeg"
+                        onchange="loadGalleryCover(event);">
+                </span>
+
+                <span class="input-element">
+                    <label for="exh-name">Exhibition/Artwork name*:</label><br>
+                    <input type="text" id="exh-name" name="exh-name" placeholder="Name" required><br>
+                </span>
+
+                <span class="input-element">
+                    <label for="statement">Exhibition/Artwork Statement:</label><br>
+                    <textarea id="statement" name="statement" placeholder="Art + Tech equals love!" rows="4" cols="50"
+                        maxlength="512"></textarea><br>
+                </span>
+                <button type="submit" class="submit-but" style="font-size: 1.2em;" value="0">
+                    &lt;General info</button>
+                <button type="submit" class="submit-but" style="font-size: 1.2em;" value="2">Profile
+                    ></button>
+            </form>
+        </div>
+
+
+
+        <div class="page" style="display: none;">
+            <form id="form" onsubmit="validate(event)">
+                <div id="profile-pic-image" class="hex-template">
+                </div>
+
+                <br /><br />
+                <div style="color: orange">If already having a profile, upload only your name and data you want updated.
+                </div>
+                <br /><br />
+
+                <span class="input-element">
+                    <label for="files">Profile pic(512x512):</label><br>
+                    <input type="file" id="files" name="files" accept="image/png, image/jpeg"
+                        onchange="loadProfilePic(event);">
+                </span>
+
+                <span class="input-element">
+                    <label for="fname">Display name:</label><br>
+                    <input type="text" id="fname" name="fname" placeholder="Name" required><br>
+                </span>
+
+                <span class="input-element">
+                    <label for="social-media-links">Social media links (separated by comma):</label><br>
+                    <input type="text" id="social-media-links" name="social-media-links"
+                        placeholder="instagram.com/artlink.app, https://artlink.app"><br>
+                </span>
+
+                <span class="input-element">
+                    <label for="artist-statement" maxlength="512">Artist Statement:</label><br>
+                    <textarea id="artist-statement" name="artist-statement" placeholder="Let's work together!" rows="4"
+                        cols="50"></textarea><br>
+                </span>
+
+                <span class="input-element">
+                    <label for="files">ARTWORKS<br />
+                        (Image, Video, GIF, 3D models):<br />
+                        Please name files with the artwork titles! <br />
+                        MAX SIZE: 25mb</label><br>
+                    <input type="file" id="files" name="files" accept=".zip, .rar,.7zip" required
+                        onchange="loadZip(event)">
+                </span>
+
+
+                <span id="error"></span><br />
+                <button type="submit" class="submit-but" style="font-size: 1.2em;" value="1">
+                    &lt;Profile</button>
+                <button type="submit" class="submit-but" id="submit-but" value="-1">Submit!</button>
+            </form>
+        </div>
+
+        <hr/>
+        <div class="social-media-wrapper">
+            <div style="text-align: left;">Are you thinking of a more ellaborate collaboration? <a href="./contact.html"
+                    target="_blank">Send
+                    us a message here</a>
+                <br />
+                Is the form too much of a hassle? Send us the artworks here and we'll handle the upload:
+            </div>
+            <br/>
+            <div class="social-media">
+                <div class="social-media-icon mail"><a href="mailto:dragos@colorfulcoding.com" target="_blank"></a>
+                </div>
+                <div class="social-media-icon facebook"><a href="https://www.facebook.com/ArtLinkApp2020"
+                        target="_blank"></a>
+                </div>
+                <div class="social-media-icon instagram"><a href="https://www.instagram.com/artlink.app/"
+                        target="_blank"></a>
+                </div>
+                <div class="social-media-icon linkedin"><a href="https://www.linkedin.com/company/artlink-app/"
+                        target="_blank"></a></div>
+                <div class="social-media-icon discord"><a href="https://discord.gg/XFEZaAztBT" target="_blank"></a>
                 </div>
             </div>
+        </div>
         </form>
         <div id="success" style="display: none;">
             <img width="250px" src="./img_2/rocket.png">
@@ -160,10 +189,30 @@
 </body>
 
 <script>
+    var pages = document.getElementsByClassName("page");
+    var currentPageIdx = 0;
+
+    function showPage(idx) {
+        pages[currentPageIdx].style.display = "none";
+
+        currentPageIdx = idx;
+        pages[currentPageIdx].style.display = "block";
+    }
+
+    function validate(evt) {
+        evt.preventDefault();
+        const val = document.activeElement.value;
+        if (val >= 0) {
+            showPage(val);
+        }else{
+            trySubscribe(evt);
+        }
+
+    }
+
     function trySubscribe(evt) {
         document.getElementById("submit-but").style.display = "none";
 
-        evt.preventDefault();
         // let fname = document.getElementById("fname").value;
         // let email = document.getElementById("email").value;
         // let what = document.getElementById("what").value;
@@ -234,7 +283,7 @@
         if (file) {
             reader.readAsDataURL(file);
         }
-     }
+    }
 
     function loadProfilePic(evt) {
         let targetImg = document.getElementById("profile-pic-image");
