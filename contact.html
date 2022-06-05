@@ -25,11 +25,11 @@
     <section class="main" style="margin-bottom: 50px;">
         <img src="img/artlink.jpg" width="50px" />
         <h1>Contact</h1>
-
-        <h3>For more extensive collaborations, scheduling a brainstorming call about AR and your work, giving us
-            feedback, or anything else, please leave us a message and we'll follow up on email.</h3>
-        <br />
         <form id="form" onsubmit="trySubscribe(event)">
+            <h3>For more extensive collaborations, scheduling a brainstorming call about AR and your work, giving us
+                feedback, or anything else, please leave us a message and we'll follow up on email.</h3>
+            <br />
+
             <span class="input-element">
                 <label for="fname">First name:</label><br>
                 <input type="text" id="fname" name="fname" placeholder="Name" required><br>
@@ -52,7 +52,7 @@
             </span>
 
             <span id="error"></span><br />
-            <button type="submit" class="submit-but" id="submit-but">Subscribe!</button>
+            <button type="submit" class="submit-but" id="submit-but">Contact us!</button>
 
             <div class="social-media-wrapper">
                 <div>Too complicated? We might answer faster here:</div>
@@ -101,28 +101,28 @@
         evt.preventDefault();
         let fname = document.getElementById("fname").value;
         let email = document.getElementById("email").value;
-        let what = document.getElementById("what").value;
-        let message = document.getElementById("message").value;
+        let senderRole = document.getElementById("what").value;
+        let body = document.getElementById("message").value;
 
-        // const xhr = new XMLHttpRequest();
-        // xhr.open("POST", "https://artlink-admin-app.herokuapp.com/subscribe");
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://artlink-admin-app.herokuapp.com/contact");
 
-        // xhr.setRequestHeader("Accept", "application/json");
-        // xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.setRequestHeader("Content-Type", "application/json");
 
-        // xhr.onload = () => {
-        //     if (xhr.status !== 200) {
-        //         document.getElementById("error").innerText = JSON.parse(xhr.responseText).message;
-        //         document.getElementById("submit-but").style.display = "inline-block";
-        //     } else {
-        //         console.log(xhr.responseText);
-        //         document.getElementById("form").style.display = "none";
-        //         document.getElementById("success").style.display = "block";
-        //     }
-        // }
+        xhr.onload = () => {
+            if (xhr.status !== 200) {
+                document.getElementById("error").innerText = JSON.parse(xhr.responseText).message;
+                document.getElementById("submit-but").style.display = "inline-block";
+            } else {
+                console.log(xhr.responseText);
+                document.getElementById("form").style.display = "none";
+                document.getElementById("success").style.display = "block";
+            }
+        }
 
-        // let data = JSON.stringify({ fname: fname, email: email, source: source });
-        // xhr.send(data);
+        let data = JSON.stringify({ fname: fname, email: email, senderRole: senderRole, body: body });
+        xhr.send(data);
     }
 </script>
 

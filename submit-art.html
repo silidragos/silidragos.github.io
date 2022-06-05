@@ -46,10 +46,10 @@
             <div id="cover-pic-image" class="hex-template">
                 <img src="./img_2/hex_overlay.png" width="256" height="256">
             </div>
-            
-            <br/><br/>
+
+            <br /><br />
             <div>If part of an existing gallery/exhibition fill in just the name.</div>
-            <br/><br/>
+            <br /><br />
 
             <span class="input-element">
                 <label for="files">Exhibition cover (512x512):</label><br>
@@ -106,7 +106,7 @@
                     (Image, Video, GIF, 3D models):<br />
                     Please name files with the artwork titles! <br />
                     MAX SIZE: 25mb</label><br>
-                <input type="file" id="files" name="files" accept=".zip, .rar,.7zip" required>
+                <input type="file" id="files" name="files" accept=".zip, .rar,.7zip" required onchange="loadZip(event)">
             </span>
 
 
@@ -114,7 +114,8 @@
             <button type="submit" class="submit-but" id="submit-but">Subscribe!</button>
 
             <div class="social-media-wrapper">
-                <div style="text-align: left;">Are you thinking of a more ellaborate collaboration? <a href="./contact.html" target="_blank">Send
+                <div style="text-align: left;">Are you thinking of a more ellaborate collaboration? <a
+                        href="./contact.html" target="_blank">Send
                         us a message here</a>
                     <br />
                     Is the form too much of a hassle? Send us the artworks here and we'll handle the upload:
@@ -137,7 +138,7 @@
         </form>
         <div id="success" style="display: none;">
             <img width="250px" src="./img_2/rocket.png">
-            <p>Congratulations! Your upload is succesful! <br/>
+            <p>Congratulations! Your upload is succesful! <br />
                 Your content is being moderated. We'll email you if something is missing. </p>
             <h2 style="text-decoration: underline; color: white;"><a href="./index.html">Back to website</a></h2>
         </div>
@@ -193,34 +194,51 @@
         // xhr.send(data);
     }
 
-    function loadGalleryCover(evt) {
+    function loadZip(evt) {
         const file = evt.target.files[0];
-        let image = document.getElementById("cover-pic-image");
-
-        const reader = new FileReader();
-        reader.onloadend = function () {
-            image.style.backgroundImage = "url(" + reader.result + ")";
-        }
-
-        if (file) {
-            reader.readAsDataURL(file);
+        if (file.size > 25 * 1048576) {
+            alert("File is too big!");
+            evt.target.value = "";
+            return;
         }
     }
 
-    function loadProfilePic(evt) {
+    function loadGalleryCover(evt) {
+        let targetImg = document.getElementById("cover-pic-image");
+        uploadPicToTarget(evt, targetImg, 512, 512);
+    }
+
+    function uploadPicToTarget(evt, targetImg, maxW, maxH) {
         const file = evt.target.files[0];
-        let image = document.getElementById("profile-pic-image");
 
         const reader = new FileReader();
-        reader.onloadend = function () {
-            image.style.backgroundImage = "url(" + reader.result + ")";
+        reader.onload = function () {
+            var img = new Image();
+            img.src = reader.result;
+            targetImg.style.backgroundImage = "url(" + reader.result + ")";
+
+            img.onload = function () {
+                const h = this.height;
+                const w = this.width;
+                if (h > maxH || w > maxW) {
+                    alert(`Height and Width must not exceed ${maxW}x${maxH}px.`);
+                    evt.target.value = "";
+                    targetImg.style.backgroundImage = "";
+                    return false;
+                }
+
+                return true;
+            }
         }
 
         if (file) {
             reader.readAsDataURL(file);
         }
+     }
 
-        // image.src = URL.createObjectURL();
+    function loadProfilePic(evt) {
+        let targetImg = document.getElementById("profile-pic-image");
+        uploadPicToTarget(evt, targetImg, 512, 512);
     }
 </script>
 
