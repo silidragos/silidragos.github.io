@@ -27,8 +27,8 @@
         <h1>Submit Gallery / Artwork for <br /> ARTLINK SELECTION </h1>
 
         <br />
-        <form id="main-form" onsubmit="validate(event)">
-            <div class="page">
+        <div class="page">
+            <form id="main-form" onsubmit="validate(event)">
                 <h3 style="text-align: left;">Fastest way to have your works published in-app is by submitting them
                     here.
                     <br />
@@ -37,6 +37,8 @@
                         artworks
                         directly in-app, with no moderation / form.</span>
                 </h3>
+
+                <hr />
                 <br />
 
                 <span class="input-element">
@@ -46,14 +48,15 @@
 
                 <span style="text-align: left; display: inline-block; width: 80%;">
                     <input type="checkbox" id="privacy" name="privacy" value="true" required>
-                    <label for="privacy">I have read and agreed with the <a href="./privacy.html" target="_blank">privacy agreement</a>.</label>
+                    <label for="privacy">I have read and agreed with the <a href="./privacy.html"
+                            target="_blank">privacy agreement</a>.</label>
                 </span>
-                <br/>
+                <br />
 
-                <button type="submit" class="submit-but" style="font-size: 1.2em;" value="1">Artwork
+                <button type="submit" class="submit-but" style="font-size: 1.2em;" value="1">Collection
                     &gt;</button>
-            </div>
-        </form>
+            </form>
+        </div>
         <div class="page" style="display: none;">
             <form id="form" onsubmit="validate(event)">
 
@@ -66,23 +69,30 @@
                 <br /><br />
 
                 <span class="input-element">
-                    <label for="files">Exhibition cover (512x512):</label><br>
-                    <input type="file" id="files" name="files" accept="image/png, image/jpeg"
+                    <label for="exhibition-cover">exhibition cover (512x512):</label><br>
+                    <input type="file" id="exhibition-cover" name="exhibition-cover" accept="image/png, image/jpeg"
                         onchange="loadGalleryCover(event);">
                 </span>
 
                 <span class="input-element">
-                    <label for="exh-name">Exhibition/Artwork name*:</label><br>
-                    <input type="text" id="exh-name" name="exh-name" placeholder="Name" required><br>
+                    <label for="exhibition-name">Exhibition/Artwork name*:</label><br>
+                    <input type="text" id="exhibition-name" name="exhibition-name" placeholder="Name" required><br>
                 </span>
 
                 <span class="input-element">
-                    <label for="statement">Exhibition/Artwork Statement:</label><br>
-                    <textarea id="statement" name="statement" placeholder="Art + Tech equals love!" rows="4" cols="50"
-                        maxlength="512"></textarea><br>
+                    <label for="exhibition-statement">Exhibition/Artwork Statement:</label><br>
+                    <textarea id="exhibition-statement" name="exhibition-statement"
+                        placeholder="Art + Tech equals love!" rows="4" cols="50" maxlength="512"></textarea><br>
                 </span>
+
+                <span class="input-element">
+                    <label for="extra-info">Extra information/requests for us to consider:</label><br>
+                    <textarea id="extra-info" name="extra-info" placeholder="Please make the frame blue!" rows="4"
+                        cols="50" maxlength="512"></textarea><br>
+                </span>
+
                 <button type="submit" class="submit-but" style="font-size: 1.2em;" value="0">
-                    &lt;General info</button>
+                    &lt;Intro</button>
                 <button type="submit" class="submit-but" style="font-size: 1.2em;" value="2">Profile
                     ></button>
             </form>
@@ -101,8 +111,8 @@
                 <br /><br />
 
                 <span class="input-element">
-                    <label for="files">Profile pic(512x512):</label><br>
-                    <input type="file" id="files" name="files" accept="image/png, image/jpeg"
+                    <label for="profile-pic">Profile pic(512x512):</label><br>
+                    <input type="file" id="profile-pic" name="profile-pic" accept="image/png, image/jpeg"
                         onchange="loadProfilePic(event);">
                 </span>
 
@@ -125,10 +135,12 @@
 
                 <span class="input-element">
                     <label for="files">ARTWORKS<br />
-                        (Image, Video, GIF, 3D models):<br />
-                        Please name files with the artwork titles! <br />
-                        MAX SIZE: 25mb</label><br>
-                    <input type="file" id="files" name="files" accept=".zip, .rar,.7zip" required
+                        <span style="color:gray">
+                            <span style="color: orangered">Please name files with the artwork titles!</span> <br />
+                            (Image, Video, GIF, 3D models):<br />
+                            MAX SIZE: 25mb</span></label>
+                    <br>
+                    <input type="file" id="files" name="files" accept=".zip" required
                         onchange="loadZip(event)">
                 </span>
 
@@ -140,7 +152,14 @@
             </form>
         </div>
 
-        <hr/>
+        <div id="success" style="display: none;">
+            <img width="250px" src="./img_2/rocket.png">
+            <p>Congratulations! Your upload is succesful! <br />
+                Your content is being moderated. We'll email you if something is missing. </p>
+            <h2 style="text-decoration: underline; color: white;"><a href="./index.html">Back to website</a></h2>
+        </div>
+
+        <hr />
         <div class="social-media-wrapper">
             <div style="text-align: left;">Are you thinking of a more ellaborate collaboration? <a href="./contact.html"
                     target="_blank">Send
@@ -148,7 +167,7 @@
                 <br />
                 Is the form too much of a hassle? Send us the artworks here and we'll handle the upload:
             </div>
-            <br/>
+            <br />
             <div class="social-media">
                 <div class="social-media-icon mail"><a href="mailto:dragos@colorfulcoding.com" target="_blank"></a>
                 </div>
@@ -165,12 +184,6 @@
             </div>
         </div>
         </form>
-        <div id="success" style="display: none;">
-            <img width="250px" src="./img_2/rocket.png">
-            <p>Congratulations! Your upload is succesful! <br />
-                Your content is being moderated. We'll email you if something is missing. </p>
-            <h2 style="text-decoration: underline; color: white;"><a href="./index.html">Back to website</a></h2>
-        </div>
     </section>
     <div class="area">
         <ul class="circles">
@@ -189,6 +202,8 @@
 </body>
 
 <script>
+    var URL = "https://artlink-admin-app.herokuapp.com";
+    // var URL = "http://localhost:3000"
     var pages = document.getElementsByClassName("page");
     var currentPageIdx = 0;
 
@@ -204,7 +219,7 @@
         const val = document.activeElement.value;
         if (val >= 0) {
             showPage(val);
-        }else{
+        } else {
             trySubscribe(evt);
         }
 
@@ -213,34 +228,74 @@
     function trySubscribe(evt) {
         document.getElementById("submit-but").style.display = "none";
 
-        // let fname = document.getElementById("fname").value;
-        // let email = document.getElementById("email").value;
-        // let what = document.getElementById("what").value;
-        // let message = document.getElementById("message").value;
+        let email = document.getElementById("email").value;
+        let exhibitionName = document.getElementById("exhibition-name").value;
+        let exhibitionStatement = document.getElementById("exhibition-statement").value;
+        let artistName = document.getElementById("fname").value;
+        let socialMedia = document.getElementById("social-media-links").value;
+        let artistStatement = document.getElementById("artist-statement").value;
+        let extraInfo = document.getElementById("extra-info").value;
 
 
-        document.getElementById("form").style.display = "none";
-        document.getElementById("success").style.display = "block";
+        let artSubmission = {
+            user: {
+                email: email,
+                artistName: artistName,
+                artistStatement: artistStatement,
+                socialMedia: socialMedia
+            },
+            exhibition: {
+                exhibitionName: exhibitionName,
+                exhibitionStatement: exhibitionStatement,
+                extraInfo: extraInfo
+            }
+        }
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", URL + "/submit-art");
 
-        // const xhr = new XMLHttpRequest();
-        // xhr.open("POST", "https://artlink-admin-app.herokuapp.com/subscribe");
+        xhr.setRequestHeader("Accept", "application/json");
+        xhr.setRequestHeader("Content-Type", "application/json");
 
-        // xhr.setRequestHeader("Accept", "application/json");
-        // xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onload = () => {
+            if (xhr.status !== 200) {
+                document.getElementById("error").innerText = JSON.parse(xhr.responseText).message;
+                document.getElementById("submit-but").style.display = "inline-block";
+            } else {
+                const id = JSON.parse(xhr.responseText).id;
+                console.log("Inserted line " + id + ". Preparing files...");
 
-        // xhr.onload = () => {
-        //     if (xhr.status !== 200) {
-        //         document.getElementById("error").innerText = JSON.parse(xhr.responseText).message;
-        //         document.getElementById("submit-but").style.display = "inline-block";
-        //     } else {
-        //         console.log(xhr.responseText);
-        //         document.getElementById("form").style.display = "none";
-        //         document.getElementById("success").style.display = "block";
-        //     }
-        // }
+                SendFiles(id);
+            }
+        }
 
-        // let data = JSON.stringify({ fname: fname, email: email, source: source });
-        // xhr.send(data);
+        let data = JSON.stringify(artSubmission);
+        xhr.send(data);
+    }
+
+    function SendFiles(id) {
+        var formData = new FormData();
+
+        formData.append("exhibitionCover", document.getElementById("exhibition-cover").files[0]);
+        formData.append("profilePic", document.getElementById("profile-pic").files[0]);
+        formData.append("filesZip", document.getElementById("files").files[0])
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", URL + "/files/submit-art-files?target=" + id);
+        xhr.onload = () => {
+            if (xhr.status !== 200) {
+                document.getElementById("error").innerText = JSON.parse(xhr.responseText).message;
+                document.getElementById("submit-but").style.display = "inline-block";
+            } else {
+                console.log(xhr.responseText);
+                const pages = document.getElementsByClassName("page");
+                for (let el of pages) {
+                    el.style.display = "none";
+                }
+
+                document.getElementById("success").style.display = "block";
+            }
+        }
+
+        xhr.send(formData);
     }
 
     function loadZip(evt) {
