@@ -33,7 +33,7 @@
                     here.
                     <br />
                     <span style="color:#1fc2e7">[SOON] We'll soon launch "Artist's Sandbox" and for private
-                        experimentsyou'll be able to upload
+                        experiments you'll be able to upload
                         artworks
                         directly in-app, with no moderation / form.</span>
                 </h3>
@@ -137,7 +137,7 @@
                     <label for="files">ARTWORKS<br />
                         <span style="color:gray">
                             <span style="color: orangered">Please name files with the artwork titles!</span> <br />
-                            (Image, Video, GIF, 3D models):<br />
+                            (Image, Video, GIF, 3D models in ZIP format):<br />
                             MAX SIZE: 25mb</span></label>
                     <br>
                     <input type="file" id="files" name="files" accept=".zip" required
@@ -202,8 +202,8 @@
 </body>
 
 <script>
-    var URL = "https://artlink-admin-app.herokuapp.com";
-    // var URL = "http://localhost:3000"
+    // var URL = "https://artlink-admin-app.herokuapp.com";
+    var URL = "http://localhost:3000"
     var pages = document.getElementsByClassName("page");
     var currentPageIdx = 0;
 
