@@ -103,7 +103,7 @@
         let body = document.getElementById("message").value;
 
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://artlink-admin-app.herokuapp.com/contact");
+        xhr.open("POST", "https://utility-server-cc.herokuapp.com/contact-form");
 
         xhr.setRequestHeader("Accept", "application/json");
         xhr.setRequestHeader("Content-Type", "application/json");
@@ -118,8 +118,14 @@
                 document.getElementById("success").style.display = "block";
             }
         }
+        let bodyText = `
+            FIRST_NAME: ${fname},
+            EMAIL: ${email},
+            ROLE: ${senderRole},
+            BODY: ${body}
+        `;
 
-        let data = JSON.stringify({ fname: fname, email: email, senderRole: senderRole, body: body });
+        let data = JSON.stringify({ identifier: "1a50f869-dffe-46a8-b1d4-41cee1ff9ef9",  text: bodyText });
         xhr.send(data);
     }
 </script>
