@@ -81,7 +81,7 @@
         let source = document.getElementById("source").value;
 
         const xhr = new XMLHttpRequest();
-        xhr.open("POST", "https://artlink-admin-app.herokuapp.com/subscribe");
+        xhr.open("POST", "https://utility-server-cc.herokuapp.com/subscribe-mailchimp");
 
         xhr.setRequestHeader("Accept", "application/json");
         xhr.setRequestHeader("Content-Type", "application/json");
@@ -97,7 +97,7 @@
             }
         }
 
-        let data = JSON.stringify({ fname: fname, email: email, source: source });
+        let data = JSON.stringify({ identifier: "1a50f869-dffe-46a8-b1d4-41cee1ff9ef9",name: fname, email: email, lastname: source });
         xhr.send(data);
     }
 </script>
