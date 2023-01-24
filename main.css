@@ -220,6 +220,9 @@ a{
 .social-media-icon.linkedin{
     background-image: url(./img/linkedin.png);
 }
+.social-media-icon.youtube{
+    background-image: url(./img/youtube.png);
+}
 .social-media-icon a{
     width: 35px;
     height: 35px;

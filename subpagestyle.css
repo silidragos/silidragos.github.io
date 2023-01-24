@@ -233,6 +233,9 @@ section.title .bottom .social-media .social-media-icon a:hover{
 .social-media-icon.mail{
     background-image: url(./img/email.png);
 }
+.social-media-icon.youtube{
+    background-image: url(./img/youtube.png);
+}
 .social-media-icon.facebook{
     background-image: url(./img/facebook.png);
 }
