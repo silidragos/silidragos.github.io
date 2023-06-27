@@ -33,7 +33,7 @@ hr{
 }
 
 .pc{
-    display:none;
+    display:none !important;
 }
 
 a:visited{

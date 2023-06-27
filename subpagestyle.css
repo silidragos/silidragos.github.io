@@ -1,25 +1,27 @@
-h1{
+h1 {
     text-align: left;
     font-size: 2em;
     line-height: 1em;
 }
-h2{
+
+h2 {
     font-weight: 100;
 }
 
-p{
+p {
     font-weight: 100;
 }
-.logo img{
+
+.logo img {
     width: 90px;
     margin-left: calc(50% - 45px);
 }
 
-ul{
+ul {
     padding-left: 20px;
 }
 
-.side-nav{
+.side-nav {
     width: 20%;
     display: inline-block;
     padding-left: 50px;
@@ -30,70 +32,73 @@ ul{
     top: 40%;
 }
 
-.side-nav ul{
+.side-nav ul {
     list-style-type: none;
     font-size: 14px;
 }
 
-.side-nav ul li{
+.side-nav ul li {
     cursor: pointer;
     margin-bottom: 10px;
     color: #999;
     transition: all .3s ease-in-out;
 }
 
-.side-nav ul li .line{
+.side-nav ul li .line {
     width: 25px;
     height: 5px;
     background-color: #999;
     vertical-align: middle;
     display: inline-block;
-    border-radius:2px;
-    margin:5px;
+    border-radius: 2px;
+    margin: 5px;
 
     transition: all .3s ease-in-out;
 }
-.side-nav ul li.active .line{
+
+.side-nav ul li.active .line {
     width: 35px;
     background-color: white;
 }
-.side-nav ul li.active{
+
+.side-nav ul li.active {
     color: white;
 }
 
-.side-nav ul li:hover .line{
+.side-nav ul li:hover .line {
     width: 35px;
     background-color: white;
 }
-.side-nav ul li:hover{
+
+.side-nav ul li:hover {
     color: white;
 }
 
-.side-nav ul li a{
+.side-nav ul li a {
     color: white;
     text-decoration: none;
 }
 
 
-.burger-menu{
+.burger-menu {
     position: fixed;
     right: 5px;
-    top: 5px;   
+    top: 5px;
 
     z-index: 100;
     width: 50px;
 }
 
-.burger-menu button{
+.burger-menu button {
     background-color: transparent;
     border: none;
 }
 
-.burger-menu img{
+.burger-menu img {
     width: 100%;
 }
 
-#navigation-menu{
+#navigation-menu {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -103,66 +108,68 @@ ul{
 
     background-color: black;
 }
-#navigation-menu .close-but{
+
+#navigation-menu .close-but {
     position: absolute;
     right: 5px;
     top: 5px;
 }
 
-#navigation-menu .close-but button{
+#navigation-menu .close-but button {
     font-size: 2em;
     background-color: transparent;
     color: white;
     border: none;
 }
 
-#navigation-menu ul{
-  list-style-type: none;
-  margin-top: 100px;
-  text-align: center;
+#navigation-menu ul {
+    list-style-type: none;
+    margin-top: 100px;
+    text-align: center;
 }
-#navigation-menu ul li{
+
+#navigation-menu ul li {
     width: 80%;
     margin: auto;
     padding-bottom: 15px;
     padding-top: 15px;
 }
 
-#navigation-menu ul li a{
+#navigation-menu ul li a {
     text-decoration: none;
 }
 
-section{
+section {
     text-align: center;
     position: relative;
 }
 
-a.small-link{
+a.small-link {
     border: none;
     text-decoration: underline;
     padding: 0;
 }
 
-a.small-link:hover{
-    background-color:transparent;
+a.small-link:hover {
+    background-color: transparent;
     color: white;
 }
 
-section.title{
+section.title {
     min-height: 400px;
 }
 
-section.title a{
+section.title a {
     margin-top: 10px;
     display: block;
     width: 250px;
 }
 
-section.title a.small-link{
+section.title a.small-link {
     text-align: left;
 }
 
-section.title .left{
+section.title .left {
     width: 65%;
     min-width: 250px;
     display: inline-block;
@@ -172,18 +179,24 @@ section.title .left{
     z-index: 10;
 }
 
-section.title .right{
+
+section.title .left p {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+section.title .right {
     width: 65%;
     display: inline-block;
     overflow: hidden;
     position: absolute;
     right: 0;
-    
+
     height: 350px;
     border-radius: 35px;
 }
 
-section.title .right video{
+section.title .right video {
     position: absolute;
     right: -230px;
     height: 625px;
@@ -191,74 +204,80 @@ section.title .right video{
     border-radius: 20px;
 }
 
-section.title .bottom{
+section.title .bottom {
     position: absolute;
     width: 75%;
     bottom: 0;
     text-align: left;
 }
 
-section.title .bottom .social-media{
+section.title .bottom .social-media {
     display: inline-block;
     vertical-align: middle;
     width: 100%;
 }
 
-section.title .bottom .social-media .social-media-icon a{
+section.title .bottom .social-media .social-media-icon a {
     border: none;
 }
 
-section.title .bottom .social-media .social-media-icon a:hover{
-    background-color:transparent;
+section.title .bottom .social-media .social-media-icon a:hover {
+    background-color: transparent;
     color: white;
 }
 
 
-.social-media-icon{
+.social-media-icon {
     width: 20%;
     max-width: 35px;
-    margin:1%;
+    margin: 1%;
     background-size: cover;
     display: inline-block;
     cursor: pointer;
     vertical-align: middle;
 }
 
-.social-media .social-media-icon{
+.social-media .social-media-icon {
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: center;
 }
 
-.social-media-icon.mail{
+.social-media-icon.mail {
     background-image: url(./img/email.png);
 }
-.social-media-icon.youtube{
+
+.social-media-icon.youtube {
     background-image: url(./img/youtube.png);
 }
-.social-media-icon.facebook{
+
+.social-media-icon.facebook {
     background-image: url(./img/facebook.png);
 }
-.social-media-icon.instagram{
+
+.social-media-icon.instagram {
     background-image: url(./img/instagram.png);
 }
-.social-media-icon.linkedin{
+
+.social-media-icon.linkedin {
     background-image: url(./img/linkedin.png);
 }
-.social-media-icon.discord{
+
+.social-media-icon.discord {
     background-image: url(./img/discord.png);
 }
-.social-media-icon a{
+
+.social-media-icon a {
     width: 35px;
     height: 35px;
     display: inline-block;
 }
 
-.get-it .links{
+.get-it .links {
     text-align: left;
 }
 
-.get-it .links a{
+.get-it .links a {
     width: 30%;
     height: 50px;
     display: inline-block;
@@ -270,123 +289,123 @@ section.title .bottom .social-media .social-media-icon a:hover{
     border: none;
     border-radius: 0;
 
-    margin-top:0;
-    padding-top:0;
+    margin-top: 0;
+    padding-top: 0;
 }
 
-.get-it .links a:hover{
-    background-color:transparent;
+.get-it .links a:hover {
+    background-color: transparent;
     color: white;
 }
 
-.android-link{
+.android-link {
     background-image: url('./img/google-play.png');
 }
 
-.ios-link{
+.ios-link {
     background-image: url('./img/ios.png');
 }
 
 
-#features .feature img{
+#features .feature img {
     width: 90%;
     margin: auto;
 }
 
-#features .feature video{
+#features .feature video {
     width: 90%;
     margin: auto;
     margin-left: 5%;
     border-radius: 20px;
 }
 
-#offers .card{
+#offers .card {
     border: 2px solid white;
     border-radius: 20px;
     text-align: left;
     padding: 10px;
-    margin-top:25px;
+    margin-top: 25px;
     margin-bottom: 25px;
 }
 
-#offers .card h2{
+#offers .card h2 {
     text-align: center;
 }
 
-#offers .card .submit{
-    text-align: center;    
+#offers .card .submit {
+    text-align: center;
     margin-bottom: 25px;
     margin-top: 25px;
 }
 
-#offers .card .submit a{
+#offers .card .submit a {
     margin: 10px;
 }
 
-#offers .card p{
-}
+#offers .card p {}
 
 
-#offers .card img{
+#offers .card img {
     width: 50%;
     margin: auto;
     display: block;
     padding: 25px;
 }
 
-#team .team-member a{
+#team .team-member a {
     width: 75%;
     display: block;
     border: none;
     margin: auto;
 
-    
-    background-color:transparent;
+
+    background-color: transparent;
     color: white;
 }
 
-#team .team-member a:hover{
-    background-color:transparent;
+#team .team-member a:hover {
+    background-color: transparent;
     color: white;
 }
-#team .team-member a img{
+
+#team .team-member a img {
     width: 100%;
     max-width: 200px;
 }
 
-#team .team-member p{
+#team .team-member p {
     text-align: left;
 }
 
-.partner-wrapper{
+.partner-wrapper {
     display: flex;
     align-items: center;
     justify-content: left;
     flex-wrap: wrap;
 }
 
-.partner-wrapper a{
+.partner-wrapper a {
     border: none;
     width: 25%;
     padding: 2%;
     display: inline-block;
 }
 
-.partner-wrapper a:hover{
+.partner-wrapper a:hover {
     background-color: transparent;
 }
 
-.partner-wrapper img{
+.partner-wrapper img {
     width: 100%;
 }
 
-#back-to-top div img{
+#back-to-top div img {
     width: 25px;
     transform: rotate(180deg);
     vertical-align: middle;
 }
 
-#back-to-top div{
+#back-to-top div {
     padding-top: 25px;
     padding-bottom: 25px;
     border-top: 1px dashed white;
@@ -395,99 +414,129 @@ section.title .bottom .social-media .social-media-icon a:hover{
 
 
 @media only screen and (max-width: 800px) {
-    .side-nav{
+    .side-nav {
         display: none;
     }
 
-    .content{
+    .content {
         overflow: hidden;
     }
-    .pc{
-        display: none;
+
+    .pc {
+        display: none !important;
     }
-    
-    section.title .right video{
+
+    section.title .left {
+        width: 100%;
+        text-align: center;
+    }
+
+    section.title .right video {
         right: -415px;
     }
 
-    section.title .right .overlay{
+    section.title .right .overlay {
         position: absolute;
         top: 0;
         bottom: 0;
         right: 0;
         left: 0;
-        background-color: rgba(0,0,0,0.4);
+        background-color: rgba(0, 0, 0, 0.4);
         z-index: 2;
     }
+
+    section.title .left p {
+        text-align: center;
+    }
+
+    section.title .left a {
+        width: 80%;
+        display: inline-block;
+    }
+
+    section.title .left a.small-link{
+        text-align: center;
+    }
+
+    section.title .bottom{
+        text-align: center;
+        display: inline-block;
+        left: 12.5%;
+    }
 }
+
 @media only screen and (min-width: 800px) {
-    h1{
+    h1 {
         font-size: 7em;
         line-height: 0.9em;
     }
 
-    .welcome{
-        padding-top:100px;
+    .welcome {
+        padding-top: 100px;
     }
-    .logo.pc img{
+
+    .logo.pc img {
         width: 50%;
         margin-left: 10px;
     }
 
-    .logo.pc h1{
+    .logo.pc h1 {
         font-size: 2em;
         text-align: left;
-        padding-left: 20px;;
+        padding-left: 20px;
+        ;
     }
 
-    .mobile{
+    .mobile {
         display: none;
     }
 
-    .content .wrapper{
+    .content .wrapper {
         width: 70%;
         margin-left: 25%;
     }
 
-    .logo{
+    .logo {
         margin-bottom: 50px;
     }
-    .logo img{
+
+    .logo img {
         width: 200px;
         margin-left: calc(50% - 100px);
     }
 
-    section.title{
+    section.title {
         width: 100%;
         margin: auto;
     }
-    section.title .right{
+
+    section.title .right {
         width: 50%;
         right: 10%;
     }
 
-    section#get-it-mobile{
+    section#get-it-mobile {
         width: 60%;
     }
 
-    #features .feature{
+    #features .feature {
         width: 28%;
         margin: auto;
         display: inline-block;
         vertical-align: top;
     }
 
-    #features .feature img{
+    #features .feature img {
         border-radius: 20px;
     }
 
-    #features .feature p{
+    #features .feature p {
         width: 100%;
         margin: auto;
         text-align: left;
     }
 
-    #offers .card{
+    #offers .card {
         width: 28%;
         margin-left: 1%;
         margin-right: 1%;
@@ -497,26 +546,26 @@ section.title .bottom .social-media .social-media-icon a:hover{
         position: relative;
     }
 
-    #offers .card .submit{
+    #offers .card .submit {
         bottom: 0;
         position: absolute;
         left: 0;
         right: 0;
     }
 
-    #offers .card p{
+    #offers .card p {
         padding-left: 20px;
     }
 
 
-    #team .team-member{
+    #team .team-member {
         width: 47%;
         margin-left: 1%;
         margin-right: 1%;
         display: inline-block;
     }
 
-    .partner-wrapper a{
+    .partner-wrapper a {
         width: 10%;
     }
 
