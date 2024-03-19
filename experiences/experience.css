@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.quicklook {
+    position: fixed;
+    top: 0;
+}
+
+.model-viewer-container {
+    width: 100%;
+    height: 100%;
+}
+
+.model-viewer-container model-viewer {
+    width: 100%;
+    height: 100%;
+}
