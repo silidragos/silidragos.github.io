@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>InnovoGraph</title>
     <link rel="stylesheet" type="text/css" href="./experience.css" />
+    <link rel="shortcut icon" type="image/png" href="./img/Favicon Logo.png" />
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
+
 <body>
+    <div class="info">
+        <div class="img"><a href="https://link.mobilocard.com/redirector/Business%20Card?activeLink=https://link.mobilocard.com/virtual_card/j0vkaFaOzzMnDTAOBEiYI9KZEba2"
+            target="_blank"><img src="./img/innovo_graph_logo.jpg" /></a></div>
+    </div>
+
+    <div class="ar-info">
+        <p>Press to enable AR experience: </p>
+    </div>
+
     <div class="model-viewer-container">
-        <model-viewer
-          alt="Neil Armstrong's Spacesuit from the Smithsonian Digitization Programs Office and National Air and Space Museum"
-          src='./models/test_house_raw.glb' ar
-          environment-image=""
-          poster="./img/innovo_graph_logo.jpg" shadow-intensity="2"
-          camera-controls
-          touch-action="pan-y"></model-viewer>
-      </div>
+        <model-viewer alt="InnovoGraph scan model" src='./models/test_house_raw.glb' ar environment-image=""
+            poster="./img/innovo_graph_logo.jpg" shadow-intensity="2" camera-controls touch-action="pan-y">
+            <div id="lazy-load-poster" slot="poster">
+                <div><img src="./img/innovo_graph_logo.jpg"></div>
+                <div>
+                    <p>Loading...</p>
+                </div>
+            </div>
+        </model-viewer>
+    </div>
 </body>
+
 </html>

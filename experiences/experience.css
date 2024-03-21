@@ -1,5 +1,20 @@
+@font-face {
+    font-family: 'jaappokki';
+    src: url('../fonts/jaapokki-regular.eot');
+    /* IE9 Compat Modes */
+    src: url('../fonts/jaapokki-regular.eot') format('embedded-opentype'),
+        /* IE6-IE8 */
+        url('../fonts/jaapokki-regular.woff') format('woff'),
+        /* Super Modern Browsers */
+        url('../fonts/jaapokki-regular.ttf') format('truetype'),
+        /* Safari, Android, iOS */
+        url('../fonts/jaapokki-regular.svg') format('svg');
+    /* Legacy iOS */
+}
+
 * {
     box-sizing: border-box;
+    font-family: 'jaappokki';
 }
 
 html,
@@ -24,4 +39,48 @@ body,
 .model-viewer-container model-viewer {
     width: 100%;
     height: 100%;
+}
+
+#lazy-load-poster {
+    z-index: 10001;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#lazy-load-poster div {}
+
+.info{
+    z-index: 10000;
+    width: 40%;
+    position: fixed;
+    top: 50px;
+    padding: 10px 10px;
+    padding-bottom: 5px;
+    background-color: white;
+
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border:1px solid black;
+    border-left: none;
+}
+
+.info .img {
+    width: 90%;
+}
+
+.info .img a img {
+    width: 100%;
+}
+
+.ar-info{
+    position: fixed;
+    bottom: 10px;
+    right: 75px;
 }
