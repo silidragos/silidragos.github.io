@@ -11,18 +11,38 @@
 </head>
 
 <body>
-    <div class="info">
-        <div class="img"><a href="https://link.mobilocard.com/redirector/Business%20Card?activeLink=https://link.mobilocard.com/virtual_card/j0vkaFaOzzMnDTAOBEiYI9KZEba2"
-            target="_blank"><img src="./img/innovo_graph_logo.jpg" /></a></div>
+    <div id="info" class="info" style="display:none">
+        <div class="img"><a
+                href="https://link.mobilocard.com/redirector/Business%20Card?activeLink=https://link.mobilocard.com/virtual_card/j0vkaFaOzzMnDTAOBEiYI9KZEba2"
+                target="_blank"><img src="./img/innovo_graph_logo.jpg" /></a></div>
+    </div>
+
+    <div class="servicii">
+        <div class="main-title">
+            <img src="./img/innovo_graph_logo.jpg" />
+        </div>
+        <div class="service-list">
+            <div class="line">
+                <div class="element el-1">SCANARE<br />3D</div>
+                <div class="element el-2">TOPOGRAFIE<br />INGINEREASCĂ</div>
+                <div class="element el-3">UCC</div>
+            </div>
+            <div class="line">
+                <div class="element el-4">CADASTRU &<br />INTABULARE</div>
+                <div class="element el-5">MĂSURĂTORI<br />BOMA</div>
+                <div class="element el-6">ASISTENȚĂ<br />FAȚADE</div>
+            </div>
+        </div>
     </div>
 
     <div class="ar-info">
-        <p>Press to enable AR experience: </p>
+        <p>Apăsați pentru a activa experiența AR: </p>
     </div>
 
-    <div class="model-viewer-container">
-        <model-viewer alt="InnovoGraph scan model" src='./models/test_house_raw.glb' ar environment-image=""
-            poster="./img/innovo_graph_logo.jpg" shadow-intensity="2" camera-controls touch-action="pan-y">
+    <div id="mv-container" class="model-viewer-container">
+        <model-viewer alt="InnovoGraph scan model" src='./models/CasaVin_03_compressed.glb' ar environment-image=""
+            poster="./img/innovo_graph_logo.jpg" shadow-intensity="1" camera-controls touch-action="pan-y"
+            tone-mapping="aces_filmic">
             <div id="lazy-load-poster" slot="poster">
                 <div><img src="./img/innovo_graph_logo.jpg"></div>
                 <div>
@@ -31,6 +51,26 @@
             </div>
         </model-viewer>
     </div>
+
+    <script type="module">
+        const modelViewer = document.querySelector('model-viewer');
+
+        modelViewer.addEventListener('load', (event) => {
+            let modelViewerContainer = document.getElementById('mv-container');
+            modelViewerContainer.classList.add('ar');
+        });
+
+        modelViewer.addEventListener('ar-status', (event) => {
+            console.log(event);
+            if(event.detail.status === 'session-started') {
+                let modelViewerContainer = document.getElementById('mv-container');
+                modelViewerContainer.classList.remove('ar');
+
+                let info = document.getElementById('info');
+                info.style.display = 'block';
+            }
+        });
+    </script>
 </body>
 
 </html>

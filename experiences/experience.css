@@ -26,6 +26,10 @@ body,
     padding: 0;
 }
 
+p {
+    font-size: .9em;
+}
+
 .quicklook {
     position: fixed;
     top: 0;
@@ -34,6 +38,10 @@ body,
 .model-viewer-container {
     width: 100%;
     height: 100%;
+}
+
+.model-viewer-container.ar{
+    padding-top: 200px;
 }
 
 .model-viewer-container model-viewer {
@@ -56,7 +64,12 @@ body,
 
 #lazy-load-poster div {}
 
-.info{
+#lazy-load-poster div img {
+    width: 90%;
+    margin-left: 5%;
+}
+
+.info {
     z-index: 10000;
     width: 40%;
     position: fixed;
@@ -67,7 +80,7 @@ body,
 
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    border:1px solid black;
+    border: 1px solid black;
     border-left: none;
 }
 
@@ -79,8 +92,87 @@ body,
     width: 100%;
 }
 
-.ar-info{
+.ar-info {
     position: fixed;
     bottom: 10px;
     right: 75px;
+    color: #1960b9;
+}
+
+
+/* SERVICII */
+.servicii {
+    position: fixed;
+    text-align: center;
+    width: 95%;
+    margin-left: 2.5%;
+    display: inline-block;
+    margin-top: 50px;
+}
+
+.servicii .main-title img {
+    width: 90%;
+}
+
+.service-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.service-list .line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.service-list .line .element {
+    font-size: 0.7em;
+    flex: 1;
+    margin: 5px;
+    padding: 5px;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.service-list .line .element.el-1 {
+    border-right: 5px solid #0097b2;
+    border-bottom: 5px solid #0097b2;
+}
+
+.service-list .line .element.el-2 {
+    border-right: 5px solid #0cc0df;
+    border-bottom: 5px solid #0cc0df;
+}
+
+.service-list .line .element.el-3 {
+    border-right: 5px solid #5ce1e6;
+    border-bottom: 5px solid #5ce1e6;
+}
+
+.service-list .line .element.el-4 {
+    border-right: 5px solid #38b6ff;
+    border-bottom: 5px solid #38b6ff;
+}
+
+.service-list .line .element.el-5 {
+    border-right: 5px solid #5271ff;
+    border-bottom: 5px solid #5271ff;
+}
+
+.service-list .line .element.el-6 {
+    border-right: 5px solid #004aad;
+    border-bottom: 5px solid #004aad;
+}
+
+@media (min-width:600px) {
+    .service-list .line .element {
+        font-size:  1em;
+        margin: 30px;
+    }
 }
