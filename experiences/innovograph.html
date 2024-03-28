@@ -21,6 +21,12 @@
         <div class="main-title">
             <img src="./img/innovo_graph_logo.jpg" />
         </div>
+
+        <div class="contact">
+            <a href="https://link.mobilocard.com/redirector/Business%20Card?activeLink=https://link.mobilocard.com/virtual_card/j0vkaFaOzzMnDTAOBEiYI9KZEba2"
+                target="_blank">Salvează contact</a>
+        </div>
+        
         <div class="service-list">
             <div class="line">
                 <div class="element el-1">SCANARE<br />3D</div>
@@ -62,7 +68,7 @@
 
         modelViewer.addEventListener('ar-status', (event) => {
             console.log(event);
-            if(event.detail.status === 'session-started') {
+            if (event.detail.status === 'session-started') {
                 let modelViewerContainer = document.getElementById('mv-container');
                 modelViewerContainer.classList.remove('ar');
 
