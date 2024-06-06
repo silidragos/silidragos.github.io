@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Share Example</title>
+</head>
+
+<body>
+    <input type="file" id="imageInput" accept="image/*" capture="environment" style="display:none;">
+    <button id="takeImageButton">Take Image</button>
+    <button id="shareImageButton" style="display:none;">Share Image</button>
+    <img id="previewImage" style="display:none;" />
+
+    <script>
+        document.getElementById('takeImageButton').addEventListener('click', () => {
+            document.getElementById('imageInput').click();
+        });
+
+        document.getElementById('imageInput').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const img = document.getElementById('previewImage');
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                    document.getElementById('shareImageButton').style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        document.getElementById('shareImageButton').addEventListener('click', async () => {
+            const img = document.getElementById('previewImage');
+            if (img.src) {
+                const response = await fetch(img.src);
+                const blob = await response.blob();
+                const file = new File([blob], 'image.jpg', { type: blob.type });
+
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    try {
+                        await navigator.share({
+                            files: [file],
+                            title: 'My Image',
+                            text: 'Check out this image!'
+                        });
+                        alert('Image shared successfully');
+                    } catch (error) {
+                        alert('Error sharing the image: ' + error);
+                    }
+                } else {
+                    alert('Sharing not supported on this device.');
+                }
+            } else {
+                alert('No image to share.');
+            }
+        });
+    </script>
+</body>
+
+</html>
