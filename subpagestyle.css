@@ -171,7 +171,7 @@ a.small-link:hover {
 
 .section-wrapper {
     position: relative;
-    margin-top: 200px;
+    margin-top: 100px;
     padding-top: 50px;
     padding-bottom: 50px;
 }
@@ -476,7 +476,7 @@ section {
 
 
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1000px) {
     h1 {
         font-size: 3em;
     }
@@ -574,7 +574,7 @@ section {
     }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1000px) {
     h1 {
         font-size: 7em;
         line-height: 0.9em;
