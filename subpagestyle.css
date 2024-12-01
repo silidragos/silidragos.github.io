@@ -2,10 +2,15 @@ h1 {
     text-align: left;
     font-size: 2em;
     line-height: 1em;
+    margin-bottom: 10px;
 }
 
 h2 {
     font-weight: 100;
+}
+
+h3 {
+    font-size: 2.5em;
 }
 
 p {
@@ -21,62 +26,71 @@ ul {
     padding-left: 20px;
 }
 
-.side-nav {
-    width: 20%;
-    display: inline-block;
-    padding-left: 50px;
-    vertical-align: top;
+.top-nav {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 10%;
 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    /* Change to your preferred background color */
+    padding: 10px 20px;
     position: fixed;
-    z-index: 100;
-    top: 40%;
+    top: 0;
+    z-index: 1000;
 }
 
-.side-nav ul {
-    list-style-type: none;
-    font-size: 14px;
-}
-
-.side-nav ul li {
-    cursor: pointer;
-    margin-bottom: 10px;
-    color: #999;
-    transition: all .3s ease-in-out;
-}
-
-.side-nav ul li .line {
-    width: 25px;
-    height: 5px;
-    background-color: #999;
+.top-nav .logo {
+    display: flex;
+    align-items: center;
     vertical-align: middle;
-    display: inline-block;
-    border-radius: 2px;
-    margin: 5px;
-
-    transition: all .3s ease-in-out;
+    margin-right: 5px;
 }
 
-.side-nav ul li.active .line {
-    width: 35px;
-    background-color: white;
+.top-nav .logo.pc a {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
 }
 
-.side-nav ul li.active {
-    color: white;
+.top-nav .logo img {
+    height: 50px;
+    /* Adjust as needed */
+    margin-right: 10px;
 }
 
-.side-nav ul li:hover .line {
-    width: 35px;
-    background-color: white;
+.top-nav .logo h1 {
+    color: #fff;
+    /* Change to your preferred text color */
+    font-size: 1.5em;
+    margin: 0;
 }
 
-.side-nav ul li:hover {
-    color: white;
+.top-nav ul {
+    display: flex;
+    list-style: none;
+    margin-right: 15px;
+    padding: 0;
 }
 
-.side-nav ul li a {
-    color: white;
+.top-nav ul li {
+    margin: 0 10px;
+}
+
+.top-nav ul li a {
+    color: #fff;
+    /* Change to your preferred text color */
     text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+.top-nav ul li a:hover {
+    background-color: #575757;
+    /* Change to your preferred hover color */
+    border-radius: 5px;
 }
 
 
@@ -155,8 +169,37 @@ a.small-link:hover {
     color: white;
 }
 
+.section-wrapper {
+    position: relative;
+    margin-top: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.section-wrapper #background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
 section.title {
     min-height: 400px;
+}
+
+section .press-icon {
+    width: 35px;
+    right: 30px;
+
+    display: inline;
+    position: absolute;
+}
+
+section .feature h3 {
+    font-size: 2em;
 }
 
 section.title a {
@@ -204,24 +247,22 @@ section.title .right video {
     border-radius: 20px;
 }
 
-section.title .bottom {
-    position: absolute;
+section.title .social-media-wrapper {
     width: 75%;
-    bottom: 0;
     text-align: left;
 }
 
-section.title .bottom .social-media {
+section.title .social-media-wrapper .social-media {
     display: inline-block;
     vertical-align: middle;
     width: 100%;
 }
 
-section.title .bottom .social-media .social-media-icon a {
+section.title .social-media-wrapper .social-media .social-media-icon a {
     border: none;
 }
 
-section.title .bottom .social-media .social-media-icon a:hover {
+section.title .social-media-wrapper .social-media .social-media-icon a:hover {
     background-color: transparent;
     color: white;
 }
@@ -278,7 +319,7 @@ section.title .bottom .social-media .social-media-icon a:hover {
 }
 
 .get-it .links a {
-    width: 30%;
+    width: 150px;
     height: 50px;
     display: inline-block;
     background-size: contain;
@@ -306,17 +347,39 @@ section.title .bottom .social-media .social-media-icon a:hover {
     background-image: url('./img/ios.png');
 }
 
-
-#features .feature img {
-    width: 90%;
+section {
+    width: 80%;
     margin: auto;
 }
 
-#features .feature video {
-    width: 90%;
+.feature {
+    width: 33%;
     margin: auto;
-    margin-left: 5%;
-    border-radius: 20px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.feature video {
+    width: 100%;
+    margin: auto;
+}
+
+.feature h3 {
+    font-size: 2em;
+    padding: 10px;
+    margin-top: -2em;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    width: 100%;
+    text-align: left;
+}
+
+.feature p {
+    width: 100%;
+    margin: auto;
+    text-align: left;
 }
 
 #offers .card {
@@ -414,6 +477,14 @@ section.title .bottom .social-media .social-media-icon a:hover {
 
 
 @media only screen and (max-width: 800px) {
+    h1 {
+        font-size: 3em;
+    }
+
+    h3 {
+        line-height: 1;
+    }
+
     .side-nav {
         display: none;
     }
@@ -425,9 +496,25 @@ section.title .bottom .social-media .social-media-icon a:hover {
     .pc {
         display: none !important;
     }
+    
+
+    .feature {
+        width: 100%;
+    }
+
+    .feature h3{
+        margin-top: -1.8em;
+    }
+
+    .feature h3.double-line{
+        margin-top: -2.8em;
+    }
+
+    section>p{
+        margin-top:0px;
+    }
 
     section.title .left {
-        width: 100%;
         text-align: center;
     }
 
@@ -454,14 +541,36 @@ section.title .bottom .social-media .social-media-icon a:hover {
         display: inline-block;
     }
 
-    section.title .left a.small-link{
+    section.title .left a.small-link {
         text-align: center;
     }
 
-    section.title .bottom{
+    section.title .social-media-wrapper {
         text-align: center;
         display: inline-block;
         left: 12.5%;
+    }
+
+    section.title .social-media-wrapper {
+        width: 100%;
+    }
+
+    .section-wrapper {
+        margin-top: 100px;
+    }
+
+    .logo.mobile {
+        text-align: left;
+        width: 100%;
+    }
+
+    .logo.mobile img {
+        margin-left: 0px;
+    }
+
+    .logo.mobile h1 {
+        margin-top: 0;
+        text-align: left;
     }
 }
 
@@ -471,20 +580,9 @@ section.title .bottom .social-media .social-media-icon a:hover {
         line-height: 0.9em;
     }
 
-    .welcome {
-        padding-top: 100px;
-    }
-
     .logo.pc img {
         width: 50%;
         margin-left: 10px;
-    }
-
-    .logo.pc h1 {
-        font-size: 2em;
-        text-align: left;
-        padding-left: 20px;
-        ;
     }
 
     .mobile {
@@ -492,12 +590,13 @@ section.title .bottom .social-media .social-media-icon a:hover {
     }
 
     .content .wrapper {
-        width: 70%;
-        margin-left: 25%;
+        width: 90%;
+        margin-left: 5%;
     }
 
     .logo {
-        margin-bottom: 50px;
+        margin-top: 25px;
+        margin-bottom: 15px;
     }
 
     .logo img {
@@ -506,7 +605,6 @@ section.title .bottom .social-media .social-media-icon a:hover {
     }
 
     section.title {
-        width: 100%;
         margin: auto;
     }
 
@@ -519,30 +617,13 @@ section.title .bottom .social-media .social-media-icon a:hover {
         width: 60%;
     }
 
-    #features .feature {
-        width: 28%;
-        margin: auto;
-        display: inline-block;
-        vertical-align: top;
-    }
-
-    #features .feature img {
-        border-radius: 20px;
-    }
-
-    #features .feature p {
-        width: 100%;
-        margin: auto;
-        text-align: left;
-    }
-
     #offers .card {
         width: 28%;
         margin-left: 1%;
         margin-right: 1%;
         display: inline-block;
         vertical-align: top;
-        min-height: 900px;
+        min-height: 800px;
         position: relative;
     }
 

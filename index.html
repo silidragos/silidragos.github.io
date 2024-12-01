@@ -4,68 +4,498 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="language" content="en" />
-
-    <meta name="description" content="ArtLink is a platform that connects artists and institutions to the art world."/>
 
     <meta property="og:title" content="ArtLink - The Artworld at your fingertips" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://artlink.app/" />
-    <meta name="og:description" content="ArtLink is a platform that connects artists and institutions to the art world."/>
     <meta property="og:image" content="./img/artlink.jpg" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
 
+    <meta name="language" content="en" />
+
+    <meta name="description" content="ArtLink is a platform that connects artists and institutions to the art world." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://artlink.app/artists.html" />
+    <meta name="og:description"
+        content="ArtLink is a platform that connects artists and institutions to the art world." />
+
     <title>ArtLink - The ArtWorld at your Fingertips</title>
     <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./bg.css" />
     <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="stylesheet" type="text/css" href="./subpagestyle.css" />
 </head>
 
 <body>
-    <video autoplay muted loop id="myVideo">
-        <source src="./video/Video preview website_PC.mp4" type="video/mp4">
-    </video>
+    <nav class="top-nav pc">
+        <div class="logo pc">
+            <a href="#welcome">
+                <img src="img_2/Artlink logo.png">
+                <h1>ARTLINK</h1>
+            </a>
+        </div>
+
+        <ul>
+            <li class="active"><span class="line"></span><a class="small-link" href="#get-it-mobile">GET THE APP</a>
+            </li>
+            <li><span class="line"></span><a class="small-link" href="#features">WHY ARTLINK</a></li>
+            <li><span class="line"></span><a class="small-link" href="#ar-services">AR SERVICES</a></li>
+            <li><span class="line"></span><a class="small-link" href="#submit-art">OFFERS</a></li>
+            <li><span class="line"></span><a class="small-link" href="#team">TEAM</a></li>
+            <li><span class="line"></span><a class="small-link" href="#partners">PARTNERS</a></li>
+        </ul>
+    </nav>
+
+    <div class="mobile burger-menu">
+        <button onclick="showNavMenu()"><img src="./img_2/menu.png"></button>
+    </div>
 
     <div class="content">
         <div class="wrapper">
-            <div class="logo">
-                <img src="img_2/Artlink logo.png" alt="main logo">
-                <br />
-                <h1>ARTLINK</h1>
-                <h2 style="text-align: center; font-weight: normal;">The Artworld at your fingertips</h2>
+            <div class="section-wrapper">
+                <video autoplay muted loop id="background-video">
+                    <source src="./video/Video preview website_PC.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <section class="title">
+                    <div class="logo mobile">
+                        <img src="img_2/Artlink logo.png">
+                        <br/>
+                        <h1>ARTLINK</h1>
+                    </div>
+                    <div id="welcome" class="welcome pc">
+                        <h1>WELCOME!</h1>
+                    </div>
+                    <div>
+                        <p style="text-align: left; margin-bottom:25px;">
+                            Engage your audience with interactive <br class="pc"/>
+                            exhibitions and enhance your online presence <br class="pc"/>
+                            by making your first steps in Mixed Reality. <br class="pc"/>
+                        </p>
+                    </div>
+
+                    <h3 style="text-align: left; margin-bottom: 10px;">DOWNLOAD THE APP</h3>
+                    <div class="get-it">
+                        <div class="links">
+                            <a href="https://play.google.com/store/apps/details?id=com.colorfulcoding.artlink"
+                                target="_blank" class="android-link"></a>
+                            <a href="https://apps.apple.com/tt/app/artlink-ar/id1526716070" target="_blank"
+                                class="ios-link"></a>
+                        </div>
+                    </div>
+
+                    <div class="social-media-wrapper" style="margin-top: 50px;">
+                        <h3 style="text-align: left; margin-bottom:0px;">LET'S GET SOCIAL</h3>
+                        <div class="social-media">
+                            <div class="social-media-icon mail"><a href="mailto:dragos@colorfulcoding.com"
+                                    target="_blank"></a></div>
+                            <div class="social-media-icon youtube"><a href="https://www.youtube.com/@artlinkapp/videos"
+                                    target="_blank"></a></div>
+                            <div class="social-media-icon facebook"><a href="https://www.facebook.com/ArtLinkApp2020"
+                                    target="_blank"></a>
+                            </div>
+                            <div class="social-media-icon instagram"><a href="https://www.instagram.com/artlink.app/"
+                                    target="_blank"></a>
+                            </div>
+                            <div class="social-media-icon linkedin"><a
+                                    href="https://www.linkedin.com/company/artlink-app/" target="_blank"></a></div>
+                            <div class="social-media-icon discord"><a href="https://discord.gg/XFEZaAztBT"
+                                    target="_blank"></a></div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <div class="main-buttons">
-                <h3> Hello, I'm an</h3>
-                <div class="buts">
-                    <a href="./artists.html">Artist</a> <span> <br/> or <br/></span><a href="./institutions.html">Institution</a>
+            <section id="features">
+                <h1>WHY ARTLINK?</h1>
+
+                <div class="feature" style="margin-bottom:50px;">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/Room AR 2.mp4" type="video/mp4">
+                    </video>
+                    <h3>INNOVATE<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Get acces to the latest AR & 3D graphics innovations while allowing
+                        you to focus 100% on the creative process.</p>
                 </div>
-            </div>
-            <div class="reel" onclick="showModal()">
-                <span>Play </span>
-                <img src="./img_2/PNG PLAY BUTTON.png" alt="Play">
-                <span> Reel</span>
-            </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/AR Trackers 2.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">GO TO <br class="mobile"/>MARKET<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>ArtLink is a scalable, stable platform used for both testing and
+                        launching XR experiences on mobile. Either you organize a social media campaign or a large-scale
+                        live festival, we have the right tools for you!</p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/community loop.mp4" type="video/mp4">
+                    </video>
+                    <h3>TAILOR MADE<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Receive on-demand help from our new media team to implement your
+                        vision.
+                    </p>
+                </div>
+            </section>
+
+
+            <section id="ar-services">
+                <h1>AR SERVICES</h1>
+
+                <div class="feature" style="margin-bottom:50px;">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/Room AR 3.mp4" type="video/mp4">
+                    </video>
+                    <h3>SPATIAL AR <img class="press-icon" src="./img/press.png" /></h3>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/AR Tracker.mp4" type="video/mp4">
+                    </video>
+                    <h3>IMAGE AR<img class="press-icon" src="./img/press.png" /></h3>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/Geolocation.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">GEOLOCATED<br class="mobile"/> AR<img class="press-icon" src="./img/press.png" /></h3>
+                </div>
+
+                <br />
+                <p style="text-align: left;">
+                    Get access to a comprehensive suite of AR services seamlessly blending 2D and 3D animation, sound
+                    design, VFX, custom shaders and more. We enable the creation of interactive and narrative
+                    experiences that engage and inspire audiences, bringing art, history, and culture to life in
+                    unforgettable ways.
+                </p>
+            </section>
+
+            <section id="features">
+                <h1>CASE STUDIES</h1>
+
+                <div class="feature" style="margin-bottom:50px;">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/degas loop.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">REMOTE<br class="mobile"/> GALLERY<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Upload your existing artworks, either they are paintings, illustrations, videos or 3D artworks.
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/SIS poster loop.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">AR<br class="mobile"/> ANIMATIONS<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Create custom interactive experiences tailored for mobile AR and your brand.
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/Educational Books.mp4" type="video/mp4">
+                    </video>
+                    <h3>AR EDUCATION<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>
+                        Create memorable educational experiences that engage students and enhance learning outcomes.
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/AR Book.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">AR<br class="mobile"/> MAGAZINES<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>
+                        Enhance printed materials with digital XR content.
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/brand-activ.mp4" type="video/mp4">
+                    </video>
+                    <h3>AR MERCH<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>
+                        Create simple yet memorable physical items for visitors to always remember you.
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/Geolocation 2.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">AUGMENTED VENUES<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Bring life to your city, with monumental scale AR experiences.</p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/AR tracker  3 .mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">AR INSTALLATIONS<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Prop-up your event with quirky, interactive AR installations.</p>
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/AI_Assistant.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">AI+AR<br class="mobile"/> Characters<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Naturally discuss with a virtual AI agent that can either answer your questions, guide you, or
+                        have a deeper chat.
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/AR Trackers 2.mp4" type="video/mp4">
+                    </video>
+                    <h3>AR BOOTHS<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Attract more visitors to your booth with interactive AR experiences.</p>
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/v2/Workshops.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">AR<br class="mobile"/> WORKSHOPS<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>
+                        Learn more about AR and how it can help you grow your audience, enhance your social media
+                        content and drive more sales.
+                    </p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/altspace square.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">VIRTUAL<br class="mobile"/> GALLERY<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>Pair your XR experience with a VR tour through your exhibiton, gallery or venue.</p>
+                </div>
+                <div class="feature">
+                    <video class="click-to-play-video" loop="" playsinline="" muted="">
+                        <source src="./video/baboon loop.mp4" type="video/mp4">
+                    </video>
+                    <h3 class="double-line">WHITE<br class="mobile"/> LABELED APP<img class="press-icon" src="./img/press.png" /></h3>
+                    <p>
+                        Get your own branded app, with custom features, your own content, and your own AR experiences.
+                    </p>
+                </div>
+            </section>
+
+            <section id="offers">
+                <h1>HOW TO <br /> GET STARTED?</h1>
+
+                <div class="card" id="community">
+                    <img src="./img_2/team.png">
+                    <h2>Join our newsletter!</h2>
+                    <div>
+                        <p>Be part of our community! Here we share knowledge, news and cool events regarding all the
+                            cool trends in the art world.</p>
+                        <p>
+                            Stay in touch with all the new mixed reality curatorial experiences and technologies.
+                        </p>
+                    </div>
+                    <div class="submit">
+                        <a href="./subscribe.html">JOIN NEWSLETTER</a>
+                    </div>
+                </div>
+
+                <div class="card" id="submit-art">
+                    <img src="./img_2/rocket.png">
+                    <h2>Augment your collection and reach new audiences!</h2>
+                    <div>
+                        <p>Submit your 2d/video/3d art galleries to be published. We'll answer in maximum 3 days.</p>
+                        <p>If you want something more special, discuss with a technical specialist, brainstorm or just
+                            to have a coffee with us, let's schedule a call. We love talking about both art & tech.
+                        </p>
+                        <p>Here's just a few areas we are interested in exploring ourselves:</p>
+                        <ul>
+                            <li>Framing 2D art withing a 3D environment</li>
+                            <li>Interactive 3D experiences</li>
+                            <li>Go to market strategies</li>
+                            <li>Seamlessly integrating AR with your event or institution</li>
+                        </ul>
+                        <div class="submit">
+                            <a href="./contact.html">AUGMENT YOUR COLLECTIONS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" id="collaborate">
+                    <img src="./img_2/augmented-reality.png">
+                    <h2>Not sure if XR is your style?</h2>
+                    <div>
+                        <p>
+                            Experience first-hand new media solutions and tell us what you think!
+                        </p>
+                        <p>
+                            AR can help you grow your audience, enhance your social media content and drive more sales.
+                        </p>
+                        <p>
+                            Contact us to find out how!
+                        </p>
+                        <div class="submit">
+                            <a href="./contact.html">SCHEDULE A CALL</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="team">
+                <h1>THE TEAM</h1>
+                <div class="team-member">
+                    <a href="https://www.linkedin.com/in/bogdan-topirceanu-a3922260/" target="_blank">
+                        <img src="./img/bogdan.jpg" />
+                    </a>
+                    <h2>BOGDAN TOPÎRCEANU</h2>
+                    <p>
+                        Having a Ph.D. in Visual Arts, and a Degree in Pedagogy, he is the founder of Art Factory, a
+                        contemporary art festival aiming to revive abandoned spaces. He is currently teaching art and
+                        building his design studio, as well as developing ArtLink, which represents a culmination of
+                        his interests in art and technology.
+                        His core value is:
+                        ”Solely do the things you believe in.”
+                    </p>
+                </div>
+                <div class="team-member">
+                    <a href="https://www.linkedin.com/in/drago%C8%99-silion-a01160100/" target="_blank">
+                        <img src="./img/dragos.jpg" />
+                    </a>
+                    <h2>DRAGOȘ SILION</h2>
+                    <p>Dragoș is an XR Creative Developer, founder of a small scale XR Studio, called ColorfulCoding,
+                        with experience in creating XR technology for arts, tourism, education but also advertising,
+                        corporate and industrial environments. Currently pursuing his PhD in Computer Science, focusing
+                        on XR Digitization for large scale instituions.
+                    </p>
+                </div>
+            </section>
+
+            <section id="partners">
+                <h1>PARTNERS</h1>
+                <div class="partner-wrapper">
+                    <a href="https://destructura.com/" target="_blank"><img src="./img/Partners/destructura.png" /></a>
+                    <a href="http://www.transylvaniatrust.ro/en/" target="_blank"><img
+                            src="./img/Partners/transylvania-trust.png" /></a>
+                    <a href="https://www.auto-bild.ro/" target="_blank"><img src="./img/Partners/autobild.png" /></a>
+                    <a href="https://climatechange-summit.org/" target="_blank"><img
+                            src="./img/Partners/climate change summit logo.png" /></a>
+                    <a href="https://future-summit.org/" target="_blank"><img
+                            src="./img/Partners/Future Summit Logo.png" /></a>
+                    <a href="https://kidkit.ro/" target="_blank"><img src="./img/Partners/kid kit B&W.png" /></a>
+                    <a href="https://centrulreplika.com/" target="_blank"><img src="./img/Partners/replika.png" /></a>
+                    <a href="https://thegreats.co/" target="_blank"><img src="./img/Partners/the-greats.png" /></a>
+                    <a href="https://fineacts.co/" target="_blank"><img
+                            src="./img/Partners/fine acts white logo.png" /></a>
+                    <a href="https://countdown.ted.com/" target="_blank"><img
+                            src="./img/Partners/ted-talk-logo black and white.png" /></a>
+                    <a href="https://countdown.ted.com/" target="_blank"><img
+                            src="./img/Partners/Countdown-Logo_TED-&Walsh_March 2020_ Black and White.png" /></a>
+                    <a href="https://www.avenor.ro/" target="_blank"><img
+                            src="./img/Partners/avenor college logo.png" /></a>
+                    <a href="" target="_blank"><img src="./img/Partners/logo rubik.png" /></a>
+                    <a href="https://institute.ro/" target="_blank"><img
+                            src="./img/Partners/logo the institute.png" /></a>
+                    <a href="https://www.facebook.com/ArtFactoryFest" target="_blank"><img
+                            src="./img/Partners/logo-art-factory.png" /></a>
+                    <a href="https://www.project-ark.co/" target="_blank"><img
+                            src="./img/Partners/project ark png white.png" /></a>
+                    <a href="https://asknights.org/" target="_blank"><img
+                            src="./img/Partners/asknights png white.png" /></a>
+                    <a href="https://www.clubulilustratorilor.ro/" target="_blank"><img
+                            src="./img/Partners/logo-clubul-ilustratorilor.png" /></a>
+                    <a href="https://institute.ro/diploma/" target="_blank"><img
+                            src="./img/Partners/logo-diploma.png" /></a>
+                    <a href="" target="_blank"><img src="./img/Partners/thinkering-logo.png" /></a>
+                    <a href="" target="_blank"><img src="./img/Partners/oko logo.png" /></a>
+                </div>
+            </section>
+            <section id="awards">
+                <h1>EVENTS</h1>
+                <div class="partner-wrapper">
+                    <a href="https://www.juxtaposeartfair.com/" target="_blank"><img
+                            src="./img/partners/juxtapose.png"></a>
+                    <a href="https://launch.ro/laser-valley-innovation-bootcamp-15-17-iunie-magurele/"
+                        target="_blank"><img src="./img/partners/laser-valley-innovation-camp.png"></a>
+                    <a href="https://futuremakers.ro/" target="_blank"><img
+                            src="./img/Partners/logo-future-makers prize.png" /></a>
+                    <a href="https://future-summit.org/" target="_blank"><img
+                            src="./img/Partners/logo-future-summit prize.png" /></a>
+                    <a href="https://launch.ro/" target="_blank"><img src="./img/Partners/Launch B&W logo.png" /></a>
+                    <a href="https://www.socialinnovationsolutions.org/" target="_blank"><img
+                            src="./img/Partners/Social Innovation Soltions Logo.png" /></a>
+                    <a href="https://upvising.net/" target="_blank"><img src="./img/Partners/Upvising logo.png" /></a>
+                    <a href="https://collisionconf.com/" target="_blank"><img
+                            src="./img/Partners/Collision_Logo_Black.png" /></a>
+                </div>
+            </section>
+            <section id="back-to-top">
+
+                <div><a href="" class="small-link"><img src="./img/download-circular-button.png"> Go Back to Top </a>
+                </div>
+            </section>
         </div>
     </div>
 
-    <div class="reel-modal" id="reel-modal" style="display: none;">
-        <div class="close-but">
-            <button onclick="closeModal()">X</button>
-        </div>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/tuzJ6c6BfOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
+
+    <div id="navigation-menu" style="display: none;">
+        <div class="close-but">
+            <button onclick="closeNavMenu()">X</button>
+        </div>
+
+        <ul>
+            <li class="active"><span class="line"></span><a class="nav-el small-link" href="#get-it-mobile">DOWNLOAD THE
+                    APP</a></li>
+            <li><span class="line"></span><a class="nav-el small-link" href="#features">WHAT IS ARTLINK</a></li>
+            <li><span class="line"></span><a class="nav-el small-link" href="#submit-art">OFFERS</a></li>
+            <li><span class="line"></span><a class="nav-el small-link" href="#team">TEAM</a></li>
+            <li><span class="line"></span><a class="nav-el small-link" href="#partners">PARTNERS</a></li>
+            <li><span class="line"></span><a class="nav-el small-link" href="./subscribe.html">JOIN MONTHLY
+                    NEWSLETTER</a></li>
+            <li><span class="line"></span><a class="nav-el small-link" href="./contact.html">CONTACT US</a></li>
+        </ul>
+    </div>
+
+
+    <script>
+        var navMenu = document.getElementById("navigation-menu");
+        var closeNavMenu = function () {
+            navMenu.style.display = "none";
+        }
+
+        var showNavMenu = function () {
+            navMenu.style.display = "block";
+        }
+
+        navMenuButtons = navMenu.getElementsByClassName("nav-el");
+        for (let but of navMenuButtons) {
+            but.addEventListener("click", () => {
+                closeNavMenu();
+            });
+        }
+
+        var clickToPlayVideos = document.getElementsByClassName("click-to-play-video");
+        var playingVideo = null;
+        for (let video of clickToPlayVideos) {
+            video.addEventListener("click", () => {
+                if (playingVideo != null && playingVideo !== video) {
+                    playingVideo.pause();
+                }
+
+                playingVideo = video;
+                if (playingVideo.paused) {
+                    playingVideo.play();
+                } else {
+                    playingVideo.pause();
+                }
+            });
+        }
+    </script>
 </body>
 
-
-<script>
-    var reelModal = document.getElementById("reel-modal");
-    var closeModal = function(){
-        reelModal.style.display = "none";
-    }
-
-    var showModal = function(){
-        reelModal.style.display = "block";
-    }
-</script>
 </html>

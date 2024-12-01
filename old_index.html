@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="language" content="en" />
+
+    <meta name="description" content="ArtLink is a platform that connects artists and institutions to the art world."/>
+
+    <meta property="og:title" content="ArtLink - The Artworld at your fingertips" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://artlink.app/" />
+    <meta name="og:description" content="ArtLink is a platform that connects artists and institutions to the art world."/>
+    <meta property="og:image" content="./img/artlink.jpg" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
+
+    <title>ArtLink - The ArtWorld at your Fingertips</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+</head>
+
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="./video/Video preview website_PC.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+        <div class="wrapper">
+            <div class="logo">
+                <img src="img_2/Artlink logo.png" alt="main logo">
+                <br />
+                <h1>ARTLINK</h1>
+                <h2 style="text-align: center; font-weight: normal;">The Artworld at your fingertips</h2>
+            </div>
+
+            <div class="main-buttons">
+                <h3> Hello, I'm an</h3>
+                <div class="buts">
+                    <a href="./artists.html">Artist</a> <span> <br/> or <br/></span><a href="./institutions.html">Institution</a>
+                </div>
+            </div>
+            <div class="reel" onclick="showModal()">
+                <span>Play </span>
+                <img src="./img_2/PNG PLAY BUTTON.png" alt="Play">
+                <span> Reel</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="reel-modal" id="reel-modal" style="display: none;">
+        <div class="close-but">
+            <button onclick="closeModal()">X</button>
+        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/tuzJ6c6BfOY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</body>
+
+
+<script>
+    var reelModal = document.getElementById("reel-modal");
+    var closeModal = function(){
+        reelModal.style.display = "none";
+    }
+
+    var showModal = function(){
+        reelModal.style.display = "block";
+    }
+</script>
+</html>

@@ -29,18 +29,13 @@ h3{
 
 a{    
     font-size: 1em;
-    border: 2px solid white;
+    border: 0px solid white;
     border-radius: 25px;
     padding: 10px;
     color: white;
     text-decoration: none;
 
     transition: 0.3s all ease-in-out;
-}
-
-a:hover{
-    background-color: white;
-    color: black;
 }
 
 #myVideo{
@@ -57,12 +52,6 @@ a:hover{
     min-height: 100%;
     background-color: rgba(0,0,0,0.8);
     color:#f1f1f1;
-}
-
-.content .wrapper{
-    width: 60%;
-    margin: auto;
-    margin-top: 50px;
 }
 
 .logo img{
