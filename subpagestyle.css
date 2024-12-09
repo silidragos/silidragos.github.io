@@ -57,7 +57,7 @@ ul {
 
 .top-nav .logo img {
     height: 50px;
-    /* Adjust as needed */
+    width: 50px;
     margin-right: 10px;
 }
 
@@ -578,6 +578,10 @@ section {
     h1 {
         font-size: 7em;
         line-height: 0.9em;
+    }
+
+    .logo.pc{
+        width: 200px;
     }
 
     .logo.pc img {
