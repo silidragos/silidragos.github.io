@@ -92,7 +92,8 @@
     </div>
 
     <script>
-        const urlBase = 'http://localhost:8080/';
+        // const urlBase = 'http://localhost:8080/';
+        const urlBase = 'https://artlink-cc.herokuapp.com/';
         function grabPreview() {
             const keypass = document.getElementById('keypass').value;
 
@@ -101,7 +102,6 @@
                 return;
             }
             // Make API call to get preview data
-            // fetch('https://artlink-cc.herokuapp.com/sandbox/expo/light', {
             fetch(urlBase + 'sandbox/expo/light', {
                 method: 'POST',
                 headers: {
