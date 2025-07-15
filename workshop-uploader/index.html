@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Uploader</title>
+    <link rel="stylesheet" type="text/css" href="./workshop-uploader.css" />
+</head>
+
+<body>
+    <!-- Animated circles background -->
+    <div class="area">
+        <ul class="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h1>Workshop Uploader</h1>
+
+        <form id="uploadForm">
+            <div class="form-group">
+                <label for="keypass">Key Pass:</label>
+                <input type="text" id="keypass" name="keypass" placeholder="Enter Key Password..." required>
+            </div>
+
+            <button type="button" onclick="grabPreview()">Grab Preview</button>
+        </form>
+
+        <!-- Exhibition Preview Section -->
+        <div id="exhibitionPreview" class="preview-section">
+            <div class="preview-card">
+                <h3>Exhibition Preview</h3>
+
+                <div class="preview-item">
+                    <label>Title:</label>
+                    <div id="expoTitle" class="value">Sample Exhibition Title</div>
+                </div>
+
+                <div class="preview-item">
+                    <label>Description:</label>
+                    <div id="expoDescription" class="value">This is a sample exhibition description that would be displayed here. It provides
+                        an overview of the exhibition content and purpose.</div>
+                </div>
+
+                <div class="preview-item">
+                    <label>Thumbnail Image:</label>
+                    <div id="expoThumbnail" class="thumbnail-placeholder">Thumbnail Image</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artwork Preview Section -->
+        <div id="artworkPreview" class="preview-section">
+            <div class="preview-card">
+                <h3>Artwork Preview</h3>
+
+                <div class="preview-item">
+                    <label>Name:</label>
+                    <div id="artworkName" class="value">Sample Artwork Name</div>
+                </div>
+
+                <div class="preview-item">
+                    <label>AR Marker Image:</label>
+                    <div id="arMarkerImage" class="thumbnail-placeholder">AR Marker Image</div>
+                </div>
+
+                <div class="preview-item">
+                    <label>Last Upload Timeline:</label>
+                    <div id="artworkTimeline" class="value">No Upload in this current session...</div>
+                </div>
+                
+                <div class="preview-item">
+                    <label>Actions:</label>
+                    <div class="button-group">
+                        <button type="button" class="action-button" onclick="uploadARMarker()">Upload new AR Marker Image</button>
+                        <button type="button" class="action-button" onclick="uploadAssetBundle()">Upload Asset Bundle</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const urlBase = 'http://localhost:8080/';
+        function grabPreview() {
+            const keypass = document.getElementById('keypass').value;
+
+            if (!keypass.trim()) {
+                alert('Please enter a Key Pass');
+                return;
+            }
+            // Make API call to get preview data
+            // fetch('https://artlink-cc.herokuapp.com/sandbox/expo/light', {
+            fetch(urlBase + 'sandbox/expo/light', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    keyPass: keypass
+                })
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('API Response:', data);
+                    ShowExpoPreview(data);
+                    GrabArtworkPreview(keypass);
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                    alert('Error fetching preview data. Please try again.');
+                });
+        }
+
+        function GrabArtworkPreview(keypass) {
+            // Make API call to get artwork data
+            fetch('http://localhost:8080/sandbox/art-piece', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    keyPass: keypass
+                })
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Artwork API Response:', data);
+                ShowArtworkPreview(data);
+            })
+            .catch(error => {
+                console.error('Error fetching artwork data:', error);
+            });
+        }
+
+        
+
+        function ShowExpoPreview(data) {
+            console.log('ShowExpoPreview called with data:', data);
+            
+            // Simple and reliable - just use IDs
+            const titleElement = document.getElementById('expoTitle');
+            const descriptionElement = document.getElementById('expoDescription');
+            const thumbnailElement = document.getElementById('expoThumbnail');
+            
+            // Update title
+            if (titleElement) {
+                titleElement.textContent = data.title || 'No title available';
+            }
+            
+            // Update description
+            if (descriptionElement) {
+                descriptionElement.textContent = data.description || 'No description available';
+            }
+            
+            // Update thumbnail
+            if (thumbnailElement) {
+                if (data.thumbnail) {
+                    thumbnailElement.innerHTML = `<img src="${data.thumbnail}" alt="Exhibition Thumbnail" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`;
+                } else {
+                    thumbnailElement.textContent = 'No thumbnail available';
+                }
+            }
+            
+            // Show preview sections
+            document.getElementById('exhibitionPreview').classList.add('show');
+            document.getElementById('artworkPreview').classList.add('show');
+        }
+
+        function ShowArtworkPreview(data) {
+            console.log('ShowArtworkPreview called with data:', data);
+            
+            // Simple and reliable - just use IDs
+            const nameElement = document.getElementById('artworkName');
+            const arMarkerImage = document.getElementById('arMarkerImage');
+            const timelineElement = document.getElementById('artworkTimeline');
+            
+            // Update name
+            if (nameElement) {
+                nameElement.textContent = data.name || data.title || 'No name available';
+            }
+            
+            // Update thumbnail
+            if (arMarkerImage) {
+                if (data.url) {
+                    const markerUrl = ConvertArtUrlToMarkerImage(data.url);
+                    console.log('Marker URL:', markerUrl);
+                    // Add timestamp to prevent caching
+                    const timestamp = new Date().getTime();
+                    const cacheBustedUrl = markerUrl + '?t=' + timestamp;
+                    arMarkerImage.innerHTML = `<img src="${cacheBustedUrl}" alt="Artwork Thumbnail" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`;
+                } else {
+                    arMarkerImage.textContent = 'No thumbnail available';
+                }
+            }else{
+                console.log('AR Marker Image element not found');
+            }
+        }
+
+        function ConvertArtUrlToMarkerImage(imageUrl) {
+            console.log('Converting image URL to marker image:', imageUrl);
+            const urlParts = imageUrl.split('/');
+            urlParts.splice(-1, 0, 'markers');
+            urlParts[urlParts.length - 1] = urlParts[urlParts.length - 1] + '.jpg';
+            return urlParts.join('/');
+        }
+
+        function uploadARMarker() {
+            console.log('Upload AR Marker Image clicked');
+            
+            // Create a hidden file input
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '.jpg,.jpeg';
+            fileInput.style.display = 'none';
+            
+            // Add event listener for file selection
+            fileInput.addEventListener('change', function(event) {
+                const file = event.target.files[0];
+                
+                if (!file) {
+                    return; // User cancelled
+                }
+                
+                // Check file extension
+                const fileName = file.name.toLowerCase();
+                if (!fileName.endsWith('.jpg') && !fileName.endsWith('.jpeg')) {
+                    alert('Error: Only .jpg files are allowed. Please select a .jpg file.');
+                    return;
+                }
+                
+                // Check file size (optional additional validation)
+                const maxSize = 5 * 1024 * 1024; // 5MB limit
+                if (file.size > maxSize) {
+                    alert('Error: File size is too large. Please select a file smaller than 5MB.');
+                    return;
+                }
+                
+                // Check image dimensions
+                const img = new Image();
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    img.onload = function() {
+                        if (img.width > 1024 || img.height > 1024) {
+                            alert('Error: Image resolution is too large. Please select an image with maximum 1024x1024 pixels.\n\nCurrent size: ' + img.width + 'x' + img.height + ' pixels');
+                            return;
+                        }
+                        
+                        // All validations passed
+                        console.log('AR Marker image selected:', file.name);
+                        console.log('Image dimensions:', img.width + 'x' + img.height);
+                        alert('AR Marker image uploaded successfully!\n\nFile: ' + file.name + '\nSize: ' + img.width + 'x' + img.height + ' pixels');
+                        
+                        uploadARMarkerToServer(file);
+                    };
+                    
+                    img.onerror = function() {
+                        alert('Error: Could not read the image file. Please try again.');
+                    };
+                    
+                    img.src = e.target.result;
+                };
+                
+                reader.onerror = function() {
+                    alert('Error: Could not read the file. Please try again.');
+                };
+                
+                reader.readAsDataURL(file);
+            });
+            
+            // Trigger file picker
+            document.body.appendChild(fileInput);
+            fileInput.click();
+            
+            // Clean up
+            setTimeout(() => {
+                document.body.removeChild(fileInput);
+            }, 1000);
+        }
+
+        function uploadAssetBundle() {
+            console.log('Upload Asset Bundle clicked');
+            
+            // Create a hidden file input for multiple files
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.multiple = true;
+            fileInput.style.display = 'none';
+            
+            // Add event listener for file selection
+            fileInput.addEventListener('change', function(event) {
+                const files = Array.from(event.target.files);
+                
+                if (files.length === 0) {
+                    return; // User cancelled
+                }
+                
+                console.log('Selected files:', files.map(f => f.name));
+                
+                // Validate number of files
+                if (files.length < 2) {
+                    alert('Error: You must select at least 2 files (Android and IOS). Windows file is optional.');
+                    return;
+                }
+                
+                if (files.length > 3) {
+                    alert('Error: You can only select up to 3 files (Android, IOS, and optionally Windows).');
+                    return;
+                }
+                
+                // Check file sizes
+                const maxSize = 100 * 1024 * 1024; // 100MB
+                for (let file of files) {
+                    if (file.size > maxSize) {
+                        alert(`Error: File "${file.name}" is too large. Maximum size is 100MB.\n\nFile size: ${(file.size / (1024 * 1024)).toFixed(2)}MB`);
+                        return;
+                    }
+                }
+                
+                // Check file extensions (should have no extension)
+                for (let file of files) {
+                    if (file.name.includes('.')) {
+                        alert(`Error: File "${file.name}" has an extension. Asset bundle files should have no file extension.`);
+                        return;
+                    }
+                }
+                
+                // Validate naming format
+                const fileNames = files.map(f => f.name);
+                const baseName = extractBaseName(fileNames);
+                
+                if (!baseName) {
+                    alert('Error: Files must follow the naming format:\n\n<AB_NAME>-Android\n<AB_NAME>-IOS\n<AB_NAME>-Win (optional)\n\nAll files must share the same base name before the platform suffix.');
+                    return;
+                }
+                
+                // Check for required platforms
+                const hasAndroid = fileNames.some(name => name.endsWith('-Android'));
+                const hasIOS = fileNames.some(name => name.endsWith('-IOS'));
+                
+                if (!hasAndroid) {
+                    alert('Error: Missing Android file. You must include a file ending with "-Android".');
+                    return;
+                }
+                
+                if (!hasIOS) {
+                    alert('Error: Missing IOS file. You must include a file ending with "-IOS".');
+                    return;
+                }
+                
+                // All validations passed
+                console.log('Asset bundle files validated successfully');
+                console.log('Base name:', baseName);
+                console.log('Files:', fileNames);
+                
+                // Calculate total size
+                const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+                const totalSizeMB = (totalSize / (1024 * 1024)).toFixed(2);
+                
+                alert(`Asset bundle files validated successfully!\n\nBase name: ${baseName}\nFiles: ${fileNames.join(', ')}\nTotal size: ${totalSizeMB}MB\n\nReady to upload to server.`);
+                
+                // TODO: Upload files to server
+                uploadAssetBundleToServer(files, baseName);
+            });
+            
+            // Trigger file picker
+            document.body.appendChild(fileInput);
+            fileInput.click();
+            
+            // Clean up
+            setTimeout(() => {
+                document.body.removeChild(fileInput);
+            }, 1000);
+        }
+        
+        function extractBaseName(fileNames) {
+            // Extract base names by removing platform suffixes
+            const baseNames = fileNames.map(name => {
+                if (name.endsWith('-Android')) return name.slice(0, -8);
+                if (name.endsWith('-IOS')) return name.slice(0, -4);
+                if (name.endsWith('-Win')) return name.slice(0, -4);
+                return null; // Invalid format
+            });
+            
+            // Check if all base names are the same and not null
+            const firstBaseName = baseNames[0];
+            if (!firstBaseName) return null;
+            
+            return baseNames.every(name => name === firstBaseName) ? firstBaseName : null;
+        }
+        
+        function uploadAssetBundleToServer(files, baseName) {
+            console.log('Uploading Asset Bundle to server:', baseName);
+            console.log('Files to upload:', files.map(f => f.name));
+            
+            // Create FormData for file upload
+            const formData = new FormData();
+            formData.append('keyPass', document.getElementById('keypass').value);
+            
+            // Add files with correct parameter names
+            files.forEach(file => {
+                if (file.name.endsWith('-Android')) {
+                    formData.append('file-Android', file);
+                } else if (file.name.endsWith('-IOS')) {
+                    formData.append('file-IOS', file);
+                } else if (file.name.endsWith('-Win')) {
+                    formData.append('file-Win', file);
+                }
+            });
+            
+            // Upload to server
+            fetch(urlBase + 'sandbox/art-piece/asset-bundles', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text(); // or response.json() if server returns JSON
+            })
+            .then(data => {
+                console.log('Asset bundle upload successful:', data);
+                
+                // Update Last Upload Timeline with current timestamp
+                const timelineElement = document.getElementById('artworkTimeline');
+                if (timelineElement) {
+                    const now = new Date();
+                    const timestamp = now.toLocaleString('en-US', {
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        hour12: false
+                    });
+                    timelineElement.textContent = timestamp;
+                }
+                
+                alert('Asset bundle uploaded successfully!\n\nBase name: ' + baseName + '\nFiles: ' + files.map(f => f.name).join(', '));
+                
+                // Refresh artwork preview
+                const keypass = document.getElementById('keypass').value;
+                GrabArtworkPreview(keypass);
+            })
+            .catch(error => {
+                console.error('Error uploading Asset Bundle:', error);
+                alert('Error uploading Asset Bundle: ' + error.message);
+            });
+        }
+
+        function uploadARMarkerToServer(file) {
+            console.log('Uploading AR Marker to server:', file.name);
+            
+            // Create FormData for file upload
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('keyPass', document.getElementById('keypass').value);
+            
+            // Upload to server
+            fetch(urlBase + 'sandbox/art-piece/marker', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text(); // or response.json() if server returns JSON
+            })
+            .then(data => {
+                console.log('AR Marker upload successful:', data);
+                alert('AR Marker uploaded successfully!');
+                
+                // Refresh artwork preview
+                const keypass = document.getElementById('keypass').value;
+                GrabArtworkPreview(keypass);
+            })
+            .catch(error => {
+                console.error('Error uploading AR Marker:', error);
+                alert('Error uploading AR Marker: ' + error.message);
+            });
+        }
+    </script>
+</body>
+
+</html>
