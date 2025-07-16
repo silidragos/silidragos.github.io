@@ -146,6 +146,93 @@ button:hover {
     font-family: 'jaappokki';
 }
 
+.image-container {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.qr-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.qr-section label {
+    font-weight: 100;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+    font-size: 1em;
+}
+
+.qr-placeholder {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px dashed rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-family: 'jaappokki';
+    font-size: 12px;
+}
+
+.name-edit-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.editable-name {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-family: 'jaappokki';
+    font-size: 14px;
+    transition: 0.3s all ease-in-out;
+}
+
+.editable-name:focus {
+    outline: none;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.editable-name::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.update-btn {
+    background-color: transparent;
+    color: white;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'jaappokki';
+    transition: 0.3s all ease-in-out;
+    white-space: nowrap;
+    flex-shrink: 0;
+    height: 36px;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+.update-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: white;
+}
+
 .button-group {
     display: flex;
     gap: 15px;

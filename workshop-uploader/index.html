@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workshop Uploader</title>
+    <link rel="shortcut icon" type="image/png" href="../img/favicon.png" />
     <link rel="stylesheet" type="text/css" href="./workshop-uploader.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 </head>
 
 <body>
@@ -55,7 +57,13 @@
 
                 <div class="preview-item">
                     <label>Thumbnail Image:</label>
-                    <div id="expoThumbnail" class="thumbnail-placeholder">Thumbnail Image</div>
+                    <div class="image-container">
+                        <div id="expoThumbnail" class="thumbnail-placeholder">Thumbnail Image</div>
+                        <div class="qr-section">
+                            <label>Exhibition Link:</label>
+                            <div id="expoQRCode" class="qr-placeholder">QR Code</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,7 +75,10 @@
 
                 <div class="preview-item">
                     <label>Name:</label>
-                    <div id="artworkName" class="value">Sample Artwork Name</div>
+                    <div class="name-edit-container">
+                        <input type="text" id="artworkName" class="editable-name" placeholder="Enter artwork name...">
+                        <button type="button" id="updateNameBtn" class="update-btn" style="display: none;" onclick="updateArtworkName()">Update Artwork Name</button>
+                    </div>
                 </div>
 
                 <div class="preview-item">
@@ -130,7 +141,7 @@
 
         function GrabArtworkPreview(keypass) {
             // Make API call to get artwork data
-            fetch('http://localhost:8080/sandbox/art-piece', {
+            fetch(urlBase + 'sandbox/art-piece', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -183,6 +194,39 @@
                 }
             }
             
+            // Update QR Code
+            const qrElement = document.getElementById('expoQRCode');
+            if (qrElement && data.id) {
+                const exhibitionUrl = `https://artlink.app/appv2?expoid=${data.id}`;
+                
+                // Clear previous content
+                qrElement.innerHTML = '';
+                
+                // Check if QRCode library is available
+                if (typeof QRCode !== 'undefined') {
+                    // Generate QR code locally using qrcodejs
+                    new QRCode(qrElement, {
+                        text: exhibitionUrl,
+                        width: 150,
+                        height: 150,
+                        colorDark: '#FFFFFF',
+                        colorLight: '#000000',
+                        correctLevel: QRCode.CorrectLevel.H
+                    });
+                } else {
+                    // Fallback: create a simple text representation
+                    console.warn('QRCode library not loaded, using fallback');
+                    qrElement.innerHTML = `
+                        <div style="text-align: center; padding: 10px;">
+                            <div style="font-size: 10px; margin-bottom: 5px;">Exhibition Link</div>
+                            <div style="font-size: 8px; word-break: break-all;">${exhibitionUrl}</div>
+                        </div>
+                    `;
+                }
+            } else if (qrElement) {
+                qrElement.textContent = 'No QR Code available';
+            }
+            
             // Show preview sections
             document.getElementById('exhibitionPreview').classList.add('show');
             document.getElementById('artworkPreview').classList.add('show');
@@ -195,10 +239,23 @@
             const nameElement = document.getElementById('artworkName');
             const arMarkerImage = document.getElementById('arMarkerImage');
             const timelineElement = document.getElementById('artworkTimeline');
+            const updateBtn = document.getElementById('updateNameBtn');
             
             // Update name
             if (nameElement) {
-                nameElement.textContent = data.name || data.title || 'No name available';
+                nameElement.value = data.name || data.title || 'No name available';
+                
+                // Add event listener for input changes
+                nameElement.addEventListener('input', function() {
+                    const currentValue = this.value;
+                    const originalValue = data.name || data.title || 'No name available';
+                    
+                    if (currentValue !== originalValue && currentValue.trim() !== '') {
+                        updateBtn.style.display = 'inline-block';
+                    } else {
+                        updateBtn.style.display = 'none';
+                    }
+                });
             }
             
             // Update thumbnail
@@ -215,6 +272,11 @@
                 }
             }else{
                 console.log('AR Marker Image element not found');
+            }
+            
+            // Update timeline
+            if (timelineElement) {
+                timelineElement.textContent = data.uploadDate || data.createdAt || data.timeline || 'No timeline available';
             }
         }
 
@@ -502,6 +564,55 @@
             .catch(error => {
                 console.error('Error uploading AR Marker:', error);
                 alert('Error uploading AR Marker: ' + error.message);
+            });
+        }
+
+        function updateArtworkName() {
+            const newName = document.getElementById('artworkName').value;
+            const updateBtn = document.getElementById('updateNameBtn');
+
+            if (!newName.trim()) {
+                alert('Artwork name cannot be empty.');
+                return;
+            }
+
+            const keypass = document.getElementById('keypass').value;
+
+            if (!keypass.trim()) {
+                alert('Please enter a Key Pass to update the artwork name.');
+                return;
+            }
+
+            // Make API call to update artwork name
+            const formData = new FormData();
+            formData.append('keyPass', keypass);
+            formData.append('newName', newName);
+            
+            fetch(urlBase + 'sandbox/art-piece/name', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text(); // Changed from response.json() to response.text()
+            })
+            .then(data => {
+                console.log('Artwork name updated successfully:', data);
+                alert('Artwork name updated successfully!');
+                // Hide the update button after successful update
+                const updateBtn = document.getElementById('updateNameBtn');
+                if (updateBtn) {
+                    updateBtn.style.display = 'none';
+                }
+                // Refresh artwork preview
+                const keypass = document.getElementById('keypass').value;
+                GrabArtworkPreview(keypass);
+            })
+            .catch(error => {
+                console.error('Error updating artwork name:', error);
+                alert('Error updating artwork name: ' + error.message);
             });
         }
     </script>
