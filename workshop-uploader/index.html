@@ -39,29 +39,37 @@
             <button type="button" onclick="grabPreview()">Grab Preview</button>
         </form>
 
+        <!-- Exhibition Link Section -->
+        <div id="exhibitionLink" class="preview-section">
+            <div class="preview-card">
+                <h3 id="exhibitionLinkTitle" style="text-align: center;">Exhibition Link</h3>
+                <div class="qr-center-container">
+                    <div id="expoQRCode" class="qr-placeholder">QR Code</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Exhibition Preview Section -->
         <div id="exhibitionPreview" class="preview-section">
             <div class="preview-card">
                 <h3>Exhibition Preview</h3>
 
                 <div class="preview-item">
-                    <label>Title:</label>
-                    <div id="expoTitle" class="value">Sample Exhibition Title</div>
-                </div>
+                    <div class="expo-content-container">
+                        <div class="expo-text-section">
+                            <div class="preview-item">
+                                <label>ExhibitionTitle:</label>
+                                <div id="expoTitle">Sample Exhibition Title</div>
+                            </div>
 
-                <div class="preview-item">
-                    <label>Description:</label>
-                    <div id="expoDescription" class="value">This is a sample exhibition description that would be displayed here. It provides
-                        an overview of the exhibition content and purpose.</div>
-                </div>
-
-                <div class="preview-item">
-                    <label>Thumbnail Image:</label>
-                    <div class="image-container">
-                        <div id="expoThumbnail" class="thumbnail-placeholder">Thumbnail Image</div>
-                        <div class="qr-section">
-                            <label>Exhibition Link:</label>
-                            <div id="expoQRCode" class="qr-placeholder">QR Code</div>
+                            <div class="preview-item">
+                                <div id="expoDescription">This is a sample exhibition description that would be displayed here. It provides
+                                    an overview of the exhibition content and purpose.</div>
+                            </div>
+                        </div>
+                        <div class="expo-thumbnail-section">
+                            <label>Thumbnail Image:</label>
+                            <div id="expoThumbnail" class="thumbnail-placeholder">Thumbnail Image</div>
                         </div>
                     </div>
                 </div>
@@ -229,6 +237,7 @@
             
             // Show preview sections
             document.getElementById('exhibitionPreview').classList.add('show');
+            document.getElementById('exhibitionLink').classList.add('show');
             document.getElementById('artworkPreview').classList.add('show');
         }
 

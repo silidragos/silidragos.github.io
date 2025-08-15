@@ -133,8 +133,8 @@ button:hover {
 }
 
 .thumbnail-placeholder {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px dashed rgba(255, 255, 255, 0.4);
     border-radius: 10px;
@@ -146,31 +146,47 @@ button:hover {
     font-family: 'jaappokki';
 }
 
-.image-container {
+/* Special styling for AR Marker Image in Artwork Preview */
+#artworkThumbnail.thumbnail-placeholder {
+    width: 200px;
+    height: 200px;
+}
+
+.expo-content-container {
     display: flex;
     gap: 20px;
     align-items: flex-start;
-    justify-content: space-between;
     width: 100%;
 }
 
-.qr-section {
+.expo-text-section {
+    flex: 1;
+}
+
+.expo-thumbnail-section {
     display: flex;
     flex-direction: column;
     gap: 8px;
     flex-shrink: 0;
 }
 
-.qr-section label {
+.expo-thumbnail-section label {
     font-weight: 100;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 0;
     font-size: 1em;
 }
 
+.qr-center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
 .qr-placeholder {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px dashed rgba(255, 255, 255, 0.4);
     border-radius: 10px;
