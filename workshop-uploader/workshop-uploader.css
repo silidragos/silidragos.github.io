@@ -147,7 +147,7 @@ button:hover {
 }
 
 /* Special styling for AR Marker Image in Artwork Preview */
-#artworkThumbnail.thumbnail-placeholder {
+#arMarkerImage.thumbnail-placeholder {
     width: 200px;
     height: 200px;
 }
